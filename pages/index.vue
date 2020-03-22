@@ -15,9 +15,9 @@
     <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
-      :url="localePath('/flow')"
-      :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
-      :btn-text="$t('相談の手順を見る')"
+      :url="$t('https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html')"
+      :text="$t('自分や家族の症状に不安や心配があればまずは確認を')"
+      :btn-text="$t('福井県公式サイトへ')"
     />
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
