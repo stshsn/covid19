@@ -43,23 +43,8 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        <small class="SideNavigation-Copyright">
-          <!-- {{ $t('このサイトの内容物は') }}
-          <a
-            :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
-            target="_blank"
-            rel="license"
-            class="SideNavigation-LicenseLink"
-          >
-            {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
-          </a>
-          {{ $t('の下に提供されています。') }}
-          <br />
-          2020 Tokyo Metropolitan Government -->
-          ※このサイトは福井高専の学生が開設したものです
-        </small>
+        {{ $t('※このサイトは福井高専の学生が開設したものです') }}<br/>
         <div class="SideNavigation-Social">
-          作者情報はこちら
           <a
             href="https://twitter.com/nomunomu0504"
             target="_blank"
