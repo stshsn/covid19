@@ -5,10 +5,10 @@
 [![福井県 新型コロナウイルス感染症対策サイト（非公式）](/static/ogp.png)](https://covid19-fukui.com/)
 
 ## 貢献の仕方
-issueを作成の上、developmentブランチにPRを発行してください。
+issueを作成の上、nomu_productionブランチにPRを発行してください。
 
 ### ブランチルール
-development 以外は Pull Request は禁止です。  
+nomu_production 以外への Pull Request は禁止です。  
 Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
 
 機能追加系： feature/#{ISSUE_ID}-#{branch_title_name}  
