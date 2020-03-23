@@ -57,7 +57,7 @@
             </picture>
           </a>
           <a
-            href="https://www.facebook.com/hiroki.nomura.0504"
+            href="https://www.facebook.com/hiroki.nomura.504"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
