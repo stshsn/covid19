@@ -2,10 +2,17 @@
 
 <!-- ![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg) -->
 
-[![福井県 新型コロナウイルス感染症対策サイト（非公式）](https://user-images.githubusercontent.com/1301149/75629392-1d19d900-5c25-11ea-843d-2d4376e3a560.png)](https://covid19-fukui.com/)
+[![福井県 新型コロナウイルス感染症対策サイト（非公式）](/static/ogp.png)](https://covid19-fukui.com/)
 
 ## 貢献の仕方
-pull requestをお送りください。
+issueを作成の上、developmentブランチにPRを発行してください。
+
+### ブランチルール
+development 以外は Pull Request は禁止です。  
+Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
+
+機能追加系： feature/#{ISSUE_ID}-#{branch_title_name}  
+ホットフィックス系: hotfix/#{ISSUE_ID}-#{branch_title_name}
 
 ## ライセンス
 本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
@@ -62,11 +69,3 @@ $ docker-compose run --rm app yarn install
 ### 本番環境/その他の判定
 `process.env.GENERATE_ENV` の値が、本番の場合は`'production'`に、それ以外の場合は `'development'` になっています。  
 テスト環境のみで実行したい処理がある場合はこちらの値をご利用ください。
-
-### ブランチルール
-
-development, dev-i18n, dev-hotfix 以外は Pull Request は禁止です。  
-Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
-
-機能追加系： feature/#{ISSUE_ID}-#{branch_title_name}  
-ホットフィックス系: hotfix/#{ISSUE_ID}-#{branch_title_name}
