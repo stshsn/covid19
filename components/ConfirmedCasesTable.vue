@@ -1,5 +1,18 @@
 <template>
   <ul :class="$style.container">
+    <li :class="[$style.box, $style.tall, $style.alluser]">
+      <div :class="$style.pillar">
+        <div :class="$style.content">
+          <!-- eslint-disable vue/no-v-html-->
+          <span v-html="$t('検査実施人数')" />
+          <!-- eslint-enable vue/no-v-html-->
+          <span>
+            <strong>{{ 検査実施人数 }}</strong>
+            <span :class="$style.unit">{{ $t('人') }}</span>
+          </span>
+        </div>
+      </div>
+    </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.confirmed]">
       <div :class="$style.pillar">
         <div :class="$style.content">
@@ -211,8 +224,15 @@ $default-boxdiff: 35px;
     }
   }
 
+  &.alluser {
+    margin-left: $default-bdw;
+    // [2列] 1/2
+    width: calc(100% / 5 - #{$default-bdw});
+  }
+
   &.confirmed {
     width: 100%;
+    margin-left: $default-bdw;
 
     > .pillar {
       // [6列] 1/6

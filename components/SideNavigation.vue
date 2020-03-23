@@ -151,6 +151,10 @@ export default Vue.extend({
         {
           title: this.$t('新型コロナウイルス感染拡大防止に伴うイベントの中止・延期について'),
           link: 'https://www.city.fukui.lg.jp/fukusi/iryou/kensen/p021724.html',
+        },
+        {
+          title: this.$t('新型コロナウイルスにおける各種相談窓口はこちら'),
+          link: 'https://www.pref.fukui.lg.jp/doc/kouho/navi.html',
           divider: true
         },
         {

@@ -13,6 +13,7 @@
       </div>
     </div>
     <whats-new class="mb-4" :items="newsItems" />
+    <whats-new-japan class="mb-4" :items="japanItems" />
     <static-info
       class="mb-4"
       :url="$t('https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html')"
@@ -40,16 +41,25 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
+import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import JapanNews from '@/data/japan.json'
+// 陽性患者数
+// import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+// 陽性患者の属性
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+// 検査陽性者の状況
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+// 検査実施人数（累計）
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+// 新型コロナ受診相談窓口相談件数（累計）
+// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+
+// import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
+
+// import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
@@ -59,14 +69,15 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
+    WhatsNewJapan,
     StaticInfo,
+    // ConfirmedCasesNumberCard,
     ConfirmedCasesDetailsCard,
-    TestedCasesDetailsCard,
-    ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard,
-    TestedNumberCard,
     InspectionPersonsNumberCard,
-    TelephoneAdvisoryReportsNumberCard,
+    // TelephoneAdvisoryReportsNumberCard,
+    // TestedCasesDetailsCard,
+    ConfirmedCasesAttributesCard,
+    // TestedNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
     // AgencyCard
@@ -76,9 +87,10 @@ export default Vue.extend({
       Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('都内の最新感染動向')
+        title: this.$t('福井県内の最新感染動向')
       },
-      newsItems: News.newsItems
+      newsItems: News.newsItems,
+      japanItems: JapanNews.japanItems
     }
     return data
   },
@@ -89,7 +101,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('都内の最新感染動向') as string
+      title: this.$t('福井県内の最新感染動向') as string
     }
   }
 })
