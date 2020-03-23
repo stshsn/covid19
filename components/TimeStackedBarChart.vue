@@ -414,7 +414,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     eachArraySum(chartDataArray: number[][]) {
       const sumArray: number[] = []
       for (let i = 0; i < chartDataArray[0].length; i++) {
-        console.log(chartDataArray);
         sumArray.push(chartDataArray[0][i])
       }
       return sumArray
