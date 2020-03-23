@@ -2,7 +2,7 @@
 
 <!-- ![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg) -->
 
-[![福井県 新型コロナウイルス感染症対策サイト（非公式）](https://user-images.githubusercontent.com/1301149/75629392-1d19d900-5c25-11ea-843d-2d4376e3a560.png)](https://covid19-fukui.com/)
+[![福井県 新型コロナウイルス感染症対策サイト（非公式）](/static/ogp.png)](https://covid19-fukui.com/)
 
 ## 貢献の仕方
 pull requestをお送りください。
