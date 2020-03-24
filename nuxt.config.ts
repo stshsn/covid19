@@ -108,7 +108,8 @@ const config: Configuration = {
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
     'nuxt-purgecss',
-    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }]
+    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
+    '@nuxtjs/sitemap'
   ],
   /*
    ** vuetify module configuration
@@ -192,7 +193,20 @@ const config: Configuration = {
     webpack: {
       poll: true
     }
-  }
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://covid19-fukui.com/',
+    // generate: true,
+    exclude: [
+      '/flow',
+      '/contacts',
+      '/parent',
+      '/worker',
+      '/print/flow'
+    ],
+    routes: []
+  },
 }
 
 export default config
