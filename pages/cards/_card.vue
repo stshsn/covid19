@@ -48,37 +48,37 @@
 <script>
 import Data from '@/data/data.json'
 import ScrapingData from '@/covid19_fukui/covid19_fukui.json'
-import MetroData from '@/data/metro.json'
-import agencyData from '@/data/agency.json'
-import ShinjukuData from '@/data/13104_daily_visitors.json'
-import ChiyodaData from '@/data/13101_daily_visitors.json'
+// import MetroData from '@/data/metro.json'
+// import agencyData from '@/data/agency.json'
+// import ShinjukuData from '@/data/13104_daily_visitors.json'
+// import ChiyodaData from '@/data/13101_daily_visitors.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+// import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
+// import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+// import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
-import MetroCard from '@/components/cards/MetroCard.vue'
-import AgencyCard from '@/components/cards/AgencyCard.vue'
-import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
-import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
+// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+// import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+// import MetroCard from '@/components/cards/MetroCard.vue'
+// import AgencyCard from '@/components/cards/AgencyCard.vue'
+// import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
+// import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
 
 export default {
   components: {
     ConfirmedCasesDetailsCard,
-    TestedCasesDetailsCard,
-    ConfirmedCasesNumberCard,
+    // TestedCasesDetailsCard,
+    // ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    TestedNumberCard,
+    // TestedNumberCard,
     InspectionPersonsNumberCard,
-    TelephoneAdvisoryReportsNumberCard,
-    ConsultationDeskReportsNumberCard,
-    MetroCard,
-    AgencyCard,
-    ShinjukuVisitorsCard,
-    ChiyodaVisitorsCard
+    // TelephoneAdvisoryReportsNumberCard,
+    // ConsultationDeskReportsNumberCard,
+    // MetroCard,
+    // AgencyCard,
+    // ShinjukuVisitorsCard,
+    // ChiyodaVisitorsCard
   },
   data() {
     let title, updatedAt

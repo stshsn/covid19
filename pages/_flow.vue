@@ -36,8 +36,8 @@ import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
 import CovidIcon from '@/static/covid.svg'
 import PrinterButton from '@/components/PrinterButton.vue'
-import FlowPc from '@/components/flow/FlowPc.vue'
-import FlowSp from '@/components/flow/FlowSp.vue'
+// import FlowPc from '@/components/flow/FlowPc.vue'
+// import FlowSp from '@/components/flow/FlowSp.vue'
 import PageHeader from '@/components/PageHeader.vue'
 
 export default Vue.extend({
@@ -45,8 +45,8 @@ export default Vue.extend({
     CovidIcon,
     PageHeader,
     PrinterButton,
-    FlowPc,
-    FlowSp
+    // FlowPc,
+    // FlowSp
   },
   head(): any {
     const title: TranslateResult = this.$t(
