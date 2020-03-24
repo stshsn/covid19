@@ -47,6 +47,7 @@
 
 <script>
 import Data from '@/data/data.json'
+import ScrapingData from '@/covid19_fukui/covid19_fukui.json'
 import MetroData from '@/data/metro.json'
 import agencyData from '@/data/agency.json'
 import ShinjukuData from '@/data/13104_daily_visitors.json'
@@ -84,7 +85,7 @@ export default {
     switch (this.$route.params.card) {
       case 'details-of-confirmed-cases':
         title = this.$t('検査陽性者の状況')
-        updatedAt = Data.inspections_summary.date
+        updatedAt = ScrapingData.inspections_summary.date
         break
       case 'details-of-tested-cases':
         title = this.$t('検査実施状況')
@@ -104,7 +105,7 @@ export default {
         break
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
-        updatedAt = Data.inspection_persons.date
+        updatedAt = ScrapingData.inspection_persons.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         title = this.$t('新型コロナコールセンター相談件数')

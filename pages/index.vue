@@ -23,15 +23,8 @@
     />
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
-      <tested-cases-details-card />
       <confirmed-cases-attributes-card />
-      <confirmed-cases-number-card />
       <inspection-persons-number-card />
-      <tested-number-card />
-      <telephone-advisory-reports-number-card />
-      <consultation-desk-reports-number-card />
-      <metro-card />
-      <agency-card />
     </v-row>
   </div>
 </template>
