@@ -125,8 +125,8 @@ exports.getWebWithCache = async function(url, path, cachetime, enc) {
     //console.log(dt, new Date(modtime).getTime(), new Date().getTime())
     cache = fs.readFileSync(fnlatest, 'utf-8')
     if (!cachetime || dt < cachetime) {
-      //console.log("use cache")
-      return cache
+      console.log("use cache")
+      // return cache
     }
   } catch (e) {
   }

@@ -163,7 +163,7 @@ const getWeekFromWeekNumber = function(weekNumber)
 const getCovid19DataJSON = async function(cachetime)
 {
   const data = await getCovid19Data(cachetime)
-  console.log(data)
+  // console.log(data)
   const dom = cheerio.load(data)
   const weeks = []
 
