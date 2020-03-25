@@ -25,6 +25,7 @@
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
+      <telephone-advisory-reports-number-card />
     </v-row>
   </div>
 </template>
@@ -48,7 +49,7 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 // 検査実施人数（累計）
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 // 新型コロナ受診相談窓口相談件数（累計）
-// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 
@@ -67,7 +68,7 @@ export default Vue.extend({
     // ConfirmedCasesNumberCard,
     ConfirmedCasesDetailsCard,
     InspectionPersonsNumberCard,
-    // TelephoneAdvisoryReportsNumberCard,
+    TelephoneAdvisoryReportsNumberCard,
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
     // TestedNumberCard,

@@ -1,20 +1,20 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
-      :title="$t('新型コロナ受診相談窓口相談件数（累計）')"
+      :title="$t('PCR検査実施件数（累計）')"
       :title-id="'number-of-reports-to-covid19-telephone-advisory-center'"
       :chart-id="'time-bar-chart-contacts'"
-      :chart-data="contactsGraph"
-      :date="Data.contacts.date"
+      :chart-data="pcrGraph"
+      :date="Data.pcr.date"
       :unit="$t('件.reports')"
-      :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000071'"
+      :url="'https://www.city.fukui.lg.jp/fukusi/iryou/kensen/p021907.html'"
     />
     <!-- 件.reports = 窓口相談件数 -->
   </v-col>
 </template>
 
 <script>
-import Data from '@/data/data.json'
+import Data from '@/covid19_fukui/covid19_fukui.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -23,12 +23,12 @@ export default {
     TimeBarChart
   },
   data() {
-    // 相談件数
-    const contactsGraph = formatGraph(Data.contacts.data)
+    // pcr検査件数
+    const pcrGraph = formatGraph(Data.pcr.data)
 
     const data = {
       Data,
-      contactsGraph
+      pcrGraph
     }
     return data
   }
