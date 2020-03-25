@@ -25,7 +25,7 @@ export default {
     TimeStackedBarChart
   },
   data() {
-    // 検査実施日別状況
+    // 検査実施週別状況
     const inspectionsGraph = [
       Data.inspections_summary.data['都内'], // TODO: ERROR
       Data.inspections_summary.data['その他']
