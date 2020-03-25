@@ -29,14 +29,14 @@ export default {
     const patientsTable = formatTable(Data.patients.data)
 
     const sumInfoOfPatients = {
-      lText: patientsGraph[
-        patientsGraph.length - 1
-      ].cumulative.toLocaleString(),
+      lText: String(Data.patients.data.length),
       sText: this.$t('{date}の累計', {
         date: patientsGraph[patientsGraph.length - 1].label
       }),
       unit: this.$t('人')
     }
+
+    console.log(sumInfoOfPatients)
 
     // 陽性患者の属性 ヘッダー翻訳
     for (const header of patientsTable.headers) {
