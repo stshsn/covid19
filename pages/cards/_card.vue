@@ -58,7 +58,7 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
@@ -73,7 +73,7 @@ export default {
     ConfirmedCasesAttributesCard,
     // TestedNumberCard,
     InspectionPersonsNumberCard,
-    // TelephoneAdvisoryReportsNumberCard,
+    TelephoneAdvisoryReportsNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
     // AgencyCard,
