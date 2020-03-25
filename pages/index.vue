@@ -12,6 +12,7 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
+    <breaking-news class="mb-4" />
     <whats-new class="mb-4" :items="newsItems" />
     <whats-new-japan class="mb-4" :items="japanItems" />
     <static-info
@@ -34,6 +35,8 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
+// 速報
+import BreakingNews from '@/components/BreakingNews.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
@@ -62,6 +65,7 @@ import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 export default Vue.extend({
   components: {
     PageHeader,
+    BreakingNews,
     WhatsNew,
     WhatsNewJapan,
     StaticInfo,
