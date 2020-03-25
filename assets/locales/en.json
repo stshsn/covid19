@@ -137,7 +137,7 @@
   "重症": "Severe symptoms",
   "死亡": "Deaths",
   "退院": "Discharged",
-  "日別": "By day",
+  "週別": "By week",
   "累計": "Total",
   "※退院には、死亡退院を含む": "* The discharged includes deaths",
   "{date} 更新": " Last update: {date}",
