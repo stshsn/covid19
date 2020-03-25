@@ -4,6 +4,7 @@ const util = require('./util.js')
 const CACHE_TIME = 1 * 60 * 60 * 1000 // 1hour
 //const CACHE_TIME = 1 * 60 * 1000 // 1min
 const PATH = 'data/covid19fukui/'
+const InspectionDataPATH = 'data/covid19fukui_inspedtion/'
 const URL = 'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'
 const InspectionDataURL = 'https://www.city.fukui.lg.jp/fukusi/iryou/kensen/p021907.html'
 
@@ -72,7 +73,7 @@ const getCovid19Data = async function(cachetime)
 // PCR検査と相談件数に関するサイトを取得
 const getCovid19InspectionData = async function(cachetime)
 {
-  return await util.getWebWithCache(InspectionDataURL, PATH, cachetime)
+  return await util.getWebWithCache(InspectionDataURL, InspectionDataPATH, cachetime)
 }
 
 const getLastUpdate = function(fn)
@@ -162,6 +163,7 @@ const getWeekFromWeekNumber = function(weekNumber)
 const getCovid19DataJSON = async function(cachetime)
 {
   const data = await getCovid19Data(cachetime)
+  console.log(data)
   const dom = cheerio.load(data)
   const weeks = []
 
@@ -212,6 +214,8 @@ const getCovid19DataJSON = async function(cachetime)
     }
     custom_res.inspections_summary.value = calcSum(custom_res.inspection_persons.data.県内)
   })
+
+  // await getCovid19InspectionDataJSON(0)
 
   var fs = require('fs');
   fs.writeFile("covid19_fukui.json", JSON.stringify(custom_res, null, '    '), function(err) {
@@ -346,8 +350,8 @@ const calcCovid19DataSummary = function(json) {
 const main = async function()
 {
   // const data = await getCovid19DataJSON(1000 * 60)
-  const temp = await getCovid19InspectionDataJSON(1000 * 60)
-  const inspectionData = await getCovid19DataJSON(1000 * 60)
+  const temp = await getCovid19InspectionDataJSON(0)
+  const inspectionData = await getCovid19DataJSON(0)
   console.log(inspectionData)
 }
 
