@@ -108,7 +108,7 @@ export default {
         updatedAt = ScrapingData.inspection_persons.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
-        title = this.$t('新型コロナコールセンター相談件数')
+        title = this.$t('PCR検査実施件数（累計）')
         updatedAt = Data.contacts.date
         break
       case 'number-of-reports-to-covid19-consultation-desk':
