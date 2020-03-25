@@ -12,7 +12,7 @@
       value="transition"
       class="DataSelector-Button"
     >
-      {{ $t('日別') }}
+      {{ $t('週別') }}
     </v-btn>
     <v-btn
       v-ripple="false"
