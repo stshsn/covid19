@@ -4,8 +4,8 @@
       :title="$t('PCR検査実施件数（累計）')"
       :title-id="'number-of-reports-to-covid19-telephone-advisory-center'"
       :chart-id="'time-bar-chart-contacts'"
-      :chart-data="contactsGraph"
-      :date="Data.contacts.date"
+      :chart-data="pcrGraph"
+      :date="Data.pcr.date"
       :unit="$t('件.reports')"
       :url="'https://www.city.fukui.lg.jp/fukusi/iryou/kensen/p021907.html'"
     />
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Data from '@/data/data.json'
+import Data from '@/covid19_fukui/covid19_fukui.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -23,12 +23,12 @@ export default {
     TimeBarChart
   },
   data() {
-    // 相談件数
-    const contactsGraph = formatGraph(Data.contacts.data)
+    // pcr検査件数
+    const pcrGraph = formatGraph(Data.pcr.data)
 
     const data = {
       Data,
-      contactsGraph
+      pcrGraph
     }
     return data
   }
