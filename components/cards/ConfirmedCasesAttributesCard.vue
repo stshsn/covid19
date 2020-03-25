@@ -36,7 +36,7 @@ export default {
       unit: this.$t('人')
     }
 
-    console.log(sumInfoOfPatients)
+    // console.log(sumInfoOfPatients)
 
     // 陽性患者の属性 ヘッダー翻訳
     for (const header of patientsTable.headers) {
