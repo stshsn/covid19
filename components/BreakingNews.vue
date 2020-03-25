@@ -8,7 +8,8 @@
     </h2>
     <ul class="WhatsNew-list">
       <h1 class="breaking-content">
-        福井県内で2, 3例目となる新型コロナウイルス感染者が確認されました
+        福井県内で2, 3例目となる新型コロナウイルス感染者が確認されました<br/>
+        詳細は <a href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200325.pdf">こちら</a> からご確認いただけます
       </h1>
       <!-- <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
         <a
