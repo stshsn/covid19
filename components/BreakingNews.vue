@@ -14,8 +14,8 @@
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/03/26
         </time>
-        <span>
-          福井県内で6例目となる新型コロナウイルス感染者が確認されました。杉本知事が本日午後7時半より臨時の記者会見を行います。
+        <span class="BreakingNews-list-item-anchor-link">
+          福井県内で6例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200326-2.pdf">こちら</a> からご確認いただけます
         </span>
       </li><br/>
       <li class="BreakingNews-list-item">
