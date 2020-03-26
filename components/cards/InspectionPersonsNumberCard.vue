@@ -9,6 +9,7 @@
       :unit="$t('人')"
       :items="inspectionsItems"
       :labels="inspectionsLabels"
+      :data-labels="inspectionsItems"
     >
       <template v-slot:description>
         <ul>
