@@ -4,7 +4,7 @@
       <v-icon size="24" class="WhatsNew-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（2020年03月25日 更新）') }}
+      {{ $t('速報（2020年03月26日 更新）') }}
     </h2>
     <ul class="WhatsNew-list">
       <h3 class="breaking-content">
@@ -17,12 +17,15 @@
         <span>
           福井県内で4, 5例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200326.pdf">こちら</a> からご確認いただけます
         </span>
+      </li><br/>
+      <li class="WhatsNew-list-item">
         <time class="WhatsNew-list-item-anchor-time px-2">
           2020/03/25
         </time>
         <span>
           福井県内で2, 3例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200325.pdf">こちら</a> からご確認いただけます
         </span>
+      </li>
         <!-- <a
           class="WhatsNew-list-item-anchor"
           :href="item.url"
