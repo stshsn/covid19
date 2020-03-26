@@ -7,12 +7,23 @@
       {{ $t('速報（2020年03月25日 更新）') }}
     </h2>
     <ul class="WhatsNew-list">
-      <h1 class="breaking-content">
-        福井県内で2, 3例目となる新型コロナウイルス感染者が確認されました<br/>
-        詳細は <a href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200325.pdf">こちら</a> からご確認いただけます
-      </h1>
-      <!-- <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
-        <a
+      <h3 class="breaking-content">
+        
+      </h3>
+      <li class="WhatsNew-list-item">
+        <time class="WhatsNew-list-item-anchor-time px-2">
+          2020/03/26
+        </time>
+        <span>
+          福井県内で4, 5例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200326.pdf">こちら</a> からご確認いただけます
+        </span>
+        <time class="WhatsNew-list-item-anchor-time px-2">
+          2020/03/25
+        </time>
+        <span>
+          福井県内で2, 3例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200325.pdf">こちら</a> からご確認いただけます
+        </span>
+        <!-- <a
           class="WhatsNew-list-item-anchor"
           :href="item.url"
           target="_blank"
@@ -34,8 +45,8 @@
               mdi-open-in-new
             </v-icon>
           </span>
-        </a>
-      </li> -->
+        </a> -->
+      </li>
     </ul>
   </div>
 </template>
