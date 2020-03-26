@@ -1,5 +1,16 @@
 {
     "lastUpdate": "2020/03/25 22:00",
+    "hospital_beds": {
+      "date": "2020/03/27 03:00",
+      "labels":[
+        "現在患者数",
+        "空き病床数(推測)"
+      ],
+      "data": {
+        "used": 6,
+        "unused": 42
+      }
+    },
     "patients": {
         "date": "2020/03/25 22:00",
         "data": [
