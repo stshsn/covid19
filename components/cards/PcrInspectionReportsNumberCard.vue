@@ -2,8 +2,8 @@
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
       :title="$t('PCR検査実施件数（累計）')"
-      :title-id="'number-of-reports-to-covid19-telephone-advisory-center'"
-      :chart-id="'time-bar-chart-contacts'"
+      :title-id="'pcr-inspection-reports-number-card'"
+      :chart-id="'pcr-inspection-reports-number-card'"
       :chart-data="pcrGraph"
       :date="Data.pcr.date"
       :unit="$t('件.reports')"
