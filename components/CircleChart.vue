@@ -161,7 +161,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayInfo() {
       const totalBeds = this.chartData[this.chartData.length - 1].cumulative
       const usedBeds = this.chartData[0].cumulative
-      const rateOfUsed = ((parseFloat(usedBeds)/totalBeds)*100).toFixed(2)
+      const rateOfUsed = ((usedBeds/totalBeds)*100).toFixed(2)
       return {
         lText: rateOfUsed.toLocaleString(),
         sText: this.info,
