@@ -26,7 +26,7 @@
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
-      <pcr-inspection-reports-number-card />
+      <!-- <pcr-inspection-reports-number-card /> -->
       <hospital-beds-number-card />
     </v-row>
   </div>
