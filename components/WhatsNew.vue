@@ -5,9 +5,10 @@
         mdi-information
       </v-icon>
       {{ $t('最新のお知らせ（福井県内）') }}
+      <a class="WhatsNew-heading-link" :href="this.localePath('/news')">一覧はこちらから</a>
     </h3>
     <ul class="WhatsNew-list">
-      <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
+      <li v-for="(item, i) in items.slice(0,3)" :key="i" class="WhatsNew-list-item">
         <a
           class="WhatsNew-list-item-anchor"
           :href="item.url"
@@ -77,7 +78,11 @@ export default Vue.extend({
   margin-left: 12px;
 
   &-icon {
-    margin: 3px;
+    margin: 10px;
+  }
+
+  &-link {
+    font-size: 12px;
   }
 }
 

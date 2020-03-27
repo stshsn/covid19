@@ -14,25 +14,25 @@
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/03/27
         </time>
-        <span class="BreakingNews-list-item-anchor-link">
+        <p class="BreakingNews-list-item-anchor-link">
           福井県内で8, 9例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200327-4.pdf">こちら</a> からご確認いただけます
-        </span>
+        </p>
       </li><br />
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/03/27
         </time>
-        <span class="BreakingNews-list-item-anchor-link">
+        <p class="BreakingNews-list-item-anchor-link">
           福井県内で7例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200327.pdf">こちら</a> からご確認いただけます
-        </span>
+        </p>
       </li><br />
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/03/26
         </time>
-        <span class="BreakingNews-list-item-anchor-link">
+        <p class="BreakingNews-list-item-anchor-link">
           福井県内で6例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200326-2.pdf">こちら</a> からご確認いただけます
-        </span>
+        </p>
       </li>
         <!-- <a
           class="BreakingNews-list-item-anchor"
@@ -97,7 +97,7 @@ export default Vue.extend({
   margin-left: 12px;
 
   &-icon {
-    margin: 3px;
+    margin: 10px;
   }
 }
 
@@ -133,7 +133,8 @@ export default Vue.extend({
 
       &-link {
         flex: 0 1 auto;
-
+        display: inline;
+    
         // @include text-link();
 
         @include lessThan($medium) {

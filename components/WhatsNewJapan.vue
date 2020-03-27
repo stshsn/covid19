@@ -1,30 +1,31 @@
 <template>
-  <div class="WhatsNew">
-    <h3 class="WhatsNew-heading">
-      <v-icon size="24" class="WhatsNew-heading-icon">
+  <div class="WhatsNewJapan">
+    <h3 class="WhatsNewJapan-heading">
+      <v-icon size="24" class="WhatsNewJapan-heading-icon">
         mdi-information
       </v-icon>
       {{ $t('最新のお知らせ（国内）') }}
+      <a class="WhatsNew-heading-link" :href="this.localePath('/japan-news')">一覧はこちらから</a>
     </h3>
-    <ul class="WhatsNew-list">
-      <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
+    <ul class="WhatsNewJapan-list">
+      <li v-for="(item, i) in items.slice(0,3)" :key="i" class="WhatsNewJapan-list-item">
         <a
-          class="WhatsNew-list-item-anchor"
+          class="WhatsNewJapan-list-item-anchor"
           :href="item.url"
           target="_blank"
           rel="noopener"
         >
           <time
-            class="WhatsNew-list-item-anchor-time px-2"
+            class="WhatsNewJapan-list-item-anchor-time px-2"
             :datetime="formattedDate(item.date)"
           >
             {{ item.date }}
           </time>
-          <span class="WhatsNew-list-item-anchor-link">
+          <span class="WhatsNewJapan-list-item-anchor-link">
             {{ item.text }}
             <v-icon
               v-if="!isInternalLink(item.url)"
-              class="WhatsNew-item-ExternalLinkIcon"
+              class="WhatsNewJapan-item-ExternalLinkIcon"
               size="12"
             >
               mdi-open-in-new
@@ -59,14 +60,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.WhatsNew {
+.WhatsNewJapan {
   @include card-container();
 
   padding: 10px;
   margin-bottom: 20px;
 }
 
-.WhatsNew-heading {
+.WhatsNewJapan-heading {
   display: flex;
   align-items: center;
 
@@ -77,11 +78,15 @@ export default Vue.extend({
   margin-left: 12px;
 
   &-icon {
-    margin: 3px;
+    margin: 10px;
+  }
+
+  &-link {
+    font-size: 12px;
   }
 }
 
-.WhatsNew .WhatsNew-list {
+.WhatsNewJapan .WhatsNewJapan-list {
   padding-left: 0;
   list-style-type: none;
 
