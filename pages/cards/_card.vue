@@ -30,6 +30,9 @@
           'number-of-reports-to-covid19-consultation-desk'
       "
     />
+    <hospital-beds-number-card
+      v-else-if="this.$route.params.card == 'hospital-beds-number-card'"
+    />
     <metro-card
       v-else-if="
         this.$route.params.card == 'predicted-number-of-toei-subway-passengers'
@@ -59,6 +62,7 @@ import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttri
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
@@ -74,6 +78,7 @@ export default {
     // TestedNumberCard,
     InspectionPersonsNumberCard,
     TelephoneAdvisoryReportsNumberCard,
+    HospitalBedsNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
     // AgencyCard,
@@ -130,6 +135,10 @@ export default {
       case 'chiyoda-visitors':
         title = this.$t('千代田区エリアの来訪者数の推移（参考値）')
         updatedAt = ChiyodaData.date
+        break
+      case 'hospital-beds-number-card':
+        title = this.$t('感染症病床使用率')
+        updatedAt = Data.hospital_beds.date
         break
     }
 
