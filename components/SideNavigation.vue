@@ -124,6 +124,17 @@ export default Vue.extend({
           divider: true
         },
         {
+          icon: 'mdi-information',
+          title: this.$t('福井県内のお知らせ一覧'),
+          link: this.localePath('/news')
+        },
+        {
+          icon: 'mdi-information',
+          title: this.$t('国内のお知らせ一覧'),
+          link: this.localePath('/japan-news'),
+          divider: true
+        },
+        {
           icon: 'mdi-account-multiple',
           title: this.$t('福井県民の皆様へ'),
           link: 'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html#'
