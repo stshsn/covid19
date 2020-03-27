@@ -121,7 +121,7 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    退院: {
+    備考: {
       type: Number,
       required: true
     }
