@@ -28,6 +28,7 @@
       <inspection-persons-number-card />
       <pcr-inspection-reports-number-card />
       <hospital-beds-number-card />
+      <youtube-card />
     </v-row>
   </div>
 </template>
@@ -57,6 +58,8 @@ import PcrInspectionReportsNumberCard from '@/components/cards/PcrInspectionRepo
 
 // 病床数
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
+// Youtube
+import YoutubeCard from '@/components/cards/YoutubeCard.vue'
 
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 
@@ -80,6 +83,7 @@ export default Vue.extend({
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
     HospitalBedsNumberCard,
+    YoutubeCard,
     // TestedNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
