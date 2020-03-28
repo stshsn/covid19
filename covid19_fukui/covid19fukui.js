@@ -228,7 +228,22 @@ const getCovid19DataJSON = async function(cachetime)
           console.log(err);
       }
   });
-  return custom_res
+  fs.writeFile("pcr.json", JSON.stringify(custom_res.pcr, null, '    '), function(err) {
+      if (err) {
+          console.log(err)
+      }
+  });
+  fs.writeFile("inspection_persons.json", JSON.stringify(custom_res.inspection_persons, null, '    '), function(err) {
+    if (err) {
+        console.log(err);
+    }
+});
+fs.writeFile("inspection_summary.json", JSON.stringify(custom_res.inspections_summary, null, '    '), function(err) {
+    if (err) {
+        console.log(err);
+    }
+});
+return custom_res
 }
 
 // スクレイピングしたデータ（PCR検査と相談件数）をJSON形式に変換
