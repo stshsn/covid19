@@ -7,6 +7,13 @@
 ## 貢献の仕方
 issueを作成の上、nomu_productionブランチにPRを発行してください。
 
+## Slackチャンネルへの参加
+このサイトを運営・改善していくためのSlackを開設しています。[こちらから登録](https://join.slack.com/t/nomunomu0504/shared_invite/zt-d6ad54zo-VqgGZR2qRtIjIKP04reI0Q)してご参加ください
+
+## CONTRIBUTORS.md への追加について
+ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](./CONTRIBUTORS.md) というファイルがあります。 
+何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。 [#24](https://github.com/nomunomu0504/covid19/issues/24) の Issue をご覧の上、コメントください。
+
 ### ブランチルール
 nomu_production 以外への Pull Request は禁止です。  
 Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
