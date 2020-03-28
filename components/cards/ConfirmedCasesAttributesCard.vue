@@ -5,7 +5,7 @@
       :title-id="'attributes-of-confirmed-cases'"
       :chart-data="patientsTable"
       :chart-option="{}"
-      :date="Data.patients.date"
+      :date="Patients.date"
       :info="sumInfoOfPatients"
       :url="'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'"
     />
@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import Data from '@/data/data.json'
+import Patients from '@/data/patients.json'
+import PatientsSummary from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import DataTable from '@/components/DataTable.vue'
@@ -24,12 +25,12 @@ export default {
   },
   data() {
     // 感染者数グラフ
-    const patientsGraph = formatGraph(Data.patients_summary.data)
+    const patientsGraph = formatGraph(PatientsSummary.data)
     // 感染者数
-    const patientsTable = formatTable(Data.patients.data)
+    const patientsTable = formatTable(Patients.data)
 
     const sumInfoOfPatients = {
-      lText: String(Data.patients.data.length),
+      lText: String(Patients.data.length),
       sText: this.$t('{date}の累計', {
         date: patientsGraph[patientsGraph.length - 1].label
       }),
@@ -58,7 +59,7 @@ export default {
     }
 
     const data = {
-      Data,
+      Patients,
       patientsTable,
       sumInfoOfPatients
     }

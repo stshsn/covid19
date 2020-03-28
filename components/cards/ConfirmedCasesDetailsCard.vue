@@ -3,7 +3,7 @@
     <confirmed-cases-card
       :title="$t('検査陽性者の状況')"
       :title-id="'details-of-confirmed-cases'"
-      :date="Data.inspections_summary.date"
+      :date="InspectionsSummary.date"
     >
       <confirmed-cases-table
         :aria-label="$t('検査陽性者の状況')"
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Data from '@/covid19_fukui/covid19_fukui.json'
+import InspectionsSummary from '@/covid19_fukui/inspection_summary.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import ConfirmedCasesCard from '@/components/ConfirmedCasesCard.vue'
 import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
@@ -26,10 +26,10 @@ export default {
   },
   data() {
     // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.inspections_summary)
+    const confirmedCases = formatConfirmedCases(InspectionsSummary)
 
     const data = {
-      Data,
+      InspectionsSummary,
       confirmedCases
     }
     return data

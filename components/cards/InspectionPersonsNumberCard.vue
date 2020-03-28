@@ -5,7 +5,7 @@
       :title-id="'number-of-inspection-persons'"
       :chart-id="'number-of-inspection-persons'"
       :chart-data="inspectionsGraph"
-      :date="Data.inspection_persons.date"
+      :date="InspectionPersons.date"
       :unit="$t('人')"
       :items="inspectionsItems"
       :labels="inspectionsLabels"
@@ -25,7 +25,7 @@
 <script>
 // import Data from '@/data/data.json'
 import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
-import Data from '@/covid19_fukui/covid19_fukui.json'
+import InspectionPersons from '@/covid19_fukui/inspection_persons.json'
 
 export default {
   components: {
@@ -34,14 +34,14 @@ export default {
   data() {
     // 検査実施週別状況
     const inspectionsGraph = [
-      Data.inspection_persons.data['県内']
+      InspectionPersons.data['県内']
     ]
     const inspectionsItems = [
       this.$t('県内')
     ]
-    const inspectionsLabels = Data.inspection_persons.labels
+    const inspectionsLabels = InspectionPersons.labels
     const data = {
-      Data,
+      InspectionPersons,
       inspectionsGraph,
       inspectionsItems,
       inspectionsLabels

@@ -5,7 +5,7 @@
       :title-id="'pcr-inspection-reports-number-card'"
       :chart-id="'pcr-inspection-reports-number-card'"
       :chart-data="pcrGraph"
-      :date="Data.pcr.date"
+      :date="Pcr.date"
       :unit="$t('件.reports')"
       :url="'https://www.city.fukui.lg.jp/fukusi/iryou/kensen/p021907.html'"
     />
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Data from '@/covid19_fukui/covid19_fukui.json'
+import Pcr from '@/covid19_fukui/pcr.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -24,10 +24,10 @@ export default {
   },
   data() {
     // pcr検査件数
-    const pcrGraph = formatGraph(Data.pcr.data)
+    const pcrGraph = formatGraph(Pcr.data)
 
     const data = {
-      Data,
+      Pcr,
       pcrGraph
     }
     return data
