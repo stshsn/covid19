@@ -14,11 +14,12 @@
 import axios from 'axios'
 import Vue from 'vue'
 import VueYoutube from 'vue-youtube'
+import config from '../../youtube-card.config.js'
 
 Vue.use(VueYoutube)
 
-const youtubeAPIKey = 'AIzaSyDg9WtuupL11twuZ8TgPB_Ru73GmtJeDUo'
-const youtubeUsername = 'fukuikouhou'
+const youtubeAPIKey = config.youtubeAPIKey
+const youtubeUsername = config.youtubeUsername
 const youtubeAPI = axios.create({
   baseURL: "https://www.googleapis.com/youtube/v3",
   headers: {
