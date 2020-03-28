@@ -38,6 +38,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/sitemap": "^2.0.1",
+    "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "cheerio": "^1.0.0-rc.3",
     "cross-env": "^5.2.0",
@@ -49,7 +50,8 @@
     "vue-chartjs": "^3.5.0",
     "vue-property-decorator": "^8.4.0",
     "vue-scrollto": "^2.17.1",
-    "vue-spinner": "^1.0.3"
+    "vue-spinner": "^1.0.3",
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",

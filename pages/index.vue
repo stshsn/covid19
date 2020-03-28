@@ -23,6 +23,7 @@
       :btn-text="$t('福井県公式サイトへ')"
     />
     <v-row class="DataBlock">
+      <youtube-card />
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
@@ -57,6 +58,8 @@ import PcrInspectionReportsNumberCard from '@/components/cards/PcrInspectionRepo
 
 // 病床数
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
+// Youtube
+import YoutubeCard from '@/components/cards/YoutubeCard.vue'
 
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 
@@ -80,6 +83,7 @@ export default Vue.extend({
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
     HospitalBedsNumberCard,
+    YoutubeCard,
     // TestedNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
