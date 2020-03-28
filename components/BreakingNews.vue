@@ -15,7 +15,7 @@
           2020/03/28
         </time>
         <p class="BreakingNews-list-item-anchor-link">
-          福井県内で10, 11, 12例目となる新型コロナウイルス感染者が確認されました。午後8時から知事が記者会見を行います
+          福井県内で10, 11, 12例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf">こちら</a> からご確認いただけます
         </p>
       </li><br />
       <li class="BreakingNews-list-item">
