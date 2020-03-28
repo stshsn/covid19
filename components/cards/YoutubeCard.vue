@@ -4,7 +4,7 @@
       <v-card-title>福井県のYoutube配信</v-card-title>
       <v-card-subtitle>公開日時: {{ publishedAt }}</v-card-subtitle>
       <v-card-text>
-        <youtube :video-id="videoId" />
+        <youtube :video-id="videoId" :class="videos" />
       </v-card-text>
     </v-card>
   </v-col>
@@ -74,35 +74,19 @@ export default {
             }
             return comparison
           })
-          console.log(relatedVideo)
+          // console.log(relatedVideo)
           this.videoId = relatedVideo[0].snippet.resourceId.videoId
           this.publishedAt = new Date(relatedVideo[0].snippet.publishedAt).toLocaleString()
         })
 
       
     }
-    // async getPlaylists(userName) {
-    //   await youtubeAPI
-    //     .get(
-    //       '/channels?part=contentDetails&forUsername='+userName+'&key='+youtubeAPIKey,
-    //     )
-    //     .then(res => {
-    //       this.playlist = res.data.items[0].contentDetails.relatedPlaylists.uploads
-    //     })
-    // },
-    // async getPlaylistItems(playlistId) {
-    //   await youtubeAPI
-    //     .get(
-    //       '/playlistItems?part=snippet&playlistId='+playlistId+'&key='+youtubeAPIKey,
-    //     )
-    //     .then(res => {
-    //       this.playlistItems = res.data.items
-    //     })
-    // },
-    // getVideoId(playlistItems) {
-    //   this.videoId = playlistItems[0].snippet.resourceId.videoId
-    //   // this.videoId = this.playlistItems.filter(item => item.snippet.title === '（福井県20/3/27）新型コロナウイルス感染症に係る記者会見3')
-    // }
   }
 }
 </script>
+
+<style>
+iframe {
+  width: 100%;
+}
+</style>

@@ -23,12 +23,12 @@
       :btn-text="$t('福井県公式サイトへ')"
     />
     <v-row class="DataBlock">
+      <youtube-card />
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
       <pcr-inspection-reports-number-card />
       <hospital-beds-number-card />
-      <youtube-card />
     </v-row>
   </div>
 </template>
