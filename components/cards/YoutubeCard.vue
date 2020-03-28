@@ -1,10 +1,10 @@
 <template>
   <v-col cols="12" class="DataCard">
     <v-card>
-      <v-card-title>福井県のYoutube配信</v-card-title>
+      <v-card-title>福井県のYouTube公開動画</v-card-title>
       <v-card-subtitle>公開日時: {{ publishedAt }}</v-card-subtitle>
       <v-card-text>
-        <youtube :video-id="videoId" :class="videos" />
+        <youtube :video-id="videoId" />
       </v-card-text>
     </v-card>
   </v-col>
