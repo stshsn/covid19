@@ -4,12 +4,19 @@
       <v-icon size="24" class="BreakingNews-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（2020年03月28日 18:50 更新）') }}
+      {{ $t('速報（2020年03月29日 19:25 更新）') }}
     </h2>
     <ul class="BreakingNews-list">
       <h3 class="breaking-content">
-
       </h3>
+      <li class="BreakingNews-list-item">
+        <time class="BreakingNews-list-item-anchor-time px-2">
+          2020/03/29
+        </time>
+        <p class="BreakingNews-list-item-anchor-link">
+          福井県内で13例目となる新型コロナウイルス感染者が確認されました。午後8時から知事の臨時記者会見が行われます。以下からご覧いただけます。
+        </p>
+      </li><br />
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/03/28

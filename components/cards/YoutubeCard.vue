@@ -1,10 +1,10 @@
 <template>
   <v-col cols="12" class="DataCard">
     <v-card>
-      <v-card-title>福井県のYouTube公開動画</v-card-title>
-      <v-card-subtitle>公開日時: {{ publishedAt }}</v-card-subtitle>
+      <v-card-title>福井県のYouTube（LIVE）</v-card-title>
+      <!-- <v-card-subtitle>公開日時: {{ publishedAt }}</v-card-subtitle> -->
       <v-card-text>
-        <youtube :video-id="videoId" />
+        <iframe style="width=100%;" height="315" src="https://www.youtube.com/embed/WaypSgzvlU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </v-card-text>
     </v-card>
   </v-col>
