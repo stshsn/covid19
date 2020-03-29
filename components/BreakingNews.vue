@@ -24,30 +24,6 @@
         <p class="BreakingNews-list-item-anchor-link">
           福井県内で10, 11, 12例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf">こちら</a> からご確認いただけます
         </p>
-      </li><br />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/03/27
-        </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で8, 9例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200327-4.pdf">こちら</a> からご確認いただけます
-        </p>
-      </li><br />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/03/27
-        </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で7例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200327.pdf">こちら</a> からご確認いただけます
-        </p>
-      </li><br />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/03/26
-        </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で6例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200326-2.pdf">こちら</a> からご確認いただけます
-        </p>
       </li>
         <!-- <a
           class="BreakingNews-list-item-anchor"
