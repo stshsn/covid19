@@ -4,7 +4,7 @@
       <v-icon size="24" class="BreakingNews-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（2020年03月29日 19:25 更新）') }}
+      {{ $t('速報（2020年03月29日 20:00 更新）') }}
     </h2>
     <ul class="BreakingNews-list">
       <h3 class="breaking-content">
@@ -14,7 +14,7 @@
           2020/03/29
         </time>
         <p class="BreakingNews-list-item-anchor-link">
-          福井県内で13例目となる新型コロナウイルス感染者が確認されました。午後8時から知事の臨時記者会見が行われます。以下からご覧いただけます。
+          福井県内で13例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200329-1.pdf">こちら</a> からご確認いただけます
         </p>
       </li><br />
       <li class="BreakingNews-list-item">
