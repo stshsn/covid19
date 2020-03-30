@@ -15,6 +15,14 @@
           2020/03/30
         </time>
         <p class="BreakingNews-list-item-anchor-link">
+          福井県内で14, 15例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200330-1.pdf">こちら</a> からご確認いただけます
+        </p>
+      </li><br />
+      <li class="BreakingNews-list-item">
+        <time class="BreakingNews-list-item-anchor-time px-2">
+          2020/03/30
+        </time>
+        <p class="BreakingNews-list-item-anchor-link">
           新型コロナウイルス感染症に係る対策本部会議が中継されます。<a target="_blank" href="https://www.youtube.com/watch?v=8XBmyHErGZk">こちら</a> からご確認いただけます
         </p>
       </li><br />
