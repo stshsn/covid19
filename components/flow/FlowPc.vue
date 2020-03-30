@@ -24,9 +24,11 @@
         tag="span"
         path="{advisory}による相談結果"
       >
-        <span :class="$style.TitleLarge" place="advisory">
-          {{ $t('新型コロナ受診相談窓口') }}
-        </span>
+        <template v-slot:advisory>
+          <span :class="$style.TitleLarge">
+            {{ $t('新型コロナ受診相談窓口') }}
+          </span>
+        </template>
       </i18n>
     </h3>
     <div :class="[$style.Outer, $style.OuterLower]">
@@ -105,10 +107,12 @@ export default {
 }
 
 .Outer {
+  $grid-gap: 12px;
+
   display: grid;
-  grid-gap: 12px;
 
   &Upper {
+    grid-gap: $grid-gap;
     grid-template-columns: 70% 30%;
     -ms-grid-columns: 70% 12px 30%;
     grid-template-rows: repeat(3, auto);
@@ -145,6 +149,7 @@ export default {
   }
 
   &Lower {
+    grid-gap: $grid-gap;
     grid-template-columns: repeat(2, calc(50% - 6px));
     -ms-grid-columns: calc(50% - 6px) 12px calc(50% - 6px);
     grid-template-rows: repeat(3, auto);
