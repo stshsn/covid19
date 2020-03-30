@@ -5,15 +5,16 @@
       :title-id="'number-of-confirmed-cases'"
       :chart-id="'time-bar-chart-patients'"
       :chart-data="patientsGraph"
-      :date="Data.patients.date"
+      :date="Patients.date"
       :unit="$t('人')"
       :url="'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'"
     />
   </v-col>
 </template>
-
+  
 <script>
-import Data from '@/data/data.json'
+import PatientsSummary from '@/data/patients_summary.json'
+import Patients from '@/data/patients.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -23,10 +24,10 @@ export default {
   },
   data() {
     // 感染者数グラフ
-    const patientsGraph = formatGraph(Data.patients_summary.data)
+    const patientsGraph = formatGraph(PatientsSummary.data)
 
     const data = {
-      Data,
+      Patients,
       patientsGraph
     }
     return data
