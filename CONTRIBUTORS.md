@@ -4,7 +4,7 @@ Fukui Covid-19 response site contributors
 本サイトにご協力いただいた皆様
 
 | Name (link) | GitHub | Twitter | Contribution | Remarks |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | [Hiroki Nomura](https://www.nomunomu0504.work/portfolio) | [@nomunomu0504](https://github.com/nomunomu0504) | [@nomunomu0504](https://twitter.com/nomunomu0504) | Project facilitation | とにかく地元に貢献できればOKの精神 |
 | [FooQoo](https://fooqoo.github.io/) | [@FooQoo](https://github.com/fooqoo) | [@FooQoo56](https://twitter.com/FooQoo56) | Coding, Review | 元福井高専生で現在都内IT企業に所属してます。少しでも地元に貢献できればと参加いたしました |
 
