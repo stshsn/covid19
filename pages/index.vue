@@ -23,7 +23,7 @@
       :btn-text="$t('福井県公式サイトへ')"
     />
     <v-row class="DataBlock">
-      <!-- <youtube-card /> -->
+      <youtube-card />
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
