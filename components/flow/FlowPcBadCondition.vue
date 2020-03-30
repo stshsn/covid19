@@ -16,11 +16,10 @@
       </i18n>
     </h3>
     <h3 :class="$style.sectionTitle">
-      <i18n path="{tiredness}" tag="p"
-        >//
-        <template v-slot:tiredness>
-          <strong>
-            {{ $t('すぐに！') }}
+      <i18n path="{immediately} 専用窓口に相談してください！" tag="p">
+        <template v-slot:immediately>
+          <strong :class="$style.FlowRowEmphasis">
+            {{ $t('すぐに') }}
           </strong>
         </template>
       </i18n>
@@ -106,6 +105,35 @@
 
   strong {
     font-size: 1.5rem;
+  }
+}
+
+.Flow {
+  @include card-container($withDivider: true);
+
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px !important;
+  position: relative;
+  color: $gray-2;
+
+  &Row {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 36%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &Emphasis {
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: solid 3px $green-1;
+
+      &Day {
+        font-size: 41px;
+      }
+    }
   }
 }
 </style>

@@ -9,10 +9,13 @@
     </div>
     -->
     <div :class="$style.FlowCard">
-      <flow-sp-general />
+      <flow-sp-bad-condition />
     </div>
     <div :class="$style.FlowCard">
       <flow-sp-elder />
+    </div>
+    <div :class="$style.FlowCard">
+      <flow-sp-general />
     </div>
     <!--
     <div :class="$style.FlowCard">
@@ -35,8 +38,8 @@
 
 <script>
 import VueScrollTo from 'vue-scrollto'
-
 // import FlowSpPast from './FlowSpPast.vue'
+import FlowSpBadCondition from './FlowSpBadCondition.vue'
 import FlowSpGeneral from './FlowSpGeneral.vue'
 import FlowSpElder from './FlowSpElder.vue'
 // import FlowSpSuspect from './FlowSpSuspect.vue'
@@ -47,6 +50,7 @@ import FlowSpAdvisory from './FlowSpAdvisory.vue'
 export default {
   components: {
     // FlowSpPast,
+    FlowSpBadCondition,
     FlowSpGeneral,
     FlowSpElder,
     // FlowSpSuspect,

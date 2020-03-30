@@ -1,22 +1,22 @@
 <template>
   <div :class="$style.container">
     <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
-      {{ $t('新型コロナ受診相談窓口（日本語のみ）') }}
+      {{ $t('新型コロナ受診相談窓口') }}
       <small :class="[$style.break, $style.fzRegular, $style.mt5]">{{
         $t('帰国者・接触者 電話相談センター')
       }}</small>
     </h4>
     <p :class="[$style.open, $style.fzMedium]">
-      <span>{{ $t('24時間対応') }}</span>
+      <span>{{ $t('時間外は携帯電話番号がアナウンスされます') }}</span>
     </p>
     <dl>
       <div :class="$style.daytime">
         <dt :class="[$style.title, $style.fzMedium]">
-          {{ $t('平日（日中）') }}
+          {{ $t('時間外も対応') }}
         </dt>
         <dd :class="$style.link">
           <a
-            href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+            href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona-denwa.html"
             target="_blank"
             rel="noopener"
           >
@@ -32,13 +32,13 @@
           <ul :class="[$style.night]">
             <li>
               <span :class="[$style.fzMedium, $style.break, $style.mb10]">
-                {{ $t('平日（夜間）') }}
+                {{ $t('厚生労働省電話相談窓口') }}
               </span>
-              {{ $t('午後5時から翌朝午前9時') }}
+              {{ $t('午後9時から午後21時') }}
             </li>
             <li>
               <span :class="$style.fzMedium">
-                {{ $t('土日祝 終日') }}
+                {{ $t('土日祝も実施') }}
               </span>
             </li>
           </ul>
@@ -48,7 +48,7 @@
             <span :class="$style.icon">
               <PhoneIcon alt="Phone" />
             </span>
-            <a href="tel:0353204592">03-5320-4592</a>
+            <a href="tel:0120565653">0120-565653</a>
           </div>
           <div
             v-if="!['ja', 'ja-basic'].includes($i18n.locale)"
