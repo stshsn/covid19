@@ -5,8 +5,8 @@
       :title-id="'hospital-beds-number-card'"
       :chart-id="'hospital-beds-number-card'"
       :chart-data="hospitalBedsGraph"
-      :date="Data.hospital_beds.date"
-      :labels="Data.hospital_beds.labels"
+      :date="HospitalBeds.date"
+      :labels="HospitalBeds.labels"
       :unit="$t('％')"
       :info="'病床使用率'"
     >
@@ -24,7 +24,7 @@
 <script>
 // import Data from '@/data/data.json'
 import CircleChart from '@/components/CircleChart.vue'
-import Data from '@/data/data.json'
+import HospitalBeds from '@/data/hospital_beds.json'
 import formatVariableGraph from '@/utils/formatVariableGraph.ts'
 
 export default {
@@ -33,12 +33,13 @@ export default {
   },
   data() {
     // 検査実施週別状況
-    const hospitalBedsGraph = formatVariableGraph(Data.hospital_beds.data)
+    const hospitalBedsGraph = formatVariableGraph(HospitalBeds.data)
     const data = {
-      Data,
+      HospitalBeds,
       hospitalBedsGraph
     }
     return data
   }
 }
 </script>
+ 
