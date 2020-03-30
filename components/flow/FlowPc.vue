@@ -18,6 +18,7 @@
         <flow-pc-advisory2 />
       </div>
     </div>
+    <!-- 一時的に「新型コロナ受診相談窓口による相談結果」は隠す
     <h3>
       <i18n
         :class="$style.TitleSmall"
@@ -47,6 +48,7 @@
         <flow-pc-hospitalized />
       </div>
     </div>
+    -->
     <p :class="$style.Note">
       {{
         $t(
@@ -63,10 +65,10 @@ import FlowPcDays from './FlowPcDays.vue'
 import FlowPcSuspect from './FlowPcSuspect.vue'
 import FlowPcAdvisory from './FlowPcAdvisory.vue'
 import FlowPcAdvisory2 from './FlowPcAdvisory2.vue'
-import FlowPcRequired from './FlowPcRequired.vue'
-import FlowPcPcr from './FlowPcPcr.vue'
-import FlowPcNotRequired from './FlowPcNotRequired.vue'
-import FlowPcHospitalized from './FlowPcHospitalized.vue'
+// import FlowPcRequired from './FlowPcRequired.vue'
+// import FlowPcPcr from './FlowPcPcr.vue'
+// import FlowPcNotRequired from './FlowPcNotRequired.vue'
+// import FlowPcHospitalized from './FlowPcHospitalized.vue'
 
 export default {
   components: {
@@ -74,11 +76,11 @@ export default {
     FlowPcDays,
     FlowPcSuspect,
     FlowPcAdvisory,
-    FlowPcAdvisory2,
-    FlowPcRequired,
-    FlowPcPcr,
-    FlowPcNotRequired,
-    FlowPcHospitalized
+    FlowPcAdvisory2
+    // FlowPcRequired,
+    // FlowPcPcr,
+    // FlowPcNotRequired,
+    // FlowPcHospitalized
   }
 }
 </script>
