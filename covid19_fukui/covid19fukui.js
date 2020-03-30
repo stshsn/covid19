@@ -90,6 +90,7 @@ const startUpdate = function()
 {
   setInterval(async function() {
     await util.getWebWithCache(URL, PATH, CACHE_TIME)
+    await getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
   }, CACHE_TIME)
 }
 
@@ -367,6 +368,67 @@ const calcCovid19DataSummary = function(json) {
   }
 }
 
+// Youtubeから関連動画のリストを取得
+const getYoutubeVideolist = async function(apiKey, userName) {
+  let axios = require('axios')
+  const youtubeAPI = axios.create({
+    baseURL: "https://www.googleapis.com/youtube/v3",
+    headers : {
+      "Content-Type": "application/json",
+      "X-Requested-With": "XMLHttpRequest"
+    },
+    timeout: 3000,
+    responseType: "json"
+  })
+  let playlistId = ''
+  let playlistItems = []
+
+  await youtubeAPI
+    .get(
+      '/channels?part=contentDetails&forUsername='+userName+'&key='+apiKey,
+    )
+    .then(res => {
+      playlistId = res.data.items[0].contentDetails.relatedPlaylists.uploads
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
+  await youtubeAPI
+    .get(
+      '/playlistItems?part=snippet&playlistId='+playlistId+'&maxResults=50&key='+apiKey
+    )
+    .then(res => {
+      playlistItems = res.data.items
+      let relatedVideo = playlistItems.filter(
+        video => video.snippet.title.match(/新型コロナウイルス/)
+      )
+      relatedVideo.sort((a, b) => {
+        const publishedAt_a = new Date(a.snippet.publishedAt).getTime()
+        const publishedAt_b = new Date(b.snippet.publishedAt).getTime()
+
+        let comparison = 0
+        if (publishedAt_a < publishedAt_b) {
+          comparison = 1
+        } else if (publishedAt_a > publishedAt_b) {
+          cimparison = -1
+        }
+        return comparison
+      })
+      // console.log(relatedVideo)
+      let fs = require('fs')
+      fs.writeFile(
+        "youtubeVideolist.json",
+        JSON.stringify(relatedVideo, null, '    '),
+        function(err) {
+          if (err) {
+            console.log(err);
+          }
+        }
+      )
+    })
+}
+
 const main = async function()
 {
   // const data = await getCovid19DataJSON(1000 * 60)
@@ -376,7 +438,8 @@ const main = async function()
 }
 
 if (require.main === module) {
-  main()
+  //main()
+  getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
 } else {
   startUpdate()
 }
