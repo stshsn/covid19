@@ -2,21 +2,30 @@
   <div :class="$style.FlowCard">
     <h3>{{ $t('新型コロナウイルス感染症にかかる相談窓口について') }}</h3>
     <div :class="[$style.Outer, $style.OuterUpper]">
+      <!--
       <div :class="[$style.CardBlock, $style.Past]">
         <flow-pc-past />
+      </div>
+      -->
+      <div :class="[$style.CardBlock, $style.Past]">
+        <flow-pc-bad-condition />
       </div>
       <div :class="[$style.CardBlock, $style.Days]">
         <flow-pc-days />
       </div>
+      <!--
       <div :class="[$style.CardBlock, $style.CardBlockCenter, $style.Suspect]">
         <flow-pc-suspect />
       </div>
+      -->
       <div :class="$style.Advisory">
         <flow-pc-advisory />
       </div>
+      <!--
       <div :class="$style.Advisory2">
         <flow-pc-advisory2 />
       </div>
+      -->
     </div>
     <!-- 一時的に「新型コロナ受診相談窓口による相談結果」は隠す
     <h3>
@@ -60,11 +69,11 @@
 </template>
 
 <script>
-import FlowPcPast from './FlowPcPast.vue'
+import FlowPcBadCondition from './FlowPcBadCondition.vue'
 import FlowPcDays from './FlowPcDays.vue'
-import FlowPcSuspect from './FlowPcSuspect.vue'
+// import FlowPcSuspect from './FlowPcSuspect.vue'
 import FlowPcAdvisory from './FlowPcAdvisory.vue'
-import FlowPcAdvisory2 from './FlowPcAdvisory2.vue'
+// import FlowPcAdvisory2 from './FlowPcAdvisory2.vue'
 // import FlowPcRequired from './FlowPcRequired.vue'
 // import FlowPcPcr from './FlowPcPcr.vue'
 // import FlowPcNotRequired from './FlowPcNotRequired.vue'
@@ -72,11 +81,12 @@ import FlowPcAdvisory2 from './FlowPcAdvisory2.vue'
 
 export default {
   components: {
-    FlowPcPast,
+    // FlowPcPast,
+    FlowPcBadCondition,
     FlowPcDays,
-    FlowPcSuspect,
-    FlowPcAdvisory,
-    FlowPcAdvisory2
+    // FlowPcSuspect,
+    FlowPcAdvisory
+    // FlowPcAdvisory2
     // FlowPcRequired,
     // FlowPcPcr,
     // FlowPcNotRequired,
@@ -270,17 +280,6 @@ export default {
   grid-column: 2 / 3;
   grid-row: 1 / 3;
   position: relative;
-
-  &::after {
-    content: url('/flow/flow_arrow.svg');
-    position: absolute;
-    left: calc(50% - 23px);
-    transform: rotate(-90deg);
-    z-index: 1;
-    display: block;
-    width: 46px;
-    height: 46px;
-  }
 }
 
 .Advisory2 {

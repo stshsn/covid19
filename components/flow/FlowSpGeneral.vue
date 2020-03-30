@@ -4,7 +4,7 @@
       <span :class="[$style.icon, $style.top]" aria-hidden="true">
         <HumanIcon />
       </span>
-      <span :class="$style.fzMedium">{{ $t('一般の方') }}</span>
+      <span :class="$style.fzMedium">{{ $t('一般の方またはお子様') }}</span>
     </p>
     <ul :class="[$style.rectContainer, $style.double]">
       <li :class="$style.symptom">
