@@ -1,40 +1,29 @@
 <template>
   <div :class="$style.flowContainer">
     <h3 :class="$style.sectionTitle">
-      <i18n path="新型コロナ外来 {advice} と判断された場合" tag="p">
-        <strong place="advice">
-          {{ $t('受診が不要') }}
-        </strong>
+      <i18n path="{tiredness} や {dyspnea} がある。" tag="p"
+        >//
+        <template v-slot:tiredness>
+          <strong>
+            {{ $t('強いだるさ(倦怠感)') }}
+          </strong>
+        </template>
+        <template v-slot:dyspnea>
+          <strong>
+            {{ $t('息苦しさ(呼吸困難)') }}
+          </strong>
+        </template>
       </i18n>
     </h3>
-    <div :class="$style.actionContainer">
-      <ul :class="$style.actions">
-        <li :class="$style.actionsList">
-          <img
-            :class="$style.actionsListIcon"
-            src="/flow/house-24px.svg"
-            aria-hidden="true"
-          />
-          {{ $t('自宅で安静に過ごす') }}
-        </li>
-        <li :class="$style.actionsList">
-          <img
-            :class="$style.actionsListIcon"
-            src="/flow/apartment-24px.svg"
-            aria-hidden="true"
-          />
-          {{ $t('一般の医療機関を受診') }}
-        </li>
-      </ul>
-      <div :class="$style.nextAction">
-        <i18n path="{getWorse}{advisory}に相談" :class="$style.content">
-          <span place="getWorse">{{ $t('症状が良くならない場合は') }}</span>
-          <strong place="advisory">{{
-            $t('新型コロナ受診相談窓口（日本語のみ）')
-          }}</strong>
-        </i18n>
-      </div>
-    </div>
+    <h3 :class="$style.sectionTitle">
+      <i18n path="{immediately} 専用窓口に相談してください！" tag="p">
+        <template v-slot:immediately>
+          <strong :class="$style.FlowRowEmphasis">
+            {{ $t('すぐに') }}
+          </strong>
+        </template>
+      </i18n>
+    </h3>
   </div>
 </template>
 
@@ -116,6 +105,35 @@
 
   strong {
     font-size: 1.5rem;
+  }
+}
+
+.Flow {
+  @include card-container($withDivider: true);
+
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px !important;
+  position: relative;
+  color: $gray-2;
+
+  &Row {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 36%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &Emphasis {
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: solid 3px $green-1;
+
+      &Day {
+        font-size: 41px;
+      }
+    }
   }
 }
 </style>

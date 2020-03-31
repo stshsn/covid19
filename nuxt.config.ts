@@ -201,11 +201,9 @@ const config: Configuration = {
     hostname: 'https://covid19-fukui.com/',
     // generate: true,
     exclude: [
-      '/flow',
       '/contacts',
       '/parent',
       '/worker',
-      '/print/flow'
     ],
     routes: []
   },
