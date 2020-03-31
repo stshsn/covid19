@@ -20,7 +20,7 @@
             target="_blank"
             rel="noopener"
           >
-            {{ $t('各保健所の電話番号は福祉保健局HPへ') }}
+            {{ $t('各管轄地域の保健所の電話番号はこちら') }}
             <v-icon size="16">
               mdi-open-in-new
             </v-icon>
@@ -32,13 +32,13 @@
           <ul :class="[$style.night]">
             <li>
               <span :class="[$style.fzMedium, $style.break, $style.mb10]">
-                {{ $t('厚生労働省電話相談窓口') }}
+                {{ $t('総合相談電話窓口') }}
               </span>
-              {{ $t('午後9時から午後21時') }}
+              {{ $t('8:30~17:15') }}
             </li>
             <li>
               <span :class="$style.fzMedium">
-                {{ $t('土日祝も実施') }}
+                {{ $t('平日のみ') }}
               </span>
             </li>
           </ul>
@@ -48,7 +48,7 @@
             <span :class="$style.icon">
               <PhoneIcon alt="Phone" />
             </span>
-            <a href="tel:0120565653">0120-565653</a>
+            <a href="tel:0776200250">0776-20-0250</a>
           </div>
           <div
             v-if="!['ja', 'ja-basic'].includes($i18n.locale)"

@@ -36,7 +36,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>{{ $t('各保健所の電話番号は福祉保健局HPへ') }}</span>
+              <span>{{ $t('各管轄地域の電話番号はこちら') }}</span>
               <v-icon size="18">
                 mdi-open-in-new
               </v-icon>
@@ -48,13 +48,13 @@
       <div :class="$style.AdvisoryContents">
         <div class="pt-8">
           <div :class="$style.AdvisoryContentsTitle2">
-            {{ $t('厚生労働省電話相談窓口') }}
+            {{ $t('総合相談電話窓口') }}
           </div>
-          <span>{{ $t('午後9時から午後21時') }}</span>
+          <span>{{ $t('8:30~17:15') }}</span>
         </div>
         <div class="mt-1">
           <span :class="$style.AdvisoryContentsSubTitle">
-            {{ $t('土日祝も実施') }}
+            {{ $t('平日のみ') }}
           </span>
         </div>
         <div
@@ -64,14 +64,14 @@
             'mt-1'
           ]"
         >
-          <a :class="$style.AdvisoryTelephone" href="tel:0120565653">
+          <a :class="$style.AdvisoryTelephone" href="tel:0776200250">
             <img
               :class="$style.AdvisoryTelephoneIcon"
               src="/flow/phone-24px.svg"
               aria-hidden="true"
               :alt="$t('電話番号')"
             />
-            0120-565653
+            0776-20-0250
           </a>
         </div>
         <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="pt-8">
