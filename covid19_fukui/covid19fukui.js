@@ -43,15 +43,15 @@ const custom_res = {
           "children": [
           {
               "attr": "入院中",
-              "value": 15,
+              "value": 20,
               "children": [
               {
                   "attr": "軽症・中等症",
-                  "value": 14
+                  "value": 17
               },
               {
                   "attr": "重症",
-                  "value": 1
+                  "value": 3
               }
               ]
           },
@@ -90,6 +90,7 @@ const startUpdate = function()
 {
   setInterval(async function() {
     await util.getWebWithCache(URL, PATH, CACHE_TIME)
+    // await getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
   }, CACHE_TIME)
 }
 
@@ -292,25 +293,25 @@ const getCovid19InspectionDataJSON = async function(cachetime)
           for ( let index = 1; index < trsLength - 1; index++ )
           {
             // 日付
-            const dayDate = parseInspectionDate(trs[index].children[1].children[0].data)
-            // 実施件数
-            const dayTotal = parseInt(trs[index].children[3].children[0].data)
-            // 陰性
-            const dayNegativeTotal = trs[index].children[5].children[0].data
-            // 陰性のうち濃厚接触者
-            const dayNegativeCloseContactTotal = trs[index].children[7].children[0].data
-            // 陽性
-            const dayActiveTotal = trs[index].children[9].children[0].data
-            // 陽性のうち濃厚接触者
-            const dayActiveCloseContactTotal = trs[index].children[11].children[0].data
+            // const dayDate = parseInspectionDate(trs[index].children[1].children[0].data)
+            // // 実施件数
+            // const dayTotal = parseInt(trs[index].children[3].children[0].data)
+            // // 陰性
+            // const dayNegativeTotal = trs[index].children[5].children[0].data
+            // // 陰性のうち濃厚接触者
+            // const dayNegativeCloseContactTotal = trs[index].children[7].children[0].data
+            // // 陽性
+            // const dayActiveTotal = trs[index].children[9].children[0].data
+            // // 陽性のうち濃厚接触者
+            // const dayActiveCloseContactTotal = trs[index].children[11].children[0].data
 
-            custom_res.pcr.data.push(
-              {
-                "日付": dayDate.date,
-                "short_date": dayDate.short_date,
-                "小計": dayTotal
-              }
-            )
+            // custom_res.pcr.data.push(
+            //   {
+            //     "日付": dayDate.date,
+            //     "short_date": dayDate.short_date,
+            //     "小計": dayTotal
+            //   }
+            // )
           }
 
           /*** trタグの一番最後は必ず累計カラム ***/
@@ -367,6 +368,67 @@ const calcCovid19DataSummary = function(json) {
   }
 }
 
+// Youtubeから関連動画のリストを取得
+const getYoutubeVideolist = async function(apiKey, userName) {
+  let axios = require('axios')
+  const youtubeAPI = axios.create({
+    baseURL: "https://www.googleapis.com/youtube/v3",
+    headers : {
+      "Content-Type": "application/json",
+      "X-Requested-With": "XMLHttpRequest"
+    },
+    timeout: 3000,
+    responseType: "json"
+  })
+  let playlistId = ''
+  let playlistItems = []
+
+  await youtubeAPI
+    .get(
+      '/channels?part=contentDetails&forUsername='+userName+'&key='+apiKey,
+    )
+    .then(res => {
+      playlistId = res.data.items[0].contentDetails.relatedPlaylists.uploads
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
+  await youtubeAPI
+    .get(
+      '/playlistItems?part=snippet&playlistId='+playlistId+'&maxResults=50&key='+apiKey
+    )
+    .then(res => {
+      playlistItems = res.data.items
+      let relatedVideo = playlistItems.filter(
+        video => video.snippet.title.match(/新型コロナウイルス/)
+      )
+      relatedVideo.sort((a, b) => {
+        const publishedAt_a = new Date(a.snippet.publishedAt).getTime()
+        const publishedAt_b = new Date(b.snippet.publishedAt).getTime()
+
+        let comparison = 0
+        if (publishedAt_a < publishedAt_b) {
+          comparison = 1
+        } else if (publishedAt_a > publishedAt_b) {
+          cimparison = -1
+        }
+        return comparison
+      })
+      // console.log(relatedVideo)
+      let fs = require('fs')
+      fs.writeFile(
+        "youtubeVideolist.json",
+        JSON.stringify(relatedVideo, null, '    '),
+        function(err) {
+          if (err) {
+            console.log(err);
+          }
+        }
+      )
+    })
+}
+
 const main = async function()
 {
   // const data = await getCovid19DataJSON(1000 * 60)
@@ -377,6 +439,7 @@ const main = async function()
 
 if (require.main === module) {
   main()
+  // getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
 } else {
   startUpdate()
 }

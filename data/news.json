@@ -1,6 +1,16 @@
 {
     "newsItems": [
         {
+            "date": "2020\/03\/29",
+            "url": "https:\/\/www.pref.fukui.lg.jp\/doc\/kenkou\/kansensyo-yobousessyu\/corona_d\/fil\/200329-1.pdf",
+            "text": "福井県内で13例目となる新型コロナウイルス感染者が確認されました"
+        },
+        {
+            "date": "2020\/03\/28",
+            "url": "https:\/\/www.pref.fukui.lg.jp\/doc\/kenkou\/kansensyo-yobousessyu\/corona_d\/fil\/200328-1.pdf",
+            "text": "福井県内で10, 11, 12例目となる新型コロナウイルス感染者が確認されました"
+        },
+        {
             "date": "2020\/03\/27",
             "url": "https:\/\/www.pref.fukui.lg.jp\/doc\/kenkou\/kansensyo-yobousessyu\/corona_d\/fil\/200327-4.pdf",
             "text": "福井県内で8, 9例目となる新型コロナウイルス感染者が確認されました"
