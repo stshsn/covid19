@@ -4,22 +4,45 @@
 
 [![福井県 新型コロナウイルス感染症対策サイト（非公式）](/static/ogp.png)](https://covid19-fukui.com/)
 
-## 貢献の仕方
-issueを作成の上、nomu_productionブランチにPRを発行してください。
-
-### ブランチルール
-nomu_production 以外への Pull Request は禁止です。  
-Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
-
 ## Slackチャンネルへの参加
-このサイトを運営・改善していくためのSlackを開設しています。[こちらから登録](https://join.slack.com/t/nomunomu0504/shared_invite/zt-d6ad54zo-VqgGZR2qRtIjIKP04reI0Q)してご参加ください
+このサイトを運営・改善していくためのSlackを開設しています。継続的に改善に参加していただける方は[こちらから登録](https://join.slack.com/t/nomunomu0504/shared_invite/zt-d6ad54zo-VqgGZR2qRtIjIKP04reI0Q)してご参加ください。リポジトリのコラボレーターに招待します。
+
+## ブランチについて
+基本的には `nomu_production` と `nomu_development` の２つをベースとして運用を行います。それぞれの扱い方は以下の通りです。
+
+- nomu_development
+
+デフォルトブランチです。複数人が作業を行っているため、ファイルがコンフリクトする可能性があります。そのため `必ず` Slackやissueを使ってコンタクトを取り合いながら進めてください。このブランチに取り込まれた内容は自動的に [https://develop.covid19-fukui.com/](https://develop.covid19-fukui.com/) に反映されます。（反映までに2,3分程かかる可能性があります。packageを変更した場合はinstall処理も走るため数分かかることがあります。お待ちください）
+
+本番ブランチ（nomu_production）に実装したい機能等が完成した場合、直接 `nomu_production` にPRを発行せずに、このブランチ（nomu_development）へPRを発行し動作確認を行ってください。ローカルで動いてもサーバー上で動かない可能性があります。このブランチへのマージは、オーナー以外のコラボレーターの方が行う可能性もあります。
+
+- nomu_production
+
+本番サイトのブランチです。このブランチへの操作権限は、このリポジトリのオーナーである[@nomunomu0504](https://github.com/nomunomu0504)のみが有しています。nomu_developmentブランチで動作確認が終わったものをPR経由で追加していく形になります。このブランチにプッシュされた内容は自動的に [https://covid19-fukui.com/](https://covid19-fukui.com/) に反映されます。
+
+## ブランチの運用について
+ブランチの運用に関しては以下のように定めます。必ず遵守するようお願いします。
+
+- 機能追加やエンハンス系について
+
+feature/{issueNumber}-{branchName} `Ex) feature/52-add_new_cards`
+
+- 緊急のバグ修正等（issueを作る場合）
+
+hotfix/{issueNumber}-{branchName} `Ex) hotfix/55-fix_nuxt_build_error`
+
+- 緊急のバグ修正等（issueを作らない場合）
+
+hotfix/{issueNumber}-{branchName} `Ex) hotfix/fix_nuxt_build_error`
+
+## 貢献の仕方
+上記２つを遵守いただいた上で、issueを作成していただき `nomu_development` へPRを発行してください。
+
+※ nomu_development 以外への Pull Request は禁止です。  
 
 ## CONTRIBUTORS.md への追加について
 ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](./CONTRIBUTORS.md) というファイルがあります。 
 何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。 [#24](https://github.com/nomunomu0504/covid19/issues/24) の Issue をご覧の上、コメントください。
-
-機能追加系： feature/#{ISSUE_ID}-#{branch_title_name}  
-ホットフィックス系: hotfix/#{ISSUE_ID}-#{branch_title_name}
 
 ## ライセンス
 本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
