@@ -1,12 +1,13 @@
 <template>
   <div class="MainPage">
+    {{ method }}
     <div class="Header mb-3">
       <page-header :icon="headerItem.icon">
         {{ headerItem.title }}
       </page-header>
       <div class="UpdatedAt">
         <span>{{ $t('最終更新') }} </span>
-        <time :datetime="updatedAt">{{ Data.lastUpdate }}</time>
+        <time :datetime="updatedAt">{{ InspectionPersons.date }}</time>
       </div>
       <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="Annotation">
         <span>{{ $t('注釈') }} </span>
@@ -43,7 +44,6 @@ import BreakingNews from '@/components/BreakingNews.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
-import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import JapanNews from '@/data/japan.json'
 // 陽性患者数
@@ -56,11 +56,21 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 // 新型コロナ受診相談窓口相談件数（累計）
 import PcrInspectionReportsNumberCard from '@/components/cards/PcrInspectionReportsNumberCard.vue'
-
 // 病床数
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
 // Youtube
 import YoutubeCard from '@/components/cards/YoutubeCard.vue'
+
+// PCR検査実施件数（累計）
+import Pcr from '@/covid19_fukui/pcr.json'
+// 検査実施人数
+import InspectionPersons from '@/covid19_fukui/inspection_persons.json'
+// 陽性患者の属性
+import InspectionsSummary from '@/covid19_fukui/inspection_summary.json'
+// 感染症病床使用率
+import HospitalBeds from '@/data/hospital_beds.json'
+// 陽性患者数
+import PatientsSummary from '@/data/patients_summary.json'
 
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 
@@ -92,7 +102,12 @@ export default Vue.extend({
   },
   data() {
     const data = {
-      Data,
+      method: 'default',
+      Pcr,
+      InspectionPersons,
+      InspectionsSummary,
+      HospitalBeds,
+      PatientsSummary,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('福井県内の最新感染動向')
@@ -102,9 +117,16 @@ export default Vue.extend({
     }
     return data
   },
+  asyncData(context) {
+    const contextData = {
+      method: context.req.method
+    }
+    console.log(contextData)
+    return contextData
+  },
   computed: {
     updatedAt() {
-      return convertDatetimeToISO8601Format(this.$data.Data.lastUpdate)
+      return convertDatetimeToISO8601Format(InspectionPersons.date)
     }
   },
   head(): MetaInfo {
