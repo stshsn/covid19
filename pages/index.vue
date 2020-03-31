@@ -25,10 +25,10 @@
     <v-row class="DataBlock">
       <!-- <youtube-card /> -->
       <confirmed-cases-details-card />
+      <confirmed-cases-number-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
       <!-- <pcr-inspection-reports-number-card /> -->
-      <confirmed-cases-number-card />
       <hospital-beds-number-card />
     </v-row>
   </div>
