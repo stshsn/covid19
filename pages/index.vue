@@ -28,6 +28,7 @@
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
       <!-- <pcr-inspection-reports-number-card /> -->
+      <confirmed-cases-number-card />
       <hospital-beds-number-card />
     </v-row>
   </div>
@@ -46,7 +47,7 @@ import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import JapanNews from '@/data/japan.json'
 // 陽性患者数
-// import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 // 陽性患者の属性
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // 検査陽性者の状況
@@ -76,7 +77,7 @@ export default Vue.extend({
     WhatsNew,
     WhatsNewJapan,
     StaticInfo,
-    // ConfirmedCasesNumberCard,
+    ConfirmedCasesNumberCard,
     ConfirmedCasesDetailsCard,
     InspectionPersonsNumberCard,
     PcrInspectionReportsNumberCard,
