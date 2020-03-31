@@ -35,6 +35,7 @@ hotfix/{issueNumber}-{branchName} `Ex) hotfix/55-fix_nuxt_build_error`
 
 hotfix/{branchName} `Ex) hotfix/fix_nuxt_build_error`
 
+
 ## 貢献の仕方
 上記２つを遵守いただいた上で、issueを作成していただき `nomu_development` へPRを発行してください。
 
