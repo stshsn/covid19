@@ -91,8 +91,8 @@ const config: Configuration = {
     '@nuxtjs/vuetify',
     ['@nuxt/typescript-build', {
       typeCheck: {
-        memoryLimit: 1024,
-        workers: 2
+        memoryLimit: 2048,
+        workers: 3
       },
       ignoreNotFoundWarnings: false
     }],
