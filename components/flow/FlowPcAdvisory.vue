@@ -13,7 +13,7 @@
         <div>
           <div :class="[$style.AdvisoryBoxContainer, $style.AdvisoryWhiteBox]">
             <span :class="$style.AdvisoryWhiteBoxSentense">
-              {{ $t('24時間対応') }}
+              {{ $t('時間外は携帯電話番号がアナウンスされます') }}
             </span>
           </div>
         </div>
@@ -22,7 +22,7 @@
       <div :class="$style.AdvisoryContents">
         <div class="py-8">
           <div :class="$style.AdvisoryContentsTitle2">
-            {{ $t('平日（日中）') }}
+            {{ $t('時間外も対応') }}
           </div>
           <div
             :class="[
@@ -32,11 +32,11 @@
             ]"
           >
             <a
-              href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+              href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona-denwa.html"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
-              <span>{{ $t('各保健所の電話番号は福祉保健局HPへ') }}</span>
+              <span>{{ $t('各管轄地域の保健所の電話番号はこちら') }}</span>
               <v-icon size="18">
                 mdi-open-in-new
               </v-icon>
@@ -48,13 +48,13 @@
       <div :class="$style.AdvisoryContents">
         <div class="pt-8">
           <div :class="$style.AdvisoryContentsTitle2">
-            {{ $t('平日（夜間）') }}
+            {{ $t('総合相談電話窓口') }}
           </div>
-          <span>{{ $t('午後5時から翌朝午前9時') }}</span>
+          <span>{{ $t('8:30~17:15') }}</span>
         </div>
         <div class="mt-1">
           <span :class="$style.AdvisoryContentsSubTitle">
-            {{ $t('土日祝 終日') }}
+            {{ $t('平日のみ') }}
           </span>
         </div>
         <div
@@ -64,13 +64,14 @@
             'mt-1'
           ]"
         >
-          <a :class="$style.AdvisoryTelephone" href="tel:0353204592">
+          <a :class="$style.AdvisoryTelephone" href="tel:0776200250">
             <img
               :class="$style.AdvisoryTelephoneIcon"
               src="/flow/phone-24px.svg"
               aria-hidden="true"
+              :alt="$t('電話番号')"
             />
-            03-5320-4592
+            0776-20-0250
           </a>
         </div>
         <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="pt-8">
@@ -179,7 +180,7 @@
 
   &WhiteBox {
     background-color: $white;
-    width: 160px;
+    max-width: 200px;
     padding: 10px;
 
     &Sentense {
