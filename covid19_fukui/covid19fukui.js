@@ -90,7 +90,7 @@ const startUpdate = function()
 {
   setInterval(async function() {
     await util.getWebWithCache(URL, PATH, CACHE_TIME)
-    await getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
+    // await getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
   }, CACHE_TIME)
 }
 
@@ -293,25 +293,25 @@ const getCovid19InspectionDataJSON = async function(cachetime)
           for ( let index = 1; index < trsLength - 1; index++ )
           {
             // 日付
-            const dayDate = parseInspectionDate(trs[index].children[1].children[0].data)
-            // 実施件数
-            const dayTotal = parseInt(trs[index].children[3].children[0].data)
-            // 陰性
-            const dayNegativeTotal = trs[index].children[5].children[0].data
-            // 陰性のうち濃厚接触者
-            const dayNegativeCloseContactTotal = trs[index].children[7].children[0].data
-            // 陽性
-            const dayActiveTotal = trs[index].children[9].children[0].data
-            // 陽性のうち濃厚接触者
-            const dayActiveCloseContactTotal = trs[index].children[11].children[0].data
+            // const dayDate = parseInspectionDate(trs[index].children[1].children[0].data)
+            // // 実施件数
+            // const dayTotal = parseInt(trs[index].children[3].children[0].data)
+            // // 陰性
+            // const dayNegativeTotal = trs[index].children[5].children[0].data
+            // // 陰性のうち濃厚接触者
+            // const dayNegativeCloseContactTotal = trs[index].children[7].children[0].data
+            // // 陽性
+            // const dayActiveTotal = trs[index].children[9].children[0].data
+            // // 陽性のうち濃厚接触者
+            // const dayActiveCloseContactTotal = trs[index].children[11].children[0].data
 
-            custom_res.pcr.data.push(
-              {
-                "日付": dayDate.date,
-                "short_date": dayDate.short_date,
-                "小計": dayTotal
-              }
-            )
+            // custom_res.pcr.data.push(
+            //   {
+            //     "日付": dayDate.date,
+            //     "short_date": dayDate.short_date,
+            //     "小計": dayTotal
+            //   }
+            // )
           }
 
           /*** trタグの一番最後は必ず累計カラム ***/
@@ -438,8 +438,8 @@ const main = async function()
 }
 
 if (require.main === module) {
-  //main()
-  getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
+  main()
+  // getYoutubeVideolist(process.env.YOUTUBE_API_KEY, process.env.YOUTUBE_USERNAME)
 } else {
   startUpdate()
 }

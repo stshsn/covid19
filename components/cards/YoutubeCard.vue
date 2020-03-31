@@ -33,7 +33,7 @@ export default {
 //       this.publishedAt = new Date(videolist[0].snippet.publishedAt).toLocaleString()
 //     }
 //   }
-// }
+}
 </script>
 
 <style>
