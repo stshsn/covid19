@@ -17,10 +17,10 @@
     <whats-new-japan class="mb-4" :items="japanItems" />
     <static-info
       class="mb-4"
-      :url="$t('https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html')"
+      :url="localePath('/flow')"
       target="_blank"
-      :text="$t('自分や家族の症状に不安や心配があればまずは確認を')"
-      :btn-text="$t('福井県公式サイトへ')"
+      :text="$t('自分や家族の症状に不安や心配がある方はこちらから確認いただけます')"
+      :btn-text="$t('感染確認フローへ')"
     />
     <v-row class="DataBlock">
       <!-- <youtube-card /> -->
