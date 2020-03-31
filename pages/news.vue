@@ -7,7 +7,7 @@
       {{ $t('福井県内のお知らせ一覧') }}
     </page-header>
     <ul class="NewsList-list">
-      <li v-for="(item, i) in items" class="NewsList-list-item">
+      <li v-for="(item, i) in items" :key="i" class="NewsList-list-item">
         <a
           class="NewsList-list-item-anchor"
           :href="item.url"

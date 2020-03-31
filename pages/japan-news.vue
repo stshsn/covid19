@@ -7,7 +7,7 @@
       {{ $t('国内のお知らせ一覧') }}
     </page-header>
     <ul class="JapanNewsList-list">
-      <li v-for="(item, i) in items" class="JapanNewsList-list-item">
+      <li v-for="(item, i) in items" :key="i" class="JapanNewsList-list-item">
         <a
           class="JapanNewsList-list-item-anchor"
           :href="item.url"
