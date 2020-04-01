@@ -43,11 +43,11 @@ const custom_res = {
           "children": [
           {
               "attr": "入院中",
-              "value": 20,
+              "value": 21,
               "children": [
               {
                   "attr": "軽症・中等症",
-                  "value": 17
+                  "value": 18
               },
               {
                   "attr": "重症",

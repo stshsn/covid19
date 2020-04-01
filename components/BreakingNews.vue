@@ -12,6 +12,14 @@
       </h3>
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
+          2020/04/01
+        </time>
+        <p class="BreakingNews-list-item-anchor-link">
+          福井県内で21例目となる新型コロナウイルス感染者が確認されました。詳細は <a target="_blank" href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200401-2.pdf">こちら</a> からご確認いただけます
+        </p>
+      </li><br />
+      <li class="BreakingNews-list-item">
+        <time class="BreakingNews-list-item-anchor-time px-2">
           2020/03/31
         </time>
         <p class="BreakingNews-list-item-anchor-link">

@@ -1,6 +1,5 @@
 <template>
   <div class="MainPage">
-    {{ method }}
     <div class="Header mb-3">
       <page-header :icon="headerItem.icon">
         {{ headerItem.title }}
@@ -117,13 +116,7 @@ export default Vue.extend({
     }
     return data
   },
-  asyncData(context) {
-    const contextData = {
-      method: context.req.method
-    }
-    console.log(contextData)
-    return contextData
-  },
+  
   computed: {
     updatedAt() {
       return convertDatetimeToISO8601Format(InspectionPersons.date)
