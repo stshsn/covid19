@@ -11,7 +11,7 @@
       <h3 class="breaking-content" />
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/04/01
+          2020/04/02
         </time>
         <p class="BreakingNews-list-item-anchor-link">
           福井県内で22例目~30例目となる新型コロナウイルス感染者が確認されました。詳細は
