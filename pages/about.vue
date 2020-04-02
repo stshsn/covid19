@@ -21,7 +21,7 @@
           '福井県による公式情報と客観的な数値をわかりやすく伝えることで、福井県にお住まいの方や、福井県内に拠点を持つ企業の方、福井県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
         )
       }}
-      
+
 
     </StaticCard>
     <StaticCard>
@@ -188,7 +188,7 @@
         }}
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <a
-            href="hhttps://github.com/nomunomu0504/covid19"
+            href="https://github.com/nomunomu0504/covid19"
             target="_blank"
             rel="noopener"
             place="githubRepo"
