@@ -55,7 +55,7 @@ type Computed = {
     datasets: {
       label: string[]
       data: number[]
-      backgroundColor: string[]
+      backgroundColor: (string | string[])[]
       borderWidth: number
     }[]
   }
@@ -169,7 +169,15 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayData() {
-      const colorArray = ['#006400', '#ccc']
+      //const colorArray = ['#006400', '#ccc']
+      const colorArray = [
+        [
+          '#006400', // normal
+          '#FFD700', // warning
+          '#FC143C', // critical
+        ],
+        '#ccc',
+      ]
       return {
         labels: this.chartData.map((d: any, index) => {
           return this.labels[index]
@@ -183,7 +191,18 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               return d.transition
             }),
             backgroundColor: this.chartData.map((d, index) => {
-              return colorArray[index]
+              if (d.label === 'used') {
+                let rateOfUsed = parseFloat(this.displayInfo.lText)
+                let status = 0
+                if (rateOfUsed >= 50 && rateOfUsed < 80) {
+                  status = 1
+                } else if (rateOfUsed >= 80) {
+                  status = 2
+                }
+                return colorArray[index][status]
+              } else {
+                return colorArray[index]
+              }
             }),
             borderWidth: 0
           }
