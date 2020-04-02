@@ -24,8 +24,6 @@
         </p>
       </li>
       <br />
-    <ul class="BreakingNews-list">
-      <h3 class="breaking-content" />
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/04/01
