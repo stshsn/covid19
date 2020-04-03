@@ -164,8 +164,7 @@ const config: Configuration = {
         '/cards/attributes-of-confirmed-cases',
         // '/cards/number-of-tested',
         '/cards/number-of-inspection-persons',
-        '/cards/hospital-beds-number-card',
-        '/cards/pcr-inspection-reports-number-card'
+        '/cards/hospital-beds-number-card'
         // '/cards/number-of-reports-to-covid19-telephone-advisory-center',
         // '/cards/number-of-reports-to-covid19-consultation-desk',
         // '/cards/predicted-number-of-toei-subway-passengers',
