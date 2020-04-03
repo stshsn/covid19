@@ -4,7 +4,7 @@
       <v-icon size="24" class="BreakingNews-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（2020年04月02日 11:30 更新）') }}
+      {{ $t('速報（2020年04月03日 更新）') }}
     </h2>
 
     <ul class="BreakingNews-list">
