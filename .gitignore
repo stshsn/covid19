@@ -105,5 +105,6 @@ covid19_fukui/**
 covid19_fukui/data/**
 !covid19_fukui/covid19fukui.js
 !covid19_fukui/util.js
+!covid19_fukui/json_getter.js
 
 .github/CODEOWNERS

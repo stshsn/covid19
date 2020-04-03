@@ -4,11 +4,26 @@
       <v-icon size="24" class="BreakingNews-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（2020年04月02日 11:30 更新）') }}
+      {{ $t('速報（2020年04月03日 11:30 更新）') }}
     </h2>
 
     <ul class="BreakingNews-list">
       <h3 class="breaking-content" />
+      <li class="BreakingNews-list-item">
+        <time class="BreakingNews-list-item-anchor-time px-2">
+          2020/04/03
+        </time>
+        <p class="BreakingNews-list-item-anchor-link">
+          福井県内で30例目~39例目となる新型コロナウイルス感染者が確認されました。詳細は
+          <a
+            target="_blank"
+            href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200403.pdf"
+            >こちら</a
+          >
+          からご確認いただけます
+        </p>
+      </li>
+      <br />
       <li class="BreakingNews-list-item">
         <time class="BreakingNews-list-item-anchor-time px-2">
           2020/04/02
@@ -33,21 +48,6 @@
           <a
             target="_blank"
             href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200401-2.pdf"
-            >こちら</a
-          >
-          からご確認いただけます
-        </p>
-      </li>
-      <br />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/03/31
-        </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で16~20例目となる新型コロナウイルス感染者が確認されました。詳細は
-          <a
-            target="_blank"
-            href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200331-1.pdf"
             >こちら</a
           >
           からご確認いただけます
