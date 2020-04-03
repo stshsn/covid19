@@ -45,7 +45,7 @@ import PatientsSummary from '@/data/patients_summary.json'
 // import ChiyodaData from '@/data/13101_daily_visitors.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
-// import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import TestedNumåberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
@@ -60,7 +60,7 @@ export default {
   components: {
     ConfirmedCasesDetailsCard,
     // TestedCasesDetailsCard,
-    // ConfirmedCasesNumberCard,
+    ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     // TestedNumberCard,
     InspectionPersonsNumberCard,
