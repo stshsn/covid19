@@ -12,7 +12,7 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
-    <breaking-news class="mb-4" />
+    <breaking-news class="mb-4" :items="BreakingItems" />
     <whats-new class="mb-4" :items="newsItems" />
     <whats-new-japan class="mb-4" :items="japanItems" />
     <static-info
@@ -45,6 +45,7 @@ import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import News from '@/data/fukui_news.json'
 import JapanNews from '@/data/japan_news.json'
+import BreakingNewsData from '@/data/breaking_news.json'
 // 陽性患者数
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 // 陽性患者の属性
@@ -112,7 +113,8 @@ export default Vue.extend({
         title: this.$t('福井県内の最新感染動向')
       },
       newsItems: News.newsItems,
-      japanItems: JapanNews.japanItems
+      japanItems: JapanNews.japanItems,
+      BreakingItems: BreakingNewsData.items
     }
     return data
   },
