@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import InspectionsSummary from '@/covid19_fukui/inspection_summary.json'
+import InspectionsSummary from '@/data/inspection_summary.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import ConfirmedCasesCard from '@/components/ConfirmedCasesCard.vue'
 import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'

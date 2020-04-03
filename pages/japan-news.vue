@@ -41,7 +41,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import StaticCard from '@/components/StaticCard.vue'
-import News from '@/data/japan.json'
+import News from '@/data/japan_news.json'
 import { convertDateToISO8601Format } from '@/utils/formatDate.ts'
 
 export default Vue.extend({

@@ -22,7 +22,6 @@
 </template>
 
 <script>
-// import Data from '@/data/data.json'
 import CircleChart from '@/components/CircleChart.vue'
 import HospitalBeds from '@/data/hospital_beds.json'
 import formatVariableGraph from '@/utils/formatVariableGraph.ts'
