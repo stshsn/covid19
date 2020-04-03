@@ -37,9 +37,9 @@
 // PCR検査実施件数（累計）
 import Pcr from '@/covid19_fukui/pcr.json'
 // 検査実施人数
-import InspectionPersons from '@/covid19_fukui/inspection_persons.json'
+import InspectionPersons from '@/data/inspection_persons.json'
 // 陽性患者の属性
-import InspectionsSummary from '@/covid19_fukui/inspection_summary.json'
+import InspectionsSummary from '@/data/inspection_summary.json'
 // 感染症病床使用率
 import HospitalBeds from '@/data/hospital_beds.json'
 // 陽性患者数

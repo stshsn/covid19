@@ -23,9 +23,8 @@
 </template>
 
 <script>
-// import Data from '@/data/data.json'
 import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
-import InspectionPersons from '@/covid19_fukui/inspection_persons.json'
+import InspectionPersons from '@/data/inspection_persons.json'
 
 export default {
   components: {

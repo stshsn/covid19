@@ -12,7 +12,7 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
-    <breaking-news class="mb-4" />
+    <breaking-news class="mb-4" :items="BreakingItems" />
     <whats-new class="mb-4" :items="newsItems" />
     <whats-new-japan class="mb-4" :items="japanItems" />
     <static-info
@@ -43,8 +43,9 @@ import BreakingNews from '@/components/BreakingNews.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
-import News from '@/data/news.json'
-import JapanNews from '@/data/japan.json'
+import News from '@/data/fukui_news.json'
+import JapanNews from '@/data/japan_news.json'
+import BreakingNewsData from '@/data/breaking_news.json'
 // 陽性患者数
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 // 陽性患者の属性
@@ -63,9 +64,9 @@ import YoutubeCard from '@/components/cards/YoutubeCard.vue'
 // PCR検査実施件数（累計）
 import Pcr from '@/covid19_fukui/pcr.json'
 // 検査実施人数
-import InspectionPersons from '@/covid19_fukui/inspection_persons.json'
+import InspectionPersons from '@/data/inspection_persons.json'
 // 陽性患者の属性
-import InspectionsSummary from '@/covid19_fukui/inspection_summary.json'
+import InspectionsSummary from '@/data/inspection_summary.json'
 // 感染症病床使用率
 import HospitalBeds from '@/data/hospital_beds.json'
 // 陽性患者数
@@ -112,7 +113,8 @@ export default Vue.extend({
         title: this.$t('福井県内の最新感染動向')
       },
       newsItems: News.newsItems,
-      japanItems: JapanNews.japanItems
+      japanItems: JapanNews.japanItems,
+      BreakingItems: BreakingNewsData.items
     }
     return data
   },

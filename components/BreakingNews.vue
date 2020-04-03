@@ -4,79 +4,17 @@
       <v-icon size="24" class="BreakingNews-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（2020年04月03日 11:30 更新）') }}
+      {{ $t('速報（2020年04月02日 11:30 更新）') }}
     </h2>
 
     <ul class="BreakingNews-list">
       <h3 class="breaking-content" />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/04/03
+      <li v-for="(item, i) in items" :key="i" class="BreakingNews-list-item">
+        <time class="BreakingNews-list-item-anchor-time px-2" v-html="item.date">
         </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で30例目~39例目となる新型コロナウイルス感染者が確認されました。詳細は
-          <a
-            target="_blank"
-            href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200403.pdf"
-            >こちら</a
-          >
-          からご確認いただけます
+        <p class="BreakingNews-list-item-anchor-link" v-html="item.text">
         </p>
       </li>
-      <br />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/04/02
-        </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で22例目~30例目となる新型コロナウイルス感染者が確認されました。詳細は
-          <a
-            target="_blank"
-            href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200402-1.pdf"
-            >こちら</a
-          >
-          からご確認いただけます
-        </p>
-      </li>
-      <br />
-      <li class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2">
-          2020/04/01
-        </time>
-        <p class="BreakingNews-list-item-anchor-link">
-          福井県内で21例目となる新型コロナウイルス感染者が確認されました。詳細は
-          <a
-            target="_blank"
-            href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200401-2.pdf"
-            >こちら</a
-          >
-          からご確認いただけます
-        </p>
-      </li>
-      <!-- <a
-          class="BreakingNews-list-item-anchor"
-          :href="item.url"
-          target="_blank"
-          rel="noopener"
-        >
-          <time
-            class="BreakingNews-list-item-anchor-time px-2"
-            :datetime="formattedDate(item.date)"
-          >
-            {{ item.date }}
-          </time>
-          <span class="BreakingNews-list-item-anchor-link">
-            {{ item.text }}
-            <v-icon
-              v-if="!isInternalLink(item.url)"
-              class="BreakingNews-item-ExternalLinkIcon"
-              size="12"
-            >
-              mdi-open-in-new
-            </v-icon>
-          </span>
-        </a> -->
-      <!-- </li> -->
     </ul>
   </div>
 </template>
@@ -86,6 +24,12 @@ import Vue from 'vue'
 import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
+  },
   methods: {
     isInternalLink(path: string): boolean {
       return !/^https?:\/\//.test(path)
@@ -129,6 +73,7 @@ export default Vue.extend({
   list-style-type: none;
 
   &-item {
+    margin-bottom: 10px;
     &-anchor {
       display: inline-block;
       text-decoration: none;
