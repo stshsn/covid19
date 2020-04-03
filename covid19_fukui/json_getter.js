@@ -15,7 +15,7 @@ const URI = 'https://script.googleusercontent.com/macros/echo?user_content_key=P
 /**
  * jsonファイルの階層
  */
-const dir = path.join(process.cwd(), 'data')
+const dir = '../data/'
 
 /**
  * 各種jsonファイルの名前
