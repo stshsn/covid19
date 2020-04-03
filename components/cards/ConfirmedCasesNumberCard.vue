@@ -5,6 +5,7 @@
       :title-id="'number-of-confirmed-cases'"
       :chart-id="'time-bar-chart-patients'"
       :chart-data="patientsGraph"
+      transition-type="daily"
       :date="patientsSummaryDate"
       :unit="$t('人')"
       :url="'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'"

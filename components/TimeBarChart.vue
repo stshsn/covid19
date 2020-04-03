@@ -7,6 +7,7 @@
       <data-selector
         v-model="dataKind"
         :target-id="chartId"
+        :transition-type="transitionType"
         :style="{ display: canvas ? 'inline-block' : 'none' }"
       />
     </template>
@@ -102,6 +103,7 @@ type Props = {
   titleId: string
   chartId: string
   chartData: GraphDataType[]
+  transitionType: string
   date: string
   unit: string
   url: string
@@ -134,6 +136,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     chartData: {
       type: Array,
       default: () => []
+    },
+    transitionType: {
+      type: String,
+      default: 'weekly'
     },
     date: {
       type: String,

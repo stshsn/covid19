@@ -12,7 +12,7 @@
       value="transition"
       class="DataSelector-Button"
     >
-      {{ $t('週別') }}
+      {{ transitionType === 'daily' ? $t('日別') : $t('週別') }}
     </v-btn>
     <v-btn
       v-ripple="false"
@@ -72,7 +72,11 @@ export default Vue.extend({
         // TODO: type は NullableString 型をとり、default: null とする
         return val && val !== '' ? val : null
       }
-    }
+    },
+    transitionType: {
+      type: String,
+      default: 'weekly'
+    },
   }
 })
 </script>
