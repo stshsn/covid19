@@ -28,7 +28,6 @@
       <confirmed-cases-number-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
-      <!-- <pcr-inspection-reports-number-card /> -->
       <hospital-beds-number-card />
     </v-row>
   </div>
@@ -54,15 +53,11 @@ import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttri
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 // 検査実施人数
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-// 新型コロナ受診相談窓口相談件数（累計）
-import PcrInspectionReportsNumberCard from '@/components/cards/PcrInspectionReportsNumberCard.vue'
 // 病床数
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
 // Youtube
 import YoutubeCard from '@/components/cards/YoutubeCard.vue'
 
-// PCR検査実施件数（累計）
-import Pcr from '@/covid19_fukui/pcr.json'
 // 検査実施人数
 import InspectionPersons from '@/data/inspection_persons.json'
 // 陽性患者の属性
@@ -90,7 +85,6 @@ export default Vue.extend({
     ConfirmedCasesNumberCard,
     ConfirmedCasesDetailsCard,
     InspectionPersonsNumberCard,
-    PcrInspectionReportsNumberCard,
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
     HospitalBedsNumberCard,
@@ -103,7 +97,6 @@ export default Vue.extend({
   data() {
     const data = {
       method: 'default',
-      Pcr,
       InspectionPersons,
       InspectionsSummary,
       HospitalBeds,

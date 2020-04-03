@@ -18,9 +18,6 @@
     <inspection-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
     />
-    <pcr-inspection-reports-number-card
-      v-else-if="this.$route.params.card =='pcr-inspection-reports-number-card'"
-    />
     <!-- <consultation-desk-reports-number-card
       v-else-if="
         this.$route.params.card ==
@@ -34,8 +31,6 @@
 </template>
 
 <script>
-// PCR検査実施件数（累計）
-import Pcr from '@/covid19_fukui/pcr.json'
 // 検査実施人数
 import InspectionPersons from '@/data/inspection_persons.json'
 // 陽性患者の属性
@@ -54,7 +49,6 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import TestedNumåberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import PcrInspectionReportsNumberCard from '@/components/cards/PcrInspectionReportsNumberCard.vue'
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
@@ -70,7 +64,6 @@ export default {
     ConfirmedCasesAttributesCard,
     // TestedNumberCard,
     InspectionPersonsNumberCard,
-    PcrInspectionReportsNumberCard,
     HospitalBedsNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
@@ -104,10 +97,6 @@ export default {
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
         updatedAt = InspectionPersons.date
-        break
-      case 'pcr-inspection-reports-number-card':
-        title = this.$t('PCR検査実施件数（累計）')
-        updatedAt = Pcr.date
         break
       // case 'number-of-reports-to-covid19-consultation-desk':
       //   title = this.$t('新型コロナ受診相談窓口相談件数')

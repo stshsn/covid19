@@ -78,6 +78,12 @@
             </picture>
           </a>
         </div>
+        <p class="SideNavigation-Copyright">
+          supported by
+        </p>
+        <picture>
+          <img src="/sakura.svg" alt="sakura internet" />
+        </picture>
       </footer>
     </div>
   </div>
@@ -400,7 +406,7 @@ export default Vue.extend({
   display: block;
   margin-top: 15px;
   color: $gray-1;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.3;
   font-weight: bold;
 }
