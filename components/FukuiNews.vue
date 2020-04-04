@@ -60,7 +60,7 @@ export default Vue.extend({
     try {
       const res = await axios.get('/api/news.xml')
       const xml = res.data
-      parseString(xml, (xmlres: any) => {
+      parseString(xml, (_, xmlres: any) => {
         this.info = xmlres['rdf:RDF'].item
           .map((i: any) => {
             return {
