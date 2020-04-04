@@ -56,6 +56,13 @@ const config: Configuration = {
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css'
       }
+    ],
+    script: [
+      {
+        src: 'https://platform.twitter.com/widgets.js',
+        charset: 'utf-8',
+        async: true
+      }
     ]
   },
   /*
@@ -89,13 +96,16 @@ const config: Configuration = {
   buildModules: [
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
-    ['@nuxt/typescript-build', {
-      typeCheck: {
-        memoryLimit: 2048,
-        workers: 3
-      },
-      ignoreNotFoundWarnings: false
-    }],
+    [
+      '@nuxt/typescript-build',
+      {
+        typeCheck: {
+          memoryLimit: 2048,
+          workers: 3
+        },
+        ignoreNotFoundWarnings: false
+      }
+    ],
     '@nuxtjs/google-analytics'
   ],
   /*
@@ -109,7 +119,9 @@ const config: Configuration = {
     'nuxt-svg-loader',
     'nuxt-purgecss',
     ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/proxy',
+    ['@nuxtjs/moment', ['ja']]
   ],
   /*
    ** vuetify module configuration
@@ -199,13 +211,17 @@ const config: Configuration = {
     path: '/sitemap.xml',
     hostname: 'https://covid19-fukui.com/',
     // generate: true,
-    exclude: [
-      '/contacts',
-      '/parent',
-      '/worker',
-    ],
+    exclude: ['/contacts', '/parent', '/worker'],
     routes: []
   },
+  proxy: {
+    '/api': {
+      target: 'https://www.pref.fukui.lg.jp',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  }
 }
 
 export default config

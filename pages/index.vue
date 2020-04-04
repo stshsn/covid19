@@ -13,13 +13,16 @@
       </div>
     </div>
     <breaking-news class="mb-4" :items="BreakingItems" />
+    <fukui-news class="mb-4" />
     <whats-new class="mb-4" :items="newsItems" />
     <whats-new-japan class="mb-4" :items="japanItems" />
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
       target="_blank"
-      :text="$t('自分や家族の症状に不安や心配がある方はこちらから確認いただけます')"
+      :text="
+        $t('自分や家族の症状に不安や心配がある方はこちらから確認いただけます')
+      "
       :btn-text="$t('感染確認フローへ')"
     />
     <v-row class="DataBlock">
@@ -41,6 +44,7 @@ import PageHeader from '@/components/PageHeader.vue'
 import BreakingNews from '@/components/BreakingNews.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
+import FukuiNews from '@/components/FukuiNews.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import News from '@/data/fukui_news.json'
 import JapanNews from '@/data/japan_news.json'
@@ -56,7 +60,7 @@ import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNum
 // 病床数
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
 // Youtube
-import YoutubeCard from '@/components/cards/YoutubeCard.vue'
+// import YoutubeCard from '@/components/cards/YoutubeCard.vue'
 
 // 検査実施人数
 import InspectionPersons from '@/data/inspection_persons.json'
@@ -79,6 +83,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     BreakingNews,
+    FukuiNews,
     WhatsNew,
     WhatsNewJapan,
     StaticInfo,
@@ -87,8 +92,8 @@ export default Vue.extend({
     InspectionPersonsNumberCard,
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
-    HospitalBedsNumberCard,
-    YoutubeCard,
+    HospitalBedsNumberCard
+    // YoutubeCard,
     // TestedNumberCard,
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
@@ -111,7 +116,7 @@ export default Vue.extend({
     }
     return data
   },
-  
+
   computed: {
     updatedAt() {
       return convertDatetimeToISO8601Format(InspectionPersons.date)
