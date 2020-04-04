@@ -65,7 +65,7 @@ export default Vue.extend({
           .map((i: any) => {
             return {
               title: i.title[0],
-              link: i.title[0],
+              link: i.link[0],
               desc: i.description[0],
               datetime: moment(i['dc:date'][0]).format('YYYY/MM/DD HH:mm')
             }
