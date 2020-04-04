@@ -14,7 +14,7 @@
       >
         <a
           class="WhatsNew-list-item-anchor"
-          :href="item.url"
+          :href="item.link"
           target="_blank"
           rel="noopener"
         >
