@@ -34,9 +34,6 @@
               mdi-open-in-new
             </v-icon>
           </span>
-          <p class="WhatsNew-list-item-anchor-time px-2">
-            {{ item.desc }}
-          </p>
         </a>
       </li>
     </ul>
