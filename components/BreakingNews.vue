@@ -5,7 +5,7 @@
         mdi-information
       </v-icon>
       {{ $t('速報') }}
-      <a class="WhatsNew-heading-link" :href="this.localePath('/news')"
+      <a class="BreakingNews-heading-link" :href="this.localePath('/news')"
         >過去のお知らせはこちら</a
       >
     </h2>
@@ -64,6 +64,16 @@ export default Vue.extend({
 
   &-icon {
     margin: 10px;
+  }
+
+  &-link {
+    flex: 0 1 auto;
+
+    @include text-link();
+
+    @include lessThan($medium) {
+      padding-left: 8px;
+    }
   }
 }
 
