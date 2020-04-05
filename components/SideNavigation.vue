@@ -42,7 +42,7 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        {{ $t('※このサイトは福井高専の学生が開設したものです') }}<br />
+        {{ $t('※このサイトは福井高専卒のエンジニアが開設したものです') }}<br />
         <div class="SideNavigation-Social">
           <a
             href="https://twitter.com/nomunomu0504"

@@ -138,7 +138,7 @@ export default {
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
     const description = `${this.updatedAt} | ${this.$t(
-      '当サイトは福井県における新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、福井高専生の野村弘樹が開設したものです'
+      '当サイトは福井県における新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、福井高専生卒の野村弘樹が開設したものです'
     )}`
 
     return {
