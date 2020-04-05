@@ -68,12 +68,9 @@ export default Vue.extend({
 
   &-link {
     flex: 0 1 auto;
+    padding-left: 8px;
 
     @include text-link();
-
-    @include lessThan($medium) {
-      padding-left: 8px;
-    }
   }
 }
 
