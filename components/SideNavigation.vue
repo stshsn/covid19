@@ -84,6 +84,13 @@
         <picture>
           <img src="/sakura.svg" alt="sakura internet" />
         </picture>
+        <small class="SideNavigation-Copyright-license">
+          Content on This Site is Licensed Under a
+          <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/">
+          Creative Commons Attribution 4.0 International License </a>provided under<br/>
+          2020 Tokyo Metropolitan Government<br/>
+          © 2020 covid19-fukui.com
+        </small>
       </footer>
     </div>
   </div>
@@ -409,6 +416,14 @@ export default Vue.extend({
   font-size: 14px;
   line-height: 1.3;
   font-weight: bold;
+  &-license {
+    display: block;
+    margin-top: 10px;
+    font-size: 8px;
+    line-height: 1.2;
+    color: $gray-1;
+    font-weight: bold;
+  }
 }
 
 .SideNavigation-LicenseLink {
