@@ -13,12 +13,12 @@
       </div>
     </div>
     <breaking-news class="mb-4" :items="BreakingItems" />
+    <!--
     <fukui-paper-news class="mb-4" />
     <fukui-news class="mb-4" />
-    <!--
+    -->
     <whats-new class="mb-4" :items="newsItems" />
     <whats-new-japan class="mb-4" :items="japanItems" />
-    -->
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -45,10 +45,10 @@ import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 // 速報
 import BreakingNews from '@/components/BreakingNews.vue'
-// import WhatsNew from '@/components/WhatsNew.vue'
-// import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
-import FukuiPaperNews from '@/components/FukuiPaperNews.vue'
-import FukuiNews from '@/components/FukuiNews.vue'
+import WhatsNew from '@/components/WhatsNew.vue'
+import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
+// import FukuiPaperNews from '@/components/FukuiPaperNews.vue'
+// import FukuiNews from '@/components/FukuiNews.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import News from '@/data/fukui_news.json'
 import JapanNews from '@/data/japan_news.json'
@@ -87,10 +87,10 @@ export default Vue.extend({
   components: {
     PageHeader,
     BreakingNews,
-    FukuiNews,
-    FukuiPaperNews,
-    // WhatsNew,
-    // WhatsNewJapan,
+    // FukuiNews,
+    // FukuiPaperNews,
+    WhatsNew,
+    WhatsNewJapan,
     StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesDetailsCard,
