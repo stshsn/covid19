@@ -4,7 +4,7 @@
       <v-icon size="24" class="WhatsNew-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('福井県からのお知らせ（RSS)') }}
+      {{ $t('福井新聞者の速報（RSS)') }}
     </h3>
     <ul class="WhatsNew-list">
       <li
@@ -34,9 +34,6 @@
               mdi-open-in-new
             </v-icon>
           </span>
-          <p class="WhatsNew-list-item-anchor-time px-2">
-            {{ item.desc }}
-          </p>
         </a>
       </li>
     </ul>
@@ -58,20 +55,24 @@ export default Vue.extend({
   },
   async mounted() {
     try {
-      const res = await axios.get('/pref/news.xml')
+      const res = await axios.get('/fukuishimbun/list/feed/rss')
       const xml = res.data
       parseString(xml, (_, xmlres: any) => {
-        this.info = xmlres['rdf:RDF'].item
+        this.info = xmlres.rss.channel[0].item
           .map((i: any) => {
             return {
               title: i.title[0],
               link: i.link[0],
-              desc: i.description[0],
-              datetime: moment(i['dc:date'][0]).format('YYYY/MM/DD HH:mm')
+              datetime: moment(i.pubDate[0]).format('YYYY/MM/DD HH:mm')
             }
           })
           .filter((i: any) => {
-            return i.title.includes('コロナ')
+            return (
+              i.title.includes('感染') ||
+              i.title.includes('コロナ') ||
+              i.title.includes('休業') ||
+              i.title.includes('休館')
+            )
           })
       })
     } catch (error) {
