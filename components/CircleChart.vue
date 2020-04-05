@@ -188,6 +188,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               return this.labels[index]
             }),
             data: this.chartData.map((d: any) => {
+              if (d.label === 'unused') {
+                if (d.transition < 0) {
+                  d.transition = 0
+                }
+              }
               return d.transition
             }),
             backgroundColor: this.chartData.map((d, index) => {
@@ -217,7 +222,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              return `${chartData[tooltipItem.index].transition} 人 (総病床数: ${chartData[0].transition + chartData[1].transition} 人)`
+              console.log(chartData)
+              return `${chartData[tooltipItem.index].transition} 人 (総病床数: ${chartData[1].cumulative} 人)`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
