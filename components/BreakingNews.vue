@@ -5,15 +5,18 @@
         mdi-information
       </v-icon>
       {{ $t('速報') }}
+      <a class="BreakingNews-heading-link" :href="this.localePath('/news')"
+        >過去のお知らせはこちら</a
+      >
     </h2>
-
     <ul class="BreakingNews-list">
       <h3 class="breaking-content" />
       <li v-for="(item, i) in items" :key="i" class="BreakingNews-list-item">
-        <time class="BreakingNews-list-item-anchor-time px-2" v-html="item.date">
-        </time>
-        <p class="BreakingNews-list-item-anchor-link" v-html="item.text">
-        </p>
+        <time
+          class="BreakingNews-list-item-anchor-time px-2"
+          v-html="item.date"
+        />
+        <p class="BreakingNews-list-item-anchor-link" v-html="item.text" />
       </li>
     </ul>
   </div>
@@ -61,6 +64,13 @@ export default Vue.extend({
 
   &-icon {
     margin: 10px;
+  }
+
+  &-link {
+    flex: 0 1 auto;
+    padding-left: 8px;
+
+    @include text-link();
   }
 }
 

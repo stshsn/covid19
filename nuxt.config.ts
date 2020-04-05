@@ -215,10 +215,16 @@ const config: Configuration = {
     routes: []
   },
   proxy: {
-    '/api': {
+    '/pref': {
       target: 'https://www.pref.fukui.lg.jp',
       pathRewrite: {
-        '^/api': '/'
+        '^/pref': '/'
+      }
+    },
+    '/fukuishimbun': {
+      target: 'https://www.fukuishimbun.co.jp',
+      pathRewrite: {
+        '^/fukuishimbun': '/'
       }
     }
   }
