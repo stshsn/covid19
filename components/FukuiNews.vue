@@ -4,7 +4,7 @@
       <v-icon size="24" class="WhatsNew-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('福井県からのお知らせ（RSS)') }}
+      {{ $t('福井県からのお知らせ（RSS）') }}
     </h3>
     <ul class="WhatsNew-list">
       <li
