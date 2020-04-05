@@ -4,12 +4,11 @@
       <v-icon size="24" class="BreakingNews-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('速報（福井県内）') }}
+      {{ $t('速報') }}
       <a class="WhatsNew-heading-link" :href="this.localePath('/news')"
-        >一覧はこちらから</a
+        >過去のお知らせはこちら</a
       >
     </h2>
-
     <ul class="BreakingNews-list">
       <h3 class="breaking-content" />
       <li v-for="(item, i) in items" :key="i" class="BreakingNews-list-item">
