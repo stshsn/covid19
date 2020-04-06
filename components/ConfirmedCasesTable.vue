@@ -1,24 +1,11 @@
 <template>
   <ul :class="$style.container">
-    <li :class="[$style.box, $style.tall, $style.alluser]">
-      <div :class="$style.pillar">
-        <div :class="$style.content">
-          <!-- eslint-disable vue/no-v-html-->
-          <span v-html="$t('検査実施人数')" />
-          <!-- eslint-enable vue/no-v-html-->
-          <span>
-            <strong>{{ 検査実施人数 }}</strong>
-            <span :class="$style.unit">{{ $t('人') }}</span>
-          </span>
-        </div>
-      </div>
-    </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.confirmed]">
       <div :class="$style.pillar">
         <div :class="$style.content">
-          <span>
+          <span class="vertical">
             {{ $t('陽性者数') }}
-            <br />({{ $t('累計') }})
+            ({{ $t('累計') }})
           </span>
           <span>
             <strong>{{ 陽性物数 }}</strong>
@@ -27,10 +14,32 @@
         </div>
       </div>
       <ul :class="$style.group">
+        <li :class="[$style.box, $style.selfheaping]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <span class="vertical">{{ $t('自宅療養') }}</span>
+              <span>
+                <strong>{{ 死亡 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li :class="[$style.box, $style.accomondation]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <span class="vertical">{{ $t('宿泊施設等') }}</span>
+              <span>
+                <strong>{{ 死亡 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('入院中') }}</span>
+              <span class="vertical">{{ $t('入院中') }}</span>
               <span>
                 <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -41,9 +50,7 @@
             <li :class="[$style.box, $style.short, $style.minor]">
               <div :class="$style.pillar">
                 <div :class="$style.content">
-                  <!-- eslint-disable vue/no-v-html-->
-                  <span v-html="$t('軽症・<br />中等症')" />
-                  <!-- eslint-enable vue/no-v-html-->
+                  <span class="vertical">{{ $t('軽症・中等症') }}</span>
                   <span>
                     <strong>{{ 軽症中等症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
@@ -124,6 +131,14 @@ export default Vue.extend({
     退院: {
       type: Number,
       required: true
+    },
+    自宅療養: {
+      type: Number,
+      required: true
+    },
+    宿泊施設等: {
+      type: Number,
+      required: true
     }
   },
   methods: {
@@ -152,6 +167,11 @@ export default Vue.extend({
 })
 </script>
 
+<style>
+.vertical {
+  writing-mode: vertical-rl;
+}
+</style>
 <style lang="scss" module>
 $default-bdw: 3px;
 $default-boxh: 150px;
@@ -235,20 +255,20 @@ $default-boxdiff: 35px;
     margin-left: $default-bdw;
 
     > .pillar {
-      // [6列] 1/6
-      width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
+      // [8列] 1/8
+      width: calc((100% + #{$default-bdw} * 2) / 8 - #{$default-bdw} * 3);
     }
 
     > .group {
-      // [6列] 5/6
-      width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw});
+      // [8列] 7/8
+      width: calc((100% + #{$default-bdw} * 2) / 8 * 7 + #{$default-bdw});
     }
   }
 
   &.hospitalized {
     margin-left: $default-bdw;
     // [5列] 3/5
-    width: calc(100% / 5 * 3 - #{$default-bdw});
+    width: calc(100% / 7 * 3 - #{$default-bdw});
 
     > .pillar {
       // [3列] 1/3
@@ -269,10 +289,12 @@ $default-boxdiff: 35px;
   }
 
   &.deceased,
-  &.recovered {
+  &.recovered,
+  &.selfheaping,
+  &.accomondation {
     margin-left: $default-bdw;
-    // [5列] 1/5
-    width: calc(100% / 5 - #{$default-bdw});
+    // [7列] 1/7
+    width: calc(100% / 7 - #{$default-bdw});
   }
 }
 
@@ -357,20 +379,20 @@ $default-boxdiff: 35px;
     &.confirmed {
       > .pillar {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 6 - #{px2vw($bdw, $vw)} * 3
+          (100% + #{px2vw($bdw, $vw)} * 2) / 8 - #{px2vw($bdw, $vw)} * 3
         );
       }
 
       > .group {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 6 * 5 + #{px2vw($bdw, $vw)}
+          (100% + #{px2vw($bdw, $vw)} * 2) / 8 * 7 + #{px2vw($bdw, $vw)}
         );
       }
     }
 
     &.hospitalized {
       margin-left: px2vw($bdw, $vw);
-      width: calc(100% / 5 * 3 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 7 * 3 - #{px2vw($bdw, $vw)});
 
       > .pillar {
         width: calc(
@@ -392,9 +414,11 @@ $default-boxdiff: 35px;
     }
 
     &.deceased,
-    &.recovered {
+    &.recovered,
+    &.selfheaping,
+    &.accomondation {
       margin-left: px2vw($bdw, $vw);
-      width: calc(100% / 5 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 7 - #{px2vw($bdw, $vw)});
     }
   }
 }
