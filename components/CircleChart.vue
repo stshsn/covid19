@@ -210,7 +210,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      const unit = this.unit
+      // const unit = this.unit
       const chartData = this.chartData
       const options = {
         tooltips: {
