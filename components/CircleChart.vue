@@ -2,12 +2,7 @@
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <p class="Graph-Desc">
-        （注）病床数は福井県庁が公開する
-        <a
-          class="link"
-          href="https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200319-1.pdf"
-          target="_blank"
-          rel="noopener">資料</a>を元にしています
+        （注）病床数は福井県庁が公開する資料を元にしています
       </p>
     </template>
     <pie-chart
@@ -33,7 +28,7 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { single as color } from '@/utils/colors'
+// import { single as color } from '@/utils/colors'
 
 type Data = {
   dataKind: 'transition' | 'cumulative'
@@ -131,12 +126,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       default: ''
     },
     info: {
-        type: String,
-        default: ''
+      type: String,
+      default: ''
     },
     labels: {
-        type: Array,
-        default: () => []
+      type: Array,
+      default: () => []
     },
     url: {
       type: String,
@@ -161,7 +156,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayInfo() {
       const totalBeds = this.chartData[this.chartData.length - 1].cumulative
       const usedBeds = this.chartData[0].cumulative
-      const rateOfUsed = ((usedBeds/totalBeds)*100).toFixed(2)
+      const rateOfUsed = ((usedBeds / totalBeds) * 100).toFixed(2)
       return {
         lText: rateOfUsed.toLocaleString(),
         sText: this.info,
@@ -169,22 +164,22 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayData() {
-      //const colorArray = ['#006400', '#ccc']
+      // const colorArray = ['#006400', '#ccc']
       const colorArray = [
         [
           '#006400', // normal
           '#FFD700', // warning
-          '#FC143C', // critical
+          '#FC143C' // critical
         ],
-        '#ccc',
+        '#ccc'
       ]
       return {
-        labels: this.chartData.map((d: any, index) => {
+        labels: this.chartData.map((_d: any, index) => {
           return this.labels[index]
         }),
         datasets: [
           {
-            label: this.chartData.map((d: any, index) => {
+            label: this.chartData.map((_d: any, index) => {
               return this.labels[index]
             }),
             data: this.chartData.map((d: any) => {
@@ -197,7 +192,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             }),
             backgroundColor: this.chartData.map((d, index) => {
               if (d.label === 'used') {
-                let rateOfUsed = parseFloat(this.displayInfo.lText)
+                const rateOfUsed = parseFloat(this.displayInfo.lText)
                 let status = 0
                 if (rateOfUsed >= 50 && rateOfUsed < 80) {
                   status = 1
@@ -215,7 +210,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      const unit = this.unit
+      // const unit = this.unit
       const chartData = this.chartData
       const options = {
         tooltips: {
@@ -223,7 +218,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           callbacks: {
             label(tooltipItem: any) {
               console.log(chartData)
-              return `${chartData[tooltipItem.index].transition} 人 (総病床数: ${chartData[1].cumulative} 人)`
+              return `${
+                chartData[tooltipItem.index].transition
+              } 人 (総病床数: ${chartData[1].cumulative} 人)`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
@@ -279,15 +276,13 @@ export default Vue.extend(options)
 </script>
 
 <style lang="scss" scoped>
-.Graph-Desc
-{
+.Graph-Desc {
   margin: 10px 0;
   font-size: 12px;
   color: $gray-3;
 }
 
-.link
-{
+.link {
   text-decoration: none;
 }
 </style>
