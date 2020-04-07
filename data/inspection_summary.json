@@ -1,19 +1,19 @@
 {
-    "date": "2020/04/07 02:36",
+    "date": "2020/04/07 12:45",
     "attr": "検査実施人数",
     "value": 333,
     "children": [
         {
             "attr": "陽性患者数",
-            "value": 59,
+            "value": 65,
             "children": [
                 {
                     "attr": "入院中",
-                    "value": 45,
+                    "value": 46,
                     "children": [
                         {
                             "attr": "軽症・中等症",
-                            "value": 42
+                            "value": 43
                         },
                         {
                             "attr": "重症",
@@ -35,7 +35,7 @@
                 },
                 {
                     "attr": "宿泊施設等",
-                    "value": 6
+                    "value": 11
                 }
             ]
         }
