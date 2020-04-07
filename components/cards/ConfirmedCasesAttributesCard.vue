@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard">
+  <v-col cols="12" class="DataCard">
     <data-table
       :title="$t('陽性患者の属性')"
       :title-id="'attributes-of-confirmed-cases'"
@@ -7,15 +7,15 @@
       :chart-option="{}"
       :date="Patients.date"
       :info="sumInfoOfPatients"
-      :url="'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'"
+      :url="
+        'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'
+      "
     />
   </v-col>
 </template>
 
 <script>
 import Patients from '@/data/patients.json'
-import PatientsSummary from '@/data/patients_summary.json'
-import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import DataTable from '@/components/DataTable.vue'
 
@@ -24,15 +24,15 @@ export default {
     DataTable
   },
   data() {
-    // 感染者数グラフ
-    const patientsGraph = formatGraph(PatientsSummary.data)
     // 感染者数
     const patientsTable = formatTable(Patients.data)
+    const patientsTableDate = new Date(Patients.date)
 
     const sumInfoOfPatients = {
       lText: String(Patients.data.length),
-      sText: this.$t('{date}の累計', {
-        date: patientsGraph[patientsGraph.length - 1].label
+      sText: this.$t('{date} 累計値', {
+        date: `${patientsTableDate.getMonth() +
+          1}/${patientsTableDate.getDate()}`
       }),
       unit: this.$t('人')
     }
