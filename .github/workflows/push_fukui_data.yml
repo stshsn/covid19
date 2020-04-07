@@ -19,7 +19,11 @@ jobs:
         run: docker-compose build fetch_fukui_data
 
       - name: data/*.jsonを作成
-        run: docker-compose run fetch_fukui_data
+        with:
+          CSV_FETCH_ENV: ${{ secrets.CSV_FETCH_ENV }}
+        run: |
+          echo $CSV_FETCH_ENV > covid19_fukui/.env.local
+          docker-compose run fetch_fukui_data
 
       - name: ブランチを作成
         id: branch

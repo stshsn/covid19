@@ -14,6 +14,8 @@ services:
 
   fetch_fukui_data:
     build: ./covid19_fukui
+    env_file:
+      - ./covid19_fukui/.env.local
     volumes:
       - ./data:/app/data
       - ./covid19_fukui:/app/covid19_fukui
