@@ -257,9 +257,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 maxTicksLimit: 20,
                 fontColor: '#808080',
                 maxRotation: 0,
-                callback: (label: string) => {
-                  return label.split('/')[1]
-                }
+                minRotation: 0
               }
             },
             {
