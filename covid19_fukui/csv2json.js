@@ -267,7 +267,7 @@ function patientsSummary(json, jsonObject) {
     const day = new Date(initDay)
     day.setDate(day.getDate() + i)
     day.setHours(day.getHours() + 9) // UTC to JST
-    const formatDay = dateFormat.format(day, 'yyyy/MM/dd hh:mm')
+    const formatDay = dateFormat.format(day, 'yyyy-MM-dd')
     const newObj = {
       日付: `${formatDay}T00:00:00.000+09:00`,
       小計: number
