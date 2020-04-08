@@ -17,7 +17,7 @@
       </div>
       <main class="mainContainer" :class="{ open: isOpenNavigation }">
         <v-container class="px-4 py-8">
-          <maintenance-mode-mark />
+          <!-- <maintenance-mode-mark /> -->
           <nuxt />
         </v-container>
       </main>
