@@ -15,16 +15,16 @@ const headers = [
 ]
 
 type DataType = {
-  リリース日: string
-  発症日: string
+  公表日: string | null
+  発症日: string | null
   居住地: string | null
   年代: string | null
   性別: '男性' | '女性' | string
   職業: string | null
   状態: string | null
   症状: string | null
-  渡航歴: boolean
-  退院: boolean
+  渡航歴: string | null
+  退院: string | null
   備考: string | null
   [key: string]: any
 }
@@ -34,12 +34,12 @@ type TableDataType = {
   発症日: string
   居住地: DataType['居住地']
   年代: DataType['年代']
-  性別: DataType['性別'] | '不明'
+  性別: DataType['性別'] | 'その他'
   職業: DataType['職業']
   状態: DataType['状態']
   症状: DataType['症状']
-  渡航歴: string | null
-  退院: string | null
+  渡航歴: DataType['渡航歴']
+  退院: DataType['退院']
   備考: DataType['備考']
 }
 
@@ -60,16 +60,16 @@ export default (data: DataType[]) => {
   }
   data.forEach(d => {
     const TableRow: TableDataType = {
-      公表日: !d['リリース日'] ? '---' : dayjs(d['リリース日']).format('MM/DD'),
+      公表日: !d['公表日'] ? '---' : dayjs(d['公表日']).format('MM/DD'),
       発症日: !d['発症日'] ? '---' : dayjs(d['発症日']).format('MM/DD'),
       居住地: d['居住地'] ?? '不明',
       年代: d['年代'] ?? '不明',
-      性別: d['性別'] ?? '不明',
+      性別: d['性別'] ?? 'その他',
       職業: d['職業'],
       状態: d['状態'],
       症状: d['症状'],
-      渡航歴: (d['渡航歴'] && 'あり') || null,
-      退院: (d['退院'] && '●') || null,
+      渡航歴: d['渡航歴'] === '1' ? 'あり' : '',
+      退院: d['退院'] === '1' ? '●' : '',
       備考: d['備考']
     }
     tableDate.datasets.push(TableRow)
