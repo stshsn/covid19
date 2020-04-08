@@ -14,7 +14,7 @@
         </div>
       </div>
       <ul :class="$style.group">
-        <li :class="[$style.box, $style.selfheaping]">
+        <!-- <li :class="[$style.box, $style.selfheaping]">
           <div :class="$style.pillar">
             <div :class="$style.content">
               <span class="vertical">{{ $t('自宅療養') }}</span>
@@ -35,7 +35,7 @@
               </span>
             </div>
           </div>
-        </li>
+        </li> -->
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
@@ -104,10 +104,6 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
-    検査実施人数: {
-      type: Number,
-      required: true
-    },
     陽性物数: {
       type: Number,
       required: true
@@ -131,15 +127,15 @@ export default Vue.extend({
     退院: {
       type: Number,
       required: true
-    },
-    自宅療養: {
-      type: Number,
-      required: true
-    },
-    宿泊施設等: {
-      type: Number,
-      required: true
     }
+    // 自宅療養: {
+    //   type: Number,
+    //   required: true
+    // },
+    // 宿泊施設等: {
+    //   type: Number,
+    //   required: true
+    // }
   },
   methods: {
     /** 桁数に応じて位置の調整をする */
@@ -255,20 +251,20 @@ $default-boxdiff: 35px;
     margin-left: $default-bdw;
 
     > .pillar {
-      // [8列] 1/8
-      width: calc((100% + #{$default-bdw} * 2) / 8 - #{$default-bdw} * 3);
+      // [6列] 1/6
+      width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
     }
 
     > .group {
-      // [8列] 7/8
-      width: calc((100% + #{$default-bdw} * 2) / 8 * 7 + #{$default-bdw});
+      // [6列] 5/6
+      width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw});
     }
   }
 
   &.hospitalized {
     margin-left: $default-bdw;
     // [5列] 3/5
-    width: calc(100% / 7 * 3 - #{$default-bdw});
+    width: calc(100% / 5 * 3 - #{$default-bdw});
 
     > .pillar {
       // [3列] 1/3
@@ -293,8 +289,8 @@ $default-boxdiff: 35px;
   &.selfheaping,
   &.accomondation {
     margin-left: $default-bdw;
-    // [7列] 1/7
-    width: calc(100% / 7 - #{$default-bdw});
+    // [5列] 1/5
+    width: calc(100% / 5 - #{$default-bdw});
   }
 }
 
@@ -379,20 +375,20 @@ $default-boxdiff: 35px;
     &.confirmed {
       > .pillar {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 8 - #{px2vw($bdw, $vw)} * 3
+          (100% + #{px2vw($bdw, $vw)} * 2) / 6 - #{px2vw($bdw, $vw)} * 3
         );
       }
 
       > .group {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 8 * 7 + #{px2vw($bdw, $vw)}
+          (100% + #{px2vw($bdw, $vw)} * 2) / 6 * 5 + #{px2vw($bdw, $vw)}
         );
       }
     }
 
     &.hospitalized {
       margin-left: px2vw($bdw, $vw);
-      width: calc(100% / 7 * 3 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 5 * 3 - #{px2vw($bdw, $vw)});
 
       > .pillar {
         width: calc(
@@ -418,7 +414,7 @@ $default-boxdiff: 35px;
     &.selfheaping,
     &.accomondation {
       margin-left: px2vw($bdw, $vw);
-      width: calc(100% / 7 - #{px2vw($bdw, $vw)});
+      width: calc(100% / 5 - #{px2vw($bdw, $vw)});
     }
   }
 }
