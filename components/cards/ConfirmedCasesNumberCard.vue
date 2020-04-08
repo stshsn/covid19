@@ -5,14 +5,15 @@
       :title-id="'number-of-confirmed-cases'"
       :chart-id="'time-bar-chart-patients'"
       :chart-data="patientsGraph"
-      transition-type="daily"
       :date="patientsSummaryDate"
       :unit="$t('人')"
-      :url="'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'"
+      :url="
+        'https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona.html'
+      "
     />
   </v-col>
 </template>
-  
+
 <script>
 import PatientsSummary from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'

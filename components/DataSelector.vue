@@ -75,8 +75,8 @@ export default Vue.extend({
     },
     transitionType: {
       type: String,
-      default: 'weekly'
-    },
+      default: 'daily'
+    }
   }
 })
 </script>
