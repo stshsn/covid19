@@ -19,7 +19,7 @@
             <div :class="$style.content">
               <span class="vertical">{{ $t('自宅療養') }}</span>
               <span>
-                <strong>{{ 死亡 }}</strong>
+                <strong>{{ 自宅療養 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -30,7 +30,7 @@
             <div :class="$style.content">
               <span class="vertical">{{ $t('宿泊施設等') }}</span>
               <span>
-                <strong>{{ 死亡 }}</strong>
+                <strong>{{ 宿泊施設等 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
