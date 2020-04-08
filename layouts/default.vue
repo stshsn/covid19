@@ -17,7 +17,7 @@
       </div>
       <main class="mainContainer" :class="{ open: isOpenNavigation }">
         <v-container class="px-4 py-8">
-          <maintenance-mode-mark />
+          <!-- <maintenance-mode-mark /> -->
           <nuxt />
         </v-container>
       </main>
@@ -114,7 +114,7 @@ export default Vue.extend({
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             ' ' +
-            this.$t('福井県版 対策サイト（非公式）')
+            this.$t('福井県版 対策サイト')
         },
         {
           hid: 'og:url',
@@ -134,7 +134,7 @@ export default Vue.extend({
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             ' ' +
-            this.$t('福井県版 対策サイト（非公式）')
+            this.$t('福井県版 対策サイト')
         },
         {
           hid: 'og:description',
@@ -156,7 +156,7 @@ export default Vue.extend({
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             ' ' +
-            this.$t('福井県版 対策サイト（非公式）')
+            this.$t('福井県版 対策サイト')
         },
         {
           hid: 'twitter:image',

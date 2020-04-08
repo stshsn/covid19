@@ -30,10 +30,10 @@
     />
     <v-row class="DataBlock">
       <!-- <youtube-card /> -->
-      <inspection-persons-number-card />
-      <confirmed-cases-details-card />
       <confirmed-cases-number-card />
+      <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
+      <inspection-persons-number-card />
       <hospital-beds-number-card />
     </v-row>
   </div>
