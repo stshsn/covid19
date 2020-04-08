@@ -160,7 +160,7 @@ function inspectionPersons(json, jsonObject) {
   jsonObject.labels = []
   Enumerable.from(json).forEach(row => {
     const date = new Date(row['実施_年月日'])
-    jsonObject.data.県内.push(parseInt(row['検査実施_件数']))
+    jsonObject.data.県内.push(row['検査実施_件数'])
     jsonObject.labels.push(`${date.getMonth() + 1}/${date.getDate()}`)
   })
 }
