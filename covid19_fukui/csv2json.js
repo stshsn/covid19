@@ -223,21 +223,18 @@ function inspectionSummary(json, jsonObject) {
 function patients(json, jsonObject) {
   jsonObject.data = []
   Enumerable.from(json).forEach(row => {
-    let publicationDate = '不明'
-    if (row.公表_年月日 !== '') {
-      const day = new Date(row.公表_年月日)
-      publicationDate = dateFormat.format(day, 'yyyy-MM-dd')
-      publicationDate = `${publicationDate}T00:00:00.000+09:00`
-    }
-    let developmentDate = '不明'
-    if (row.発症_年月日 !== '') {
-      const day = new Date(row.発症_年月日)
-      developmentDate = dateFormat.format(day, 'yyyy-MM-dd')
-      developmentDate = `${developmentDate}T00:00:00.000+09:00`
-    }
+    const publicationDay = new Date(row.公表_年月日)
+    const publicationDate = dateFormat.format(publicationDay, 'yyyy-MM-dd')
+    const publicationDateString = `${publicationDate}T00:00:00.000+09:00`
+
+    const developmentDay = new Date(row.発症_年月日)
+    const developmentDate = dateFormat.format(developmentDay, 'yyyy-MM-dd')
+    const developmentDateString =
+      row.発症_年月日 !== '' ? `${developmentDate}T00:00:00.000+09:00` : ''
+
     const newObj = {
-      公表日: publicationDate,
-      発症日: developmentDate,
+      公表日: publicationDateString,
+      発症日: developmentDateString,
       居住地: row['患者_居住地'],
       年代: row['患者_年代'],
       性別: row['患者_性別'],
