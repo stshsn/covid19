@@ -17,6 +17,7 @@
       </div>
       <main class="mainContainer" :class="{ open: isOpenNavigation }">
         <v-container class="px-4 py-8">
+          <maintenance-mode-mark />
           <nuxt />
         </v-container>
       </main>
@@ -38,6 +39,7 @@ import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 import SideNavigation from '@/components/SideNavigation.vue'
 import NoScript from '@/components/NoScript.vue'
 import DevelopmentModeMark from '@/components/DevelopmentModeMark.vue'
+import MaintenanceModeMark from '@/components/MaintenanceModeMark.vue'
 
 type LocalData = {
   hasNavigation: boolean
@@ -47,6 +49,7 @@ type LocalData = {
 
 export default Vue.extend({
   components: {
+    MaintenanceModeMark,
     DevelopmentModeMark,
     ScaleLoader,
     SideNavigation,

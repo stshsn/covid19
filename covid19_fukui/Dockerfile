@@ -1,10 +1,10 @@
 # LTSのバージョンを使う
 FROM node:12.16.1-slim
 
-# 最新の yarn をインストール
+# build-essentials python3 最新の yarn をインストール
 RUN set -eux \
     && apt-get update \
-    && apt-get install -qqy curl \
+    && apt-get install -qqy curl build-essential python3 \
     && curl --compressed -o- -sSL https://yarnpkg.com/install.sh | bash \
     && apt-get remove -y curl \
     && apt-get clean \

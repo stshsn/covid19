@@ -7,6 +7,21 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
+      - name: 共通のデータを出力
+        id: metadatas
+        uses: actions/github-script@0.9.0
+        with:
+          script: |
+            console.log(context)
+
+            const baseBranch = typeof context.payload.client_payload.base_branch === 'string' || context.payload.client_payload.base_branch.length > 1
+              ? context.payload.client_payload.base_branch : context.payload.repository.default_branch.replace('refs/heads/', '')
+
+            core.setOutput('base-branch', baseBranch)
+            core.setOutput('head-branch', 'update_data/updatejson')
+            core.setOutput('current-date', (new Date).toString())
+
+
       - name: Gitを設定
         run: |
           git config --global user.name github-actions
@@ -14,29 +29,35 @@ jobs:
 
       - name: リポジトリをチェックアウト
         uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.metadatas.outputs.base-branch }}
 
       - name: Dockerイメージをビルド
         run: docker-compose build fetch_fukui_data
 
       - name: data/*.jsonを作成
-        run: docker-compose run fetch_fukui_data
+        with:
+          CSV_FETCH_ENV: ${{ secrets.CSV_FETCH_ENV }}
+        run: |
+          echo $CSV_FETCH_ENV > covid19_fukui/.env.local
+          docker-compose run fetch_fukui_data
 
       - name: ブランチを作成
         id: branch
         env:
           TZ: JST-9
         run: |
-          BRANCH_NAME="update_fukui_data/$(date "+%Y%m%d_%Hh%Mm%Ss")"
+          BRANCH_NAME="${{ steps.metadatas.outputs.base-branch }}"
           git checkout -b $BRANCH_NAME
-          echo "##[set-output name=name]$BRANCH_NAME"
+          git push -f -u origin $BRANCH_NAME
 
       - name: コミット
         run: |
           git add .
-          git commit -m "[Auto] データを更新"
+          git commit -m "[Auto] データを更新 ${{ steps.metadatas.outputs.current-date }}"
 
       - name: プッシュ
-        run: git push -u origin ${{ steps.branch.outputs.name }}
+        run: git push
 
       - name: Pull request を作成
         uses: actions/github-script@0.9.0
@@ -45,7 +66,7 @@ jobs:
             github.pulls.create({
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
-              title: '[Auto]データ更新 ${{ steps.branch.outputs.name }}',
-              head: '${{ steps.branch.outputs.name }}',
-              base: context.payload.repository.default_branch,
+              title: '[Auto]データ更新 ${{ steps.metadatas.outputs.current-date }}',
+              head: '${{ steps.metadatas.outputs.head-branch }}',
+              base: '${{ steps.metadatas.outputs.base-branch }}',
             })
