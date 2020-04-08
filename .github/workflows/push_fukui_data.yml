@@ -2,6 +2,9 @@ name: 福井県のデータをGitHubへPush
 
 on:
   repository_dispatch:
+  # スケジュール実行の例。 以下は昼の12:30JSTに実行する例
+  # schedule:
+  #   - cron: 30 12 * * *
 
 jobs:
   build:
@@ -11,16 +14,16 @@ jobs:
         id: metadatas
         uses: actions/github-script@0.9.0
         with:
+          update-push-branch: ${{ secrets.SCHEDULED_UPDATE_PUSH_BRANCH }}
           script: |
             console.log(context)
 
-            const baseBranch = typeof context.payload.client_payload.base_branch === 'string' || context.payload.client_payload.base_branch.length > 1
-              ? context.payload.client_payload.base_branch : context.payload.repository.default_branch.replace('refs/heads/', '')
+            const baseBranch = context.payload.client_payload != null && typeof context.payload.client_payload.base_branch === 'string' && context.payload.client_payload.base_branch.length > 1
+              ? context.payload.client_payload.base_branch : core.getInput('update-push-branch') || context.payload.repository.default_branch.replace('refs/heads/', '')
 
-            core.setOutput('base-branch', baseBranch)
             core.setOutput('head-branch', 'update_data/updatejson')
+            core.setOutput('base-branch', baseBranch)
             core.setOutput('current-date', (new Date).toString())
-
 
       - name: Gitを設定
         run: |
@@ -33,22 +36,22 @@ jobs:
           ref: ${{ steps.metadatas.outputs.base-branch }}
 
       - name: Dockerイメージをビルド
-        run: docker-compose build fetch_fukui_data
-
-      - name: data/*.jsonを作成
-        with:
+        env:
           CSV_FETCH_ENV: ${{ secrets.CSV_FETCH_ENV }}
         run: |
-          echo $CSV_FETCH_ENV > covid19_fukui/.env.local
-          docker-compose run fetch_fukui_data
+          echo "$CSV_FETCH_ENV" > covid19_fukui/.env.local
+          docker-compose build fetch_fukui_data
+
+      - name: data/*.jsonを作成
+        run: docker-compose run fetch_fukui_data
 
       - name: ブランチを作成
         id: branch
         env:
           TZ: JST-9
+          BRANCH_NAME: ${{ steps.metadatas.outputs.head-branch }}
         run: |
-          BRANCH_NAME="${{ steps.metadatas.outputs.base-branch }}"
-          git checkout -b $BRANCH_NAME
+          git switch -c $BRANCH_NAME
           git push -f -u origin $BRANCH_NAME
 
       - name: コミット
