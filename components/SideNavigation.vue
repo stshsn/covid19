@@ -17,7 +17,7 @@
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('新型コロナウイルス感染症') }}<br />{{
-              $t('福井県版 対策サイト（非公式）')
+              $t('福井県版 対策サイト')
             }}
           </div>
         </nuxt-link>
@@ -45,7 +45,7 @@
         {{ $t('※このサイトは福井高専卒のエンジニアが開設したものです') }}<br />
         <div class="SideNavigation-Social">
           <a
-            href="https://twitter.com/nomunomu0504"
+            href="https://twitter.com/fukui_kohou"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -55,7 +55,7 @@
               <img src="/twitter.png" alt="Twitter" />
             </picture>
           </a>
-          <a
+          <!-- <a
             href="https://www.facebook.com/hiroki.nomura.504"
             target="_blank"
             rel="noopener"
@@ -65,7 +65,7 @@
               <source srcset="/facebook.webp" type="image/webp" />
               <img src="/facebook.png" alt="Facebook" />
             </picture>
-          </a>
+          </a> -->
           <a
             href="https://github.com/nomunomu0504/covid19"
             target="_blank"
