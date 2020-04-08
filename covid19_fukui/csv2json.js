@@ -86,8 +86,10 @@ const main = async () => {
   const japanNewsJson = newsJson.japan_news
 
   // オープンデータ
+  const today = new Date()
+  today.setHours(today.getHours() + 9)
   const jsonObjectBase = {
-    date: dateFormat.format(new Date(), 'yyyy/MM/dd hh:mm')
+    date: dateFormat.format(today, 'yyyy/MM/dd hh:mm')
   }
   // 各JSONを作成
   const hospitalBedsJson = Object.assign({}, jsonObjectBase)
