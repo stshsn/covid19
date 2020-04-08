@@ -139,7 +139,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     transitionType: {
       type: String,
-      default: 'weekly'
+      default: 'daily'
     },
     date: {
       type: String,
