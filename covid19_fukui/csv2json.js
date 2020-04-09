@@ -13,8 +13,9 @@ const iconv = require('iconv-lite')
 
 /**
  * Shift-JISフラグ
+ * falseの場合はUTF-8として処理
  */
-const ISSHIFTJIS = true
+const ISSHIFTJIS = false
 
 /**
  * 病床数
