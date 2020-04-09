@@ -13,8 +13,8 @@
       </div>
     </div>
     <breaking-news class="mb-4" :items="BreakingItems" />
-    <!--
     <fukui-paper-news class="mb-4" />
+    <!--
     <fukui-news class="mb-4" />
     -->
     <whats-new class="mb-4" :items="newsItems" />
@@ -47,7 +47,7 @@ import PageHeader from '@/components/PageHeader.vue'
 import BreakingNews from '@/components/BreakingNews.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import WhatsNewJapan from '@/components/WhatsNewJapan.vue'
-// import FukuiPaperNews from '@/components/FukuiPaperNews.vue'
+import FukuiPaperNews from '@/components/FukuiPaperNews.vue'
 // import FukuiNews from '@/components/FukuiNews.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import News from '@/data/fukui_news.json'
@@ -88,7 +88,7 @@ export default Vue.extend({
     PageHeader,
     BreakingNews,
     // FukuiNews,
-    // FukuiPaperNews,
+    FukuiPaperNews,
     WhatsNew,
     WhatsNewJapan,
     StaticInfo,

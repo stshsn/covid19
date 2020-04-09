@@ -20,9 +20,9 @@
         >
           <time
             class="WhatsNew-list-item-anchor-time px-2"
-            :datetime="item.datetime"
+            :datetime="item.published_at"
           >
-            {{ item.datetime }}
+            {{ item.published_at }}
           </time>
           <span class="WhatsNew-list-item-anchor-link">
             {{ item.title }}
@@ -46,37 +46,12 @@ import { parseString } from 'xml2js'
 import Vue from 'vue'
 import moment from 'moment'
 import { convertDateToISO8601Format } from '@/utils/formatDate'
+import fukuishimbun from '@/data/fukuishimbun.json'
 
 export default Vue.extend({
   data() {
     return {
-      info: []
-    }
-  },
-  async mounted() {
-    try {
-      const res = await axios.get('/fukuishimbun/list/feed/rss')
-      const xml = res.data
-      parseString(xml, (_, xmlres: any) => {
-        this.info = xmlres.rss.channel[0].item
-          .map((i: any) => {
-            return {
-              title: i.title[0],
-              link: i.link[0],
-              datetime: moment(i.pubDate[0]).format('YYYY/MM/DD HH:mm')
-            }
-          })
-          .filter((i: any) => {
-            return (
-              i.title.includes('感染') ||
-              i.title.includes('コロナ') ||
-              i.title.includes('休業') ||
-              i.title.includes('休館')
-            )
-          })
-      })
-    } catch (error) {
-      this.info = []
+      info: fukuishimbun.info
     }
   },
   methods: {
