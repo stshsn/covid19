@@ -34,6 +34,7 @@
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <inspection-persons-number-card />
+      <information-number-card />
       <hospital-beds-number-card />
     </v-row>
   </div>
@@ -75,6 +76,12 @@ import HospitalBeds from '@/data/hospital_beds.json'
 // 陽性患者数
 import PatientsSummary from '@/data/patients_summary.json'
 
+// お問い合わせ件数
+import Contacts from '@/data/contacts.json'
+
+// コールセンターお問合せ件数
+import InformationNumberCard from '@/components/cards/InformationNumberCard.vue'
+
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
@@ -97,7 +104,8 @@ export default Vue.extend({
     InspectionPersonsNumberCard,
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
-    HospitalBedsNumberCard
+    HospitalBedsNumberCard,
+    InformationNumberCard
     // YoutubeCard,
     // TestedNumberCard,
     // ConsultationDeskReportsNumberCard,
@@ -111,6 +119,7 @@ export default Vue.extend({
       InspectionsSummary,
       HospitalBeds,
       PatientsSummary,
+      Contacts,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('福井県内の最新感染動向')
