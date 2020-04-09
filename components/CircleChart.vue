@@ -2,7 +2,7 @@
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <p class="Graph-Desc">
-        （ 注 ）福井県から情報が提供されていないた、あくまでも参考値となります<br/>
+        （ 注 ）福井県から情報が提供されていないため、あくまでも参考値となります<br/>
         （ 注 ）現在患者数 = 累計陽性患者数 - 退院済患者数 - 死亡者数
       </p>
     </template>
