@@ -42,10 +42,10 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        {{ $t('※このサイトは福井高専卒のエンジニアが開設したものです') }}<br />
+        {{ $t('※このサイトは福井高専卒のエンジニアが開設したものです') }}<br /><br />
         <div class="SideNavigation-Social">
           <a
-            href="https://twitter.com/fukui_kohou"
+            href="https://twitter.com/covid19_fukui"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -55,8 +55,8 @@
               <img src="/twitter.png" alt="Twitter" />
             </picture>
           </a>
-          <!-- <a
-            href="https://www.facebook.com/hiroki.nomura.504"
+          <a
+            href="https://www.facebook.com/StopCovid19Fukui/"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -65,7 +65,7 @@
               <source srcset="/facebook.webp" type="image/webp" />
               <img src="/facebook.png" alt="Facebook" />
             </picture>
-          </a> -->
+          </a>
           <a
             href="https://github.com/nomunomu0504/covid19"
             target="_blank"
