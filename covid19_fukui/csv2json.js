@@ -66,6 +66,7 @@ const files = {
   breakingNews: 'breaking_news.json', // 速報
   fukuiNews: 'fukui_news.json', // 県内のお知らせ
   japanNews: 'japan_news.json', // 国内のお知らせ
+  contacts: 'contacts.json', // コールセンター相談件数
   hospitalBeds: 'hospital_beds.json', // 感染症病床使用率
   inspectionPersons: 'inspection_persons.json', // 検査実施人数
   inspectionSummary: 'inspection_summary.json', // 検査陽性者の状況
@@ -93,6 +94,7 @@ const main = async () => {
     date: dateFormat.format(today, 'yyyy/MM/dd hh:mm')
   }
   // 各JSONを作成
+  const contactsJson = Object.assign({}, jsonObjectBase)
   const hospitalBedsJson = Object.assign({}, jsonObjectBase)
   const inspectionPersonsJson = Object.assign({}, jsonObjectBase)
   const inspectionSummaryJson = Object.assign({}, jsonObjectBase)
@@ -101,6 +103,7 @@ const main = async () => {
   // LINQの設定
   const linq = Enumerable.from(openDataSource)
   // 各JSONの処理
+  contacts(linq.where(x => x.name === 'call_center').first().json, contactsJson)
   hospitalBeds(
     linq.where(x => x.name === 'patients').first().json,
     hospitalBedsJson
@@ -123,6 +126,7 @@ const main = async () => {
   writeFile(breakingNewsJson, files.breakingNews)
   writeFile(fukuiNewsJson, files.fukuiNews)
   writeFile(japanNewsJson, files.japanNews)
+  writeFile(contactsJson, files.contacts)
   writeFile(hospitalBedsJson, files.hospitalBeds)
   writeFile(inspectionPersonsJson, files.inspectionPersons)
   writeFile(inspectionSummaryJson, files.inspectionSummary)
@@ -144,6 +148,19 @@ function writeFile(json, fileName) {
   fs.writeFile(filePath, JSON.stringify(json, null, '    '), err => {
     if (err) console.error(err)
   })
+}
+
+function contacts(json, jsonObject) {
+  jsonObject.data = Enumerable.from(json)
+    .select(x => {
+      const date = new Date(x.受付_年月日)
+      const formatDate = dateFormat.format(date, 'yyyy-MM-dd')
+      return {
+        日付: `${formatDate}T00:00:00.000+09:00`,
+        小計: parseInt(x.相談件数)
+      }
+    })
+    .toArray()
 }
 
 function hospitalBeds(json, jsonObject) {
