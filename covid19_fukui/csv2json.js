@@ -20,6 +20,9 @@ const ISSHIFTJIS = false
 /**
  * 病床数
  */
+if (isNaN(parseInt(process.env.HOSPITAL_BEDS))) {
+  throw new RangeError('env HOSPITAL_BEDS is NaN')
+}
 const HospitalBedNum = process.env.HOSPITAL_BEDS
 
 /**
