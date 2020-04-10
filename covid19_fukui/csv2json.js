@@ -20,7 +20,7 @@ const ISSHIFTJIS = false
 /**
  * 病床数
  */
-const HospitalBedNum = 84
+const HospitalBedNum = process.env.HOSPITAL_BEDS
 
 /**
  * オープンデータ取得先
