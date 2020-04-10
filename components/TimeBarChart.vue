@@ -236,6 +236,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const unit = this.unit
       const scaledTicksYAxisMax = this.scaledTicksYAxisMax
       const options = {
+        animation: false,
         tooltips: {
           displayColors: false,
           callbacks: {
@@ -268,7 +269,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 maxTicksLimit: 20,
                 fontColor: '#808080',
                 maxRotation: 0,
-                minRotation: 0
+                minRotation: 0,
+                max: this.chartData[this.graphRange[1]].label,
+                min: this.chartData[this.graphRange[0]].label
               }
             },
             {
@@ -344,6 +347,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       })
     },
     sliderMax() {
+      console.log(this.chartData.length -1)
       if (!this.chartData || this.chartData.length === 0) {
         return 1
       }

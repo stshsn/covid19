@@ -60,7 +60,6 @@ export default {
       if (!this.chartData || this.chartData.length === 0) {
         return 1
       }
-      console.log(`${this.value}:${this.chartData[id].label}`)
       return this.chartData[id].label
     }
   }
