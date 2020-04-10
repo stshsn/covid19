@@ -348,7 +348,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       })
     },
     sliderMax() {
-      console.log(this.chartData.length -1)
       if (!this.chartData || this.chartData.length === 0) {
         return 1
       }
