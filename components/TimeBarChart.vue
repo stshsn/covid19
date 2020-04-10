@@ -269,7 +269,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontSize: 9,
                 maxTicksLimit: 20,
                 fontColor: '#808080',
-                maxRotation: 0,
+                maxRotation: 60,
                 minRotation: 0,
                 max: this.chartData[this.graphRange[1]].label,
                 min: this.chartData[this.graphRange[0]].label
