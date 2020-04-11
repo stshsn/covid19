@@ -186,12 +186,15 @@ function hospitalBeds(json, jsonObject) {
 }
 
 function inspectionPersons(json, jsonObject) {
-  jsonObject.data = { 県内: [] }
-  jsonObject.labels = []
+  jsonObject.data = []
   Enumerable.from(json).forEach(row => {
-    const date = new Date(row['実施_年月日'])
-    jsonObject.data.県内.push(parseInt(row['検査実施_件数']))
-    jsonObject.labels.push(`${date.getMonth() + 1}/${date.getDate()}`)
+    const date = new Date(`${row['実施_年月日']}T00:00:00+09:00`)
+    const testCount = parseInt(row['検査実施_件数'])
+    const dataItem = {
+      '日付': date.toISOString(),
+      '小計': testCount
+    }
+    jsonObject.data.push(dataItem)
   })
 }
 
