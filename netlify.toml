@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/bff/*"
+  from = "/api/*"
   to = "https://covid19-273411.appspot.com"
   status = 200
   force = true

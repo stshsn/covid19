@@ -66,7 +66,7 @@ export default Vue.extend({
   },
   async created() {
     try {
-      const res = await axios.get('/bff/api/v1/rss/fukuishimbun', {timeout: 5000})
+      const res = await axios.get('/api/v1/rss/fukuishimbun', {timeout: 5000})
       const info = res.data.info.map((e: any) => {
       return {title: e.title, link: e.link, published_at: moment.unix(e.published_at).format('YYYY/MM/DD HH:mm') }
       })

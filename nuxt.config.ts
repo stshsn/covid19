@@ -222,10 +222,10 @@ const config: Configuration = {
         '^/pref': '/'
       }
     },
-    '/bff': {
+    '/api': {
       target: 'https://covid19-273411.appspot.com',
       pathRewrite: {
-        '^/bff': '/'
+        '^/api': '/api'
       }
     }
   }
