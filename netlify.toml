@@ -4,7 +4,7 @@
   status = 404
 
 [[redirects]]
-  from = "/bff"
+  from = "/bff/*"
   to = "https://covid19-273411.appspot.com"
   status = 200
 
