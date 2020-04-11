@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/api/*"
-  to = "https://covid19-273411.appspot.com"
+  from = "/api/v1/rss/fukuishimbun"
+  to = "https://covid19-273411.appspot.com/api/v1/rss/fukuishimbun"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
