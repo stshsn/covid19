@@ -10,6 +10,7 @@ const axios = require('axios')
 const csv2json = require('csvtojson')
 const Enumerable = require('linq')
 const iconv = require('iconv-lite')
+const cheerio = require('cheerio')
 
 /**
  * Shift-JISフラグ
@@ -20,11 +21,11 @@ const ISSHIFTJIS = false
 /**
  * 病床数
  */
-if (isNaN(parseInt(process.env.HOSPITAL_BEDS))) {
+/*if (isNaN(parseInt(process.env.HOSPITAL_BEDS))) {
   throw new RangeError('env HOSPITAL_BEDS is NaN')
 }
 const HospitalBedNum = process.env.HOSPITAL_BEDS
-
+*/
 /**
  * オープンデータ取得先
  */
@@ -332,9 +333,22 @@ const dateFormat = {
   }
 }
 
-main()
+//main()
 
 const main2 = () => {
+
+  const isCovidArticle = async (article) => {
+    try {
+      const res = await axios.get(article.link)
+      const $ = cheerio.load(res.data)
+      const context = $('div.article-body > p').text()
+      return context.includes('コロナ') || context.includes('感染')
+    } catch(e) {
+      console.error(e)
+    }
+    return false
+  }
+
   const getFukuiShimbun = () => {
     const moment = require('moment-timezone')
     const xml2js = require('xml2js')
@@ -364,10 +378,16 @@ const main2 = () => {
     })
   }
 
+  async function asyncFilter(array, asyncCallback) {
+    const bits = await Promise.all(array.map(asyncCallback));
+    return array.filter((_, i) => bits[i]);
+  }
+
   const storeFukuiShimbun = async () => {
     try {
-      const info = await getFukuiShimbun()
-      writeFile(info, files.fukuiShimbun)
+      const json = await getFukuiShimbun()
+      json.info = await asyncFilter(json.info, el => isCovidArticle(el))
+      writeFile(json, files.fukuiShimbun)
     } catch (error) {
       console.error(error)
     }
