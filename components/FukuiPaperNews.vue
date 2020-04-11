@@ -57,11 +57,6 @@ export default Vue.extend({
       return convertDateToISO8601Format(dateString)
     }
   },
-  data () {
-    return {
-      info: []
-    }
-  },
   async created() {
     try {
       const res = await axios.get('/bff/api/v1/rss/fukuishimbun', {timeout: 5000})
