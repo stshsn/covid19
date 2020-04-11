@@ -3,6 +3,11 @@
   to = "/404.html"
   status = 404
 
+[[redirects]]
+  from = "/bff"
+  to = "https://covid19-273411.appspot.com"
+  status = 200
+
 [context.production]
   # https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory
   # data ディレクトリの中に json ファイルが
