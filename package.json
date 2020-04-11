@@ -1,7 +1,7 @@
 {
   "name": "covid19",
   "version": "1.0.0",
-  "description": "福井県 新型コロナウイルス感染症対策サイト",
+  "description": "福井県公認 新型コロナウイルス感染症対策サイト",
   "author": "野村弘樹（福井高専卒）",
   "private": true,
   "engines": {
