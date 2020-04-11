@@ -226,6 +226,12 @@ const config: Configuration = {
       pathRewrite: {
         '^/fukuishimbun': '/'
       }
+    },
+    '/covid19rss': {
+      target: 'https://covid19-273411.appspot.com',
+      pathRewrite: {
+        '^/covid19rss': '/'
+      }
     }
   }
 }

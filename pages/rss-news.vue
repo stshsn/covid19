@@ -1,40 +1,35 @@
 <template>
-  <div class="WhatsNew">
-    <h3 class="WhatsNew-heading">
-      <v-icon size="24" class="WhatsNew-heading-icon">
+  <div class="NewsList">
+    <page-header class="mb-3">
+      <v-icon size="24" class="NewsList-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('福井新聞社の速報（RSS）') }}
-      <a class="WhatsNew-heading-link" :href="this.localePath('/rss-news')">一覧はこちらから</a>
-    </h3>
-    <ul class="WhatsNew-list">
-      <li
-        v-for="(item, i) in info.slice(0, 3)"
-        :key="i"
-        class="WhatsNew-list-item"
-      >
+      {{ $t('福井県内のお知らせ一覧') }}
+    </page-header>
+    <ul class="NewsList-list">
+      <li v-for="(item, i) in info" :key="i" class="NewsList-list-item">
         <a
-          class="WhatsNew-list-item-anchor"
+          class="NewsList-list-item-anchor"
           :href="item.link"
           target="_blank"
           rel="noopener"
         >
           <time
-            class="WhatsNew-list-item-anchor-time px-2"
-            :datetime="item.published_at"
+            class="NewsList-list-item-anchor-time px-2"
+            :datetime="formattedDate(item.published_at)"
           >
             {{ item.published_at }}
           </time>
-          <span class="WhatsNew-list-item-anchor-link">
+          <p class="NewsList-list-item-anchor-link">
             {{ item.title }}
             <v-icon
               v-if="!isInternalLink(item.link)"
-              class="WhatsNew-item-ExternalLinkIcon"
+              class="NewsList-item-ExternalLinkIcon"
               size="12"
             >
               mdi-open-in-new
             </v-icon>
-          </span>
+          </p>
         </a>
       </li>
     </ul>
@@ -43,15 +38,27 @@
 
 <script lang="ts">
 import axios from 'axios'
-import Vue from 'vue'
 import moment from 'moment'
-import { convertDateToISO8601Format } from '@/utils/formatDate'
-import fukuishimbun from '@/data/fukuishimbun.json'
+import Vue from 'vue'
+import { MetaInfo } from 'vue-meta'
+import PageHeader from '@/components/PageHeader.vue'
+import StaticCard from '@/components/StaticCard.vue'
+import Fukuishimbun from '@/data/fukuishimbun.json'
+import { convertDateToISO8601Format } from '@/utils/formatDate.ts'
 
 export default Vue.extend({
+  components: {
+    PageHeader,
+    StaticCard
+  },
+  head(): MetaInfo {
+    return {
+      title: this.$t('福井新聞社の速報（RSS）') as string
+    }
+  }, 
   data() {
     return {
-      info: fukuishimbun.info
+      info: Fukuishimbun.info
     }
   },
   methods: {
@@ -64,8 +71,8 @@ export default Vue.extend({
   },
   async created() {
     try {
-      const res = await axios.get('/covid19rss/api/v1/rss/fukuishimbun', {timeout: 5000})
-      this.info = res.data.info.map((e: any) => {
+        const res = await axios.get('/covid19rss/api/v1/rss/fukuishimbun', {timeout: 5000})
+        this.info = res.data.info.map((e: any) => {
         return {title: e.title, link: e.link, published_at: moment.unix(e.published_at).format('YYYY/MM/DD HH:mm') }
       })
     } catch(error) {}
@@ -74,14 +81,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.WhatsNew {
+.NewsList {
   @include card-container();
 
   padding: 10px;
   margin-bottom: 20px;
 }
 
-.WhatsNew-heading {
+.NewsList-heading {
   display: flex;
   align-items: center;
 
@@ -94,13 +101,9 @@ export default Vue.extend({
   &-icon {
     margin: 10px;
   }
-
-  &-link {
-    font-size: 12px;
-  }
 }
 
-.WhatsNew .WhatsNew-list {
+.NewsList .NewsList-list {
   padding-left: 0;
   list-style-type: none;
 
@@ -109,7 +112,7 @@ export default Vue.extend({
       display: inline-block;
       text-decoration: none;
       margin: 5px;
-      font-size: 14px;
+      font-size: 16px;
 
       @include lessThan($medium) {
         display: flex;
@@ -128,7 +131,8 @@ export default Vue.extend({
 
       &-link {
         flex: 0 1 auto;
-
+        display: inline; 
+        
         @include text-link();
 
         @include lessThan($medium) {
