@@ -197,7 +197,7 @@ export default Vue.extend({
     },
     graphEmbedValue(): string {
       const graphEmbedValue =
-        '<iframe width="560" height="315" src="' +
+        '<iframe style="width: 100%; height="600px;" src="' +
         this.permalink(true, true) +
         '" frameborder="0"></iframe>'
       return graphEmbedValue
