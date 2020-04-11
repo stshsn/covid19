@@ -136,6 +136,11 @@ export default Vue.extend({
         },
         {
           icon: 'mdi-information',
+          title: this.$t('福井新聞社の速報（RSS）'),
+          link: this.localePath('/rss-news')
+        },
+        {
+          icon: 'mdi-information',
           title: this.$t('福井県内のお知らせ一覧'),
           link: this.localePath('/news')
         },

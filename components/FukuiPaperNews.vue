@@ -9,7 +9,7 @@
     </h3>
     <ul class="WhatsNew-list">
       <li
-        v-for="(item, i) in info.slice(0, 3)"
+        v-for="(item, i) in $store.state.info.slice(0, 3)"
         :key="i"
         class="WhatsNew-list-item"
       >
@@ -49,11 +49,6 @@ import { convertDateToISO8601Format } from '@/utils/formatDate'
 import fukuishimbun from '@/data/fukuishimbun.json'
 
 export default Vue.extend({
-  data() {
-    return {
-      info: fukuishimbun.info
-    }
-  },
   methods: {
     isInternalLink(path: string): boolean {
       return !/^https?:\/\//.test(path)
@@ -62,13 +57,22 @@ export default Vue.extend({
       return convertDateToISO8601Format(dateString)
     }
   },
+  data () {
+    return {
+      info: []
+    }
+  },
   async created() {
     try {
-      const res = await axios.get('/covid19rss/api/v1/rss/fukuishimbun', {timeout: 5000})
-      this.info = res.data.info.map((e: any) => {
+      const res = await axios.get('/bff/api/v1/rss/fukuishimbun', {timeout: 5000})
+      const info = res.data.info.map((e: any) => {
         return {title: e.title, link: e.link, published_at: moment.unix(e.published_at).format('YYYY/MM/DD HH:mm') }
       })
-    } catch(error) {}
+      this.$store.commit('setInfo', info)
+    } catch(error) {
+      //console.error(error)
+      this.$store.commit('setInfo', fukuishimbun.info)
+    }
   }
 })
 </script>

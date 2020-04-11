@@ -4,10 +4,10 @@
       <v-icon size="24" class="NewsList-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('福井県内のお知らせ一覧') }}
+      {{ $t('福井新聞社の速報（RSS）') }}
     </page-header>
     <ul class="NewsList-list">
-      <li v-for="(item, i) in info" :key="i" class="NewsList-list-item">
+      <li v-for="(item, i) in $store.state.info" :key="i" class="NewsList-list-item">
         <a
           class="NewsList-list-item-anchor"
           :href="item.link"
@@ -56,11 +56,6 @@ export default Vue.extend({
       title: this.$t('福井新聞社の速報（RSS）') as string
     }
   }, 
-  data() {
-    return {
-      info: Fukuishimbun.info
-    }
-  },
   methods: {
     isInternalLink(path: string): boolean {
       return !/^https?:\/\//.test(path)
@@ -71,11 +66,15 @@ export default Vue.extend({
   },
   async created() {
     try {
-        const res = await axios.get('/covid19rss/api/v1/rss/fukuishimbun', {timeout: 5000})
-        this.info = res.data.info.map((e: any) => {
-        return {title: e.title, link: e.link, published_at: moment.unix(e.published_at).format('YYYY/MM/DD HH:mm') }
+      const res = await axios.get('/bff/api/v1/rss/fukuishimbun', {timeout: 5000})
+      const info = res.data.info.map((e: any) => {
+      return {title: e.title, link: e.link, published_at: moment.unix(e.published_at).format('YYYY/MM/DD HH:mm') }
       })
-    } catch(error) {}
+      this.$store.commit('setInfo', info)
+    } catch(error) {
+      //console.log(error)
+      this.$store.commit('setInfo', Fukuishimbun.info)
+    }
   }
 })
 </script>

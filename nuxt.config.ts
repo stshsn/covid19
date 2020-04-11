@@ -121,7 +121,8 @@ const config: Configuration = {
     ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
     '@nuxtjs/sitemap',
     '@nuxtjs/proxy',
-    ['@nuxtjs/moment', ['ja']]
+    ['@nuxtjs/moment', ['ja']],
+    '@nuxtjs/axios'
   ],
   /*
    ** vuetify module configuration
@@ -221,16 +222,10 @@ const config: Configuration = {
         '^/pref': '/'
       }
     },
-    '/fukuishimbun': {
-      target: 'https://www.fukuishimbun.co.jp',
-      pathRewrite: {
-        '^/fukuishimbun': '/'
-      }
-    },
-    '/covid19rss': {
+    '/bff': {
       target: 'https://covid19-273411.appspot.com',
       pathRewrite: {
-        '^/covid19rss': '/'
+        '^/bff': '/'
       }
     }
   }
