@@ -333,7 +333,7 @@ const dateFormat = {
   }
 }
 
-//main()
+main()
 
 const main2 = () => {
 
