@@ -1,6 +1,16 @@
 {
-    "timestamp": 1586729089,
+    "timestamp": 1586732704,
     "info": [
+        {
+            "title": "新型コロナ、うつさない行動の要点",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067127",
+            "published_at": "2020/04/13 07:20"
+        },
+        {
+            "title": "コロナ乗り越えたら…宿泊業ひたむき",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067125",
+            "published_at": "2020/04/13 07:10"
+        },
         {
             "title": "石川県で新型コロナ新たに9人感染、県内計113人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067046",
@@ -30,21 +40,6 @@
             "title": "感染看護師、感染症病棟と一般病棟に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1066930",
             "published_at": "2020/04/12 11:45"
-        },
-        {
-            "title": "福井県立病院看護師が感染、会見配信",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1066911",
-            "published_at": "2020/04/12 10:00"
-        },
-        {
-            "title": "福井県立病院看護師が新型コロナ感染",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1066912",
-            "published_at": "2020/04/12 09:45"
-        },
-        {
-            "title": "緊急事態宣言の発令となったコロナ禍…",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1066887",
-            "published_at": "2020/04/12 07:20"
         }
     ]
 }
