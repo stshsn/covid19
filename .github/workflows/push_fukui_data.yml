@@ -2,12 +2,12 @@ name: 福井県のデータをGitHubへPush
 
 on:
   repository_dispatch:
-  # スケジュール実行の例。 以下は昼の12:30JSTに実行する例
-  # schedule:
-  #   - cron: 30 12 * * *
+  schedule:
+    - cron: '0 * * * *'
+    # - cron: '* * * * *'
 
 jobs:
-  build:
+  fetch_data:
     runs-on: ubuntu-18.04
     steps:
       - name: 共通のデータを出力
@@ -19,13 +19,9 @@ jobs:
           script: |
             console.log(context)
 
-            const defaultBaseBranch = context.payload.repository.default_branch.replace('refs/heads/', '')
-
-            const owner = context.payload.repository.owner.login
-            const repo = context.payload.repository.name
-
             const clientPayloadHasBaseBranch = context.payload.client_payload != null && typeof context.payload.client_payload.base_branch === 'string' && context.payload.client_payload.base_branch.length > 1
             const inputHasBaseBranch = core.getInput('secondary-base-branch') !== ''
+            const isScheduled = context.eventName === 'schedule'
 
             let baseBranch = ''
             let altBaseBranches = []
@@ -38,8 +34,20 @@ jobs:
             } else if (inputHasBaseBranch) {
               baseBranch = core.getInput('secondary-base-branch')
               altBaseBranches = core.getInput('secondary-alt-base-branches').split(' ').filter(branch => branch !== '')
+            } else if (isScheduled) {
+              baseBranch = 'nomu_production'
+              altBaseBranches = ['nomu_development']
             } else {
-              baseBranch = defaultBaseBranch
+              baseBranch = context.payload.repository.default_branch.replace('refs/heads/', '')
+            }
+
+            const githubRepository = '${{ github.repository }}'
+
+            const owner = githubRepository.split('/')[0]
+            const repo = githubRepository.split('/')[1]
+
+            if (!owner || !repo) {
+              throw new Error('${{ github.repository}} is invalid')
             }
 
             const headBranch = `update_data/updatejson_for/${baseBranch}`
@@ -48,6 +56,8 @@ jobs:
 
             core.setOutput('head-branch', headBranch)
             core.setOutput('base-branch', baseBranch)
+            core.setOutput('owner', owner)
+            core.setOutput('repo', repo)
             core.setOutput('alt-base-branches', JSON.stringify(altBaseBranches))
             core.setOutput('current-date', (new Date).toString())
 
@@ -89,8 +99,8 @@ jobs:
         id: closed-pulls
         with:
           script: |
-            const owner = context.payload.repository.owner.login
-            const repo = context.payload.repository.name
+            const owner = '${{ steps.metadatas.outputs.owner }}'
+            const repo = '${{ steps.metadatas.outputs.repo }}'
             const head = '${{ steps.metadatas.outputs.head-branch }}'
 
             // 重複しているかもしれないPRを取得
@@ -126,20 +136,27 @@ jobs:
             const closedPulls = JSON.parse(core.getInput('closed-pulls'), { required: true })
             const altBaseBranches = JSON.parse(core.getInput('alt-base-branches'), { required: true })
 
-            const owner = context.payload.repository.owner.login
-            const repo = context.payload.repository.name
-            const title = '[Auto]データ更新 ${{ steps.metadatas.outputs.current-date }}'
+            const owner = '${{ steps.metadatas.outputs.owner }}'
+            const repo = '${{ steps.metadatas.outputs.repo }}'
+            const genTitleFor = branch => `[Auto for ${branch}]データ更新 ${{ steps.metadatas.outputs.current-date }}`
             const head = '${{ steps.metadatas.outputs.head-branch }}'
             const baseBranches = ['${{ steps.metadatas.outputs.base-branch }}', ...altBaseBranches]
 
-            for await (base of baseBranches) {
+            baseBranches.forEach(async base => {
               const newPrData = (await github.pulls.create({
                 owner,
                 repo,
-                title,
+                title: genTitleFor(base),
                 head,
                 base,
               })).data
+
+              await github.issues.addLabels({
+                owner,
+                repo,
+                issue_number: newPrData.number,
+                labels: ['auto_merge'],
+              })
 
               if (closedPulls[base] != null) {
                 await github.issues.createComment({
@@ -149,4 +166,4 @@ jobs:
                   body: `Superseded by #${newPrData.number}.`,
                 })
               }
-            }
+            })
