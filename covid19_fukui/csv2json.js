@@ -191,8 +191,8 @@ function inspectionPersons(json, jsonObject) {
     const date = new Date(`${row['実施_年月日']}T00:00:00+09:00`)
     const testCount = parseInt(row['検査実施_件数'])
     const dataItem = {
-      '日付': date.toISOString(),
-      '小計': testCount
+      日付: date.toISOString(),
+      小計: testCount
     }
     jsonObject.data.push(dataItem)
   })
@@ -201,15 +201,10 @@ function inspectionPersons(json, jsonObject) {
 function inspectionSummary(json, jsonObject) {
   const patient = Enumerable.from(json)
   const hospitalized = x =>
-    x.患者_状態 !== '死亡' && parseInt(x.患者_退院済フラグ) === 0
+    x.患者_状態 !== '死亡' && parseInt(x.患者_退院済フラグ) !== 1
   const mildOrModerate = x =>
-    (x.患者_状態 === '軽症' ||
-      x.患者_状態 === '中等症' ||
-      x.患者_状態 === '') &&
-    parseInt(x.患者_退院済フラグ) === 0
-  const severeOrSerious = x =>
-    (x.患者_状態 === '重症' || x.患者_状態 === '重篤') &&
-    parseInt(x.患者_退院済フラグ) === 0
+    x.患者_状態 === '軽症' || x.患者_状態 === '中等症' || x.患者_状態 === ''
+  const severeOrSerious = x => x.患者_状態 === '重症' || x.患者_状態 === '重篤'
   const dead = x => x.患者_状態 === '死亡'
   const discharge = x =>
     parseInt(x.患者_退院済フラグ) === 1 && x.患者_状態 !== '死亡'
@@ -224,11 +219,17 @@ function inspectionSummary(json, jsonObject) {
           children: [
             {
               attr: '軽症・中等症',
-              value: patient.where(mildOrModerate).count()
+              value: patient
+                .where(hospitalized)
+                .where(mildOrModerate)
+                .count()
             },
             {
               attr: '重症',
-              value: patient.where(severeOrSerious).count()
+              value: patient
+                .where(hospitalized)
+                .where(severeOrSerious)
+                .count()
             }
           ]
         },
@@ -339,14 +340,13 @@ const dateFormat = {
 main()
 
 const main2 = () => {
-
-  const isCovidArticle = async (article) => {
+  const isCovidArticle = async article => {
     try {
       const res = await axios.get(article.link)
       const $ = cheerio.load(res.data)
       const context = $('div.article-body > p').text()
       return context.includes('コロナ') || context.includes('感染')
-    } catch(e) {
+    } catch (e) {
       console.error(e)
     }
     return false
@@ -382,8 +382,8 @@ const main2 = () => {
   }
 
   async function asyncFilter(array, asyncCallback) {
-    const bits = await Promise.all(array.map(asyncCallback));
-    return array.filter((_, i) => bits[i]);
+    const bits = await Promise.all(array.map(asyncCallback))
+    return array.filter((_, i) => bits[i])
   }
 
   const storeFukuiShimbun = async () => {
