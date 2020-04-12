@@ -149,10 +149,7 @@ export default Vue.extend({
                 "isPartOf":{
                   "@id":"https://covid19-fukui.com/"
                 },
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://covid19-fukui.com/"
-                },
+                "mainEntityOfPage": "https://covid19-fukui.com/",
                 "headline": "福井県内の最新感染動向 | 福井県公認 新型コロナウイルス感染症対策サイト",
                 "description": "当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、福井高専卒のエンジニアが開設したものです",
                 "image": "https://covid19-fukui.com/new_ogp.png",  
@@ -172,6 +169,60 @@ export default Vue.extend({
                 },
                 "datePublished": "2020-03-23",
                 "dateModified": "2020-04-12"
+              },
+              {
+                "@type": "BreadcrumbList", 
+                "itemListElement": [{
+                  "@type": "ListItem", 
+                  "position": 1, 
+                  "name": "検査陽性者の状況",
+                  "item": "https://covid19-fukui.com/cards/details-of-confirmed-cases"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 2, 
+                  "name": "感染症病床使用率",
+                  "item": "https://covid19-fukui.com/cards/hospital-beds-number-card"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 3, 
+                  "name": "陽性患者数",
+                  "item": "https://covid19-fukui.com/cards/number-of-confirmed-cases"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 4, 
+                  "name": "陽性患者の属性一覧",
+                  "item": "https://covid19-fukui.com/cards/attributes-of-confirmed-cases"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 5, 
+                  "name": "検査実施人数",
+                  "item": "https://covid19-fukui.com/cards/number-of-inspection-persons"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 6, 
+                  "name": "当サイトについて",
+                  "item": "https://covid19-fukui.com/about"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 7, 
+                  "name": "新型コロナウイルス感染症が心配なときに",
+                  "item": "https://covid19-fukui.com/flow"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 8, 
+                  "name": "国内のニュース",
+                  "item": "https://covid19-fukui.com/japan-news"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 9, 
+                  "name": "福井県内のニュース",
+                  "item": "https://covid19-fukui.com/news"  
+                },{
+                  "@type": "ListItem", 
+                  "position": 10, 
+                  "name": "福井新聞の速報RSS",
+                  "item": "https://covid19-fukui.com/rss-news"  
+                }]
               }
             ]
           }`,
