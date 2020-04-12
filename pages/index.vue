@@ -138,7 +138,48 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('福井県内の最新感染動向') as string
+      title: this.$t('福井県内の最新感染動向') as string,
+      __dangerouslyDisableSanitizers: ['script'],
+      script: [
+        {
+          innerHTML: `{
+            "@context": "https://schema.org",
+            "@graph":[
+              {
+                "@type": "Article",
+                "@id":"https://covid19-fukui.com/",
+                "isPartOf":{
+                  "@id":"https://covid19-fukui.com/"
+                },
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://covid19-fukui.com/"
+                },
+                "headline": "福井県内の最新感染動向 | 福井県公認 新型コロナウイルス感染症対策サイト",
+                "description": "当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、福井高専卒のエンジニアが開設したものです",
+                "image": "https://covid19-fukui.com/new_ogp.png",  
+                "author": {
+                  "@type": "Person",
+                  "name": "野村弘樹（福井高専卒）"
+                },  
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "福井県版 新型コロナウィルス感染症対策サイト 運営管理人",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://covid19-fukui.com/favicon.png",
+                    "width": 48,
+                    "height": 48
+                  }
+                },
+                "datePublished": "2020-03-23",
+                "dateModified": "2020-04-12"
+              }
+            ]
+          }`,
+          type: 'application/ld+json'
+        }
+      ]
     }
   }
 })
