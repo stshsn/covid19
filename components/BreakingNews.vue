@@ -10,13 +10,34 @@
       >
     </h2>
     <ul class="BreakingNews-list">
-      <h3 class="breaking-content" />
-      <li v-for="(item, i) in items" :key="i" class="BreakingNews-list-item">
-        <time
-          class="BreakingNews-list-item-anchor-time px-2"
-          v-html="item.date"
-        />
-        <p class="BreakingNews-list-item-anchor-link" v-html="item.text" />
+      <li
+        v-for="(item, i) in items.slice(0, 3)"
+        :key="i"
+        class="BreakingNews-list-item"
+      >
+        <a
+          ref="noopener"
+          class="BreakingNews-list-item-anchor"
+          :href="item.url"
+          target="_blank"
+        >
+          <time
+            class="BreakingNews-list-item-anchor-time px-2"
+            :datetime="formattedDate(item.date)"
+          >
+            {{ item.date }}
+          </time>
+          <span class="BreakingNews-list-item-anchor-link">
+            {{ item.text }}
+            <v-icon
+              v-if="!isInternalLink(item.url)"
+              class="BreakingNews-item-ExternalLinkIcon"
+              size="12"
+            >
+              mdi-open-in-new
+            </v-icon>
+          </span>
+        </a>
       </li>
     </ul>
   </div>
