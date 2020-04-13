@@ -12,7 +12,7 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
-    <breaking-news class="mb-4" :items="BreakingItems" />
+    <breaking-news class="mb-4" :items="newsItems" />
     <fukui-paper-news class="mb-4" />
     <!-- <fukui-news class="mb-4" />
     <whats-new class="mb-4" :items="newsItems" /> -->
