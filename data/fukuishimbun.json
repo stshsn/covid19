@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586765117,
+    "timestamp": 1586768708,
     "info": [
+        {
+            "title": "福井県が交通事故死者ワースト脱却",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067224",
+            "published_at": "2020/04/13 17:10"
+        },
         {
             "title": "坂井、福井、鯖江市の計４人感染",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067286",
@@ -17,7 +22,7 @@
             "published_at": "2020/04/13 11:45"
         },
         {
-            "title": "感染看護師の接触者検査結果で会見",
+            "title": "福井県立病院、接触者検査結果で会見",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067215",
             "published_at": "2020/04/13 10:17"
         },
@@ -30,11 +35,6 @@
             "title": "新型コロナ、うつさない行動の要点",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067127",
             "published_at": "2020/04/13 07:20"
-        },
-        {
-            "title": "コロナ乗り越えたら…宿泊業ひたむき",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1067125",
-            "published_at": "2020/04/13 07:10"
         }
     ]
 }
