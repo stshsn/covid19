@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586736610,
+    "timestamp": 1586739910,
     "info": [
+        {
+            "title": "福井県で新型コロナ新たに４人感染",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067204",
+            "published_at": "2020/04/13 09:35"
+        },
         {
             "title": "新型コロナ、うつさない行動の要点",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067127",
@@ -35,11 +40,6 @@
             "title": "感染88例目は福井市の会社役員男性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1066948",
             "published_at": "2020/04/12 13:30"
-        },
-        {
-            "title": "感染看護師、感染症病棟と一般病棟に",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1066930",
-            "published_at": "2020/04/12 11:45"
         }
     ]
 }
