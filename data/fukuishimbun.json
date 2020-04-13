@@ -1,6 +1,16 @@
 {
-    "timestamp": 1586747109,
+    "timestamp": 1586750717,
     "info": [
+        {
+            "title": "坂井、福井、鯖江市の計４人感染",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067286",
+            "published_at": "2020/04/13 12:30"
+        },
+        {
+            "title": "福井県立病院、面会を原則すべて禁止",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067253",
+            "published_at": "2020/04/13 12:05"
+        },
         {
             "title": "感染看護師と接触、81人は陰性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067240",
@@ -30,16 +40,6 @@
             "title": "石川県で新型コロナ新たに9人感染、県内計113人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067046",
             "published_at": "2020/04/12 18:50"
-        },
-        {
-            "title": "握手も自粛、コロナ禍でどう選挙活動",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1066961",
-            "published_at": "2020/04/12 17:10"
-        },
-        {
-            "title": "幼児健診「３密」避ける対策に苦悩",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1066965",
-            "published_at": "2020/04/12 17:00"
         }
     ]
 }
