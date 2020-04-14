@@ -1,6 +1,16 @@
 {
-    "timestamp": 1586844328,
+    "timestamp": 1586847909,
     "info": [
+        {
+            "title": "【速報】福井県が「緊急事態宣言」",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1068088",
+            "published_at": "2020/04/14 15:40"
+        },
+        {
+            "title": "園児登園自粛、保護者も保育士も悩み",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1068041",
+            "published_at": "2020/04/14 15:10"
+        },
         {
             "title": "福井県コロナ感染症対策会議を配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068064",
@@ -25,11 +35,6 @@
             "title": "新型コロナ、福井市の70代男性死亡",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067903",
             "published_at": "2020/04/14 10:00"
-        },
-        {
-            "title": "緊急事態宣言１週間",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1067841",
-            "published_at": "2020/04/14 07:30"
         }
     ]
 }
