@@ -36,9 +36,9 @@ const openDataSource = [
       'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_call_center.csv'
   },
   {
-    name: 'confirm_negative',
+    name: 'discharge',
     url:
-      'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_confirm_negative.csv'
+      'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_discharge.csv'
   },
   {
     name: 'patients',
