@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586829903,
+    "timestamp": 1586833499,
     "info": [
+        {
+            "title": "福井県立病院、15人の陰性確認",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1067956",
+            "published_at": "2020/04/14 11:25"
+        },
         {
             "title": "福井市の感染男性死亡、会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067935",
@@ -30,11 +35,6 @@
             "title": "新型コロナ福井県の感染者計92人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1067598",
             "published_at": "2020/04/14 07:10"
-        },
-        {
-            "title": "福井県が交通事故死者ワースト脱却",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1067224",
-            "published_at": "2020/04/13 17:10"
         }
     ]
 }
