@@ -155,9 +155,26 @@ async function getCSV(URL) {
 
 function writeFile(json, fileName) {
   const filePath = path.join(dir, fileName)
-  fs.writeFile(filePath, JSON.stringify(json, null, '    '), err => {
-    if (err) console.error(err)
+  fs.readFile(filePath, 'UTF-8', (err, data) => {
+    if (err) throw err
+    const oldJSON = JSON.parse(data)
+    if (isUpdateJSON(oldJSON, json)) {
+      fs.writeFile(filePath, JSON.stringify(json, null, '    '), err => {
+        if (err) throw err
+      })
+    }
   })
+}
+
+function isUpdateJSON(oldJSON, newJSON) {
+  // newJSONはシャローコピーなのでディープコピーを作成
+  const newJSONClone = JSON.parse(JSON.stringify(newJSON))
+  // 各jsonからdateを除去
+  delete oldJSON.date
+  delete newJSONClone.date
+  const oldJSONStr = JSON.stringify(oldJSON)
+  const newJSONCloneStr = JSON.stringify(newJSONClone)
+  return oldJSONStr !== newJSONCloneStr
 }
 
 function contacts(json, jsonObject) {
@@ -188,10 +205,11 @@ function hospitalBeds(json, jsonObject) {
 function inspectionPersons(json, jsonObject) {
   jsonObject.data = []
   Enumerable.from(json).forEach(row => {
-    const date = new Date(`${row['実施_年月日']}T00:00:00+09:00`)
+    const date = new Date(`${row['実施_年月日']}`)
+    const formattedDate = dateFormat.format(date, 'yyyy-MM-dd')
     const testCount = parseInt(row['検査実施_件数'])
     const dataItem = {
-      日付: date.toISOString(),
+      日付: `${formattedDate}T00:00:00.000+09:00`,
       小計: testCount
     }
     jsonObject.data.push(dataItem)
