@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586952392,
+    "timestamp": 1586955908,
     "info": [
+        {
+            "title": "县民行动指南Ver２",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1069055",
+            "published_at": "2020/04/15 21:01"
+        },
         {
             "title": "外出自粛でも楽しめる居酒屋気分",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068812",
@@ -30,16 +35,6 @@
             "title": "福井県で１人死亡、８人新たに感染",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068735",
             "published_at": "2020/04/15 12:40"
-        },
-        {
-            "title": "休校中の子に「勉強しろ」という前に",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1068732",
-            "published_at": "2020/04/15 12:09"
-        },
-        {
-            "title": "勝山市が子ども１人に６万円現金給付",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1068644",
-            "published_at": "2020/04/15 11:00"
         }
     ]
 }
