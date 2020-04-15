@@ -144,6 +144,12 @@ const main = async () => {
   writeFile(patientsSummaryJson, files.patientsSummary)
 }
 
+/**
+ * オープンデータのCSVを取得します
+ * `ISSHIFTJIS`が`true`ならばShift-JISをUTF-8に変換します
+ * @param {String} URL 取得先URL
+ * @returns 取得したデータ
+ */
 async function getCSV(URL) {
   if (ISSHIFTJIS) {
     const data = (await axios.get(URL, { responseType: 'arraybuffer' })).data
@@ -153,6 +159,12 @@ async function getCSV(URL) {
   return data
 }
 
+/**
+ * JSONオブジェクトを書き出します
+ * `dir`ディレクトリ以下に引数のファイル名で出力します
+ * @param {Object} json 書き出すJSONオブジェクト
+ * @param {String} fileName 書き出すファイル名
+ */
 function writeFile(json, fileName) {
   const filePath = path.join(dir, fileName)
   fs.readFile(filePath, 'UTF-8', (err, data) => {
@@ -166,6 +178,13 @@ function writeFile(json, fileName) {
   })
 }
 
+/**
+ * 2つのJSONオブジェクトに差があるか調べます
+ * `date`要素を除いた上で実行します
+ * @param {Object} oldJSON 変更元のJSONオブジェクト
+ * @param {Object} newJSON 変更先のJSONオブジェクト
+ * @returns 差があるか
+ */
 function isUpdateJSON(oldJSON, newJSON) {
   // newJSONはシャローコピーなのでディープコピーを作成
   const newJSONClone = JSON.parse(JSON.stringify(newJSON))
@@ -177,6 +196,11 @@ function isUpdateJSON(oldJSON, newJSON) {
   return oldJSONStr !== newJSONCloneStr
 }
 
+/**
+ * コールセンターの相談件数をJSONにします
+ * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} jsonObject 書き出すJSONオブジェクト
+ */
 function contacts(json, jsonObject) {
   jsonObject.data = Enumerable.from(json)
     .select(x => {
@@ -190,6 +214,12 @@ function contacts(json, jsonObject) {
     .toArray()
 }
 
+/**
+ * 病床数をJSONにします
+ * 全体のベッド数は環境変数`HOSPITAL_BEDS`から取得します
+ * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} jsonObject 書き出すJSONオブジェクト
+ */
 function hospitalBeds(json, jsonObject) {
   const patient = Enumerable.from(json)
   const hospitalized = x =>
@@ -202,6 +232,11 @@ function hospitalBeds(json, jsonObject) {
   jsonObject.labels = ['現在患者数', '空き病床数(推定)']
 }
 
+/**
+ * 日毎の検査実施件数をJSONにします
+ * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} jsonObject 書き出すJSONオブジェクト
+ */
 function inspectionPersons(json, jsonObject) {
   jsonObject.data = []
   Enumerable.from(json).forEach(row => {
@@ -216,6 +251,11 @@ function inspectionPersons(json, jsonObject) {
   })
 }
 
+/**
+ * 陽性患者の属性をJSONにします
+ * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} jsonObject 書き出すJSONオブジェクト
+ */
 function inspectionSummary(json, jsonObject) {
   const patient = Enumerable.from(json)
   const hospitalized = x =>
@@ -272,6 +312,11 @@ function inspectionSummary(json, jsonObject) {
   ]
 }
 
+/**
+ * 陽性者の状態をJSONにします
+ * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} jsonObject 書き出すJSONオブジェクト
+ */
 function patients(json, jsonObject) {
   jsonObject.data = []
   Enumerable.from(json).forEach(row => {
@@ -301,6 +346,11 @@ function patients(json, jsonObject) {
   })
 }
 
+/**
+ * 日毎の患者数をJSONにします
+ * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} jsonObject 書き出すJSONオブジェクト
+ */
 function patientsSummary(json, jsonObject) {
   jsonObject.data = []
   // 最初の日
