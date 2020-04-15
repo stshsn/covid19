@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586937937,
+    "timestamp": 1586941541,
     "info": [
+        {
+            "title": "外出自粛でも楽しめる居酒屋気分",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1068812",
+            "published_at": "2020/04/15 17:10"
+        },
         {
             "title": "福井市の夜の繁華街、来訪者6割減",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068787",
@@ -40,11 +45,6 @@
             "title": "感染者いない福井嶺南、検査態勢は？",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068602",
             "published_at": "2020/04/15 10:05"
-        },
-        {
-            "title": "コロナ禍と国際社会",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1068563",
-            "published_at": "2020/04/15 07:30"
         }
     ]
 }
