@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586927109,
+    "timestamp": 1586930733,
     "info": [
+        {
+            "title": "福井県死亡４人目は鯖江市の男性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1068794",
+            "published_at": "2020/04/15 14:40"
+        },
         {
             "title": "福井県で１人死亡８人感染、会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068761",
@@ -35,11 +40,6 @@
             "title": "看護師「覚悟と感染の恐怖」の最前線",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068005",
             "published_at": "2020/04/15 07:20"
-        },
-        {
-            "title": "デマや中傷は「犯罪」、弁護士警鐘",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1068306",
-            "published_at": "2020/04/15 07:10"
         }
     ]
 }
