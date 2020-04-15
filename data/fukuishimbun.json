@@ -1,6 +1,11 @@
 {
-    "timestamp": 1586930733,
+    "timestamp": 1586933119,
     "info": [
+        {
+            "title": "福井県の新型コロナ感染計100例に",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1068819",
+            "published_at": "2020/04/15 15:15"
+        },
         {
             "title": "福井県死亡４人目は鯖江市の男性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068794",
@@ -35,11 +40,6 @@
             "title": "コロナ禍と国際社会",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1068563",
             "published_at": "2020/04/15 07:30"
-        },
-        {
-            "title": "看護師「覚悟と感染の恐怖」の最前線",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1068005",
-            "published_at": "2020/04/15 07:20"
         }
     ]
 }
