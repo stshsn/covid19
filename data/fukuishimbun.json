@@ -1,6 +1,16 @@
 {
-    "timestamp": 1587006302,
+    "timestamp": 1587009916,
     "info": [
+        {
+            "title": "福井県で新たに３人感染、会見配信",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1069512",
+            "published_at": "2020/04/16 12:43"
+        },
+        {
+            "title": "福井県で新たに３人感染、新型コロナ",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1069509",
+            "published_at": "2020/04/16 12:24"
+        },
         {
             "title": "新型コロナ、妊婦は予防が最重要",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1069481",
@@ -25,11 +35,6 @@
             "title": "「不文律」とは、法律で明文化され…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1069351",
             "published_at": "2020/04/16 07:20"
-        },
-        {
-            "title": "县民行动指南Ver２",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1069055",
-            "published_at": "2020/04/15 21:01"
         }
     ]
 }
