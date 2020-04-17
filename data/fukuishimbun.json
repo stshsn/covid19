@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587099916,
+    "timestamp": 1587103525,
     "info": [
+        {
+            "title": "新たな感染者は福井市の50代女性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1070256",
+            "published_at": "2020/04/17 14:18"
+        },
         {
             "title": "福井県で新たに１人感染、会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070224",
@@ -40,11 +45,6 @@
             "title": "ドライブスルーで町がマスク販売",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1069825",
             "published_at": "2020/04/17 07:10"
-        },
-        {
-            "title": "山あい「桃源郷」ハナモモ咲き乱れ",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1069817",
-            "published_at": "2020/04/17 07:00"
         }
     ]
 }
