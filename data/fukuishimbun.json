@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587089113,
+    "timestamp": 1587093243,
     "info": [
+        {
+            "title": "福井県が休業要請検討、支援金も",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1070161",
+            "published_at": "2020/04/17 11:00"
+        },
         {
             "title": "新型コロナに効果は…進む別の病気の治療薬投与試験",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1066989",
@@ -35,11 +40,6 @@
             "title": "映画館を襲う新型コロナの試練",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1069621",
             "published_at": "2020/04/16 17:10"
-        },
-        {
-            "title": "新たな感染者は福井市の男女３人",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1069566",
-            "published_at": "2020/04/16 14:37"
         }
     ]
 }
