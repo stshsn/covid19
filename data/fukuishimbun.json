@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587082230,
+    "timestamp": 1587085518,
     "info": [
+        {
+            "title": "新型コロナに効果は…進む別の病気の治療薬投与試験",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1066989",
+            "published_at": "2020/04/17 10:00"
+        },
         {
             "title": "全国に緊急事態宣言",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070096",
@@ -35,11 +40,6 @@
             "title": "新たな感染者は福井市の男女３人",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1069566",
             "published_at": "2020/04/16 14:37"
-        },
-        {
-            "title": "福井県で新たに３人感染、会見配信",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1069512",
-            "published_at": "2020/04/16 12:43"
         }
     ]
 }
