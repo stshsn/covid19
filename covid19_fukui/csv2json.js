@@ -35,11 +35,11 @@ const openDataSource = [
     url:
       'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_call_center.csv'
   },
-  {
-    name: 'discharge',
-    url:
-      'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_discharge.csv'
-  },
+  // {
+  //   name: 'discharge',
+  //   url:
+  //     'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_discharge.csv'
+  // },
   {
     name: 'patients',
     url:
