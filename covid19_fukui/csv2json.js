@@ -85,6 +85,7 @@ const files = {
 }
 
 const main = async () => {
+  try{
   // オープンデータ取得
   for (const source of openDataSource) {
     const csv = await getCSV(source.url)
@@ -142,6 +143,10 @@ const main = async () => {
   writeFile(inspectionSummaryJson, files.inspectionSummary)
   writeFile(patientsJson, files.patients)
   writeFile(patientsSummaryJson, files.patientsSummary)
+  } catch(e) {
+    console.error(e)
+    process.exit(1)
+  }
 }
 
 /**
