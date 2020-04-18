@@ -419,39 +419,36 @@ const main2 = () => {
       const $ = cheerio.load(res.data)
       const context = $('div.article-body > p').text()
       return context.includes('コロナ') || context.includes('感染')
-    } catch (e) {
-      console.error(e)
+    } catch(e) {
+      throw e
     }
-    return false
   }
 
-  const getFukuiShimbun = () => {
+  const getFukuiShimbun = async () => {
     const moment = require('moment-timezone')
     const xml2js = require('xml2js')
     moment.tz.setDefault('Asia/Tokyo')
 
-    return new Promise(async (resolve, reject) => {
-      try {
-        const res = await axios.get(fukuiShimbunURL)
-        const xml = res.data
-        const json = {
-          timestamp: moment().unix(),
-          info: null
-        }
-        xml2js.parseString(xml, (_, xmlres) => {
-          json.info = xmlres.rss.channel[0].item.map(i => {
-            return {
-              title: i.title[0],
-              link: i.link[0],
-              published_at: moment(i.pubDate[0]).format('YYYY/MM/DD HH:mm')
-            }
-          })
-        })
-        resolve(json)
-      } catch (error) {
-        reject(error)
+    try {
+      const res = await axios.get(fukuiShimbunURL)
+      const xml = res.data
+      const json = {
+        timestamp: moment().unix(),
+        info: null
       }
-    })
+      await xml2js.parseString(xml, (_, xmlres) => {
+        json.info = xmlres.rss.channel[0].item.map(i => {
+          return {
+            title: i.title[0],
+            link: i.link[0],
+            published_at: moment(i.pubDate[0]).format('YYYY/MM/DD HH:mm')
+          }
+        })
+      })
+      return json
+    } catch(e) {
+      throw e
+    }
   }
 
   async function asyncFilter(array, asyncCallback) {
@@ -463,9 +460,11 @@ const main2 = () => {
     try {
       const json = await getFukuiShimbun()
       json.info = await asyncFilter(json.info, el => isCovidArticle(el))
+      // console.log(json)
       writeFile(json, files.fukuiShimbun)
     } catch (error) {
       console.error(error)
+      process.exit(1)
     }
   }
 
