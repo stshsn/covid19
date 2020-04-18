@@ -35,11 +35,11 @@ const openDataSource = [
     url:
       'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_call_center.csv'
   },
-  {
-    name: 'discharge',
-    url:
-      'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_discharge.csv'
-  },
+  // {
+  //   name: 'discharge',
+  //   url:
+  //     'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_discharge.csv'
+  // },
   {
     name: 'patients',
     url:
@@ -85,6 +85,7 @@ const files = {
 }
 
 const main = async () => {
+  try{
   // オープンデータ取得
   for (const source of openDataSource) {
     const csv = await getCSV(source.url)
@@ -142,6 +143,10 @@ const main = async () => {
   writeFile(inspectionSummaryJson, files.inspectionSummary)
   writeFile(patientsJson, files.patients)
   writeFile(patientsSummaryJson, files.patientsSummary)
+  } catch(e) {
+    console.error(e)
+    process.exit(1)
+  }
 }
 
 /**
