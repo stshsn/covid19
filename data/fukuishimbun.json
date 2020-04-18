@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587197122,
+    "timestamp": 1587199084,
     "info": [
+        {
+            "title": "福井の日本酒、飲食店休業で大打撃",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1070930",
+            "published_at": "2020/04/18 17:20"
+        },
         {
             "title": "濃厚接触者、全員がPCR検査対象？",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070912",
@@ -30,11 +35,6 @@
             "title": "西武福井店、食品売り場除き休業",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070800",
             "published_at": "2020/04/18 09:00"
-        },
-        {
-            "title": "越前町「舟盛り」ＰＲ",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1070774",
-            "published_at": "2020/04/18 07:30"
         }
     ]
 }
