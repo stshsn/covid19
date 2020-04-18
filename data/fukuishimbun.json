@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587164695,
+    "timestamp": 1587168660,
     "info": [
+        {
+            "title": "西武福井店、食品売り場除き休業",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1070800",
+            "published_at": "2020/04/18 09:00"
+        },
         {
             "title": "越前町「舟盛り」ＰＲ",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070774",
@@ -20,11 +25,6 @@
             "title": "石川県で新たに男女14人が新型コロナウイルス感染",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070353",
             "published_at": "2020/04/18 06:00"
-        },
-        {
-            "title": "おしゃれなゆるキャラ、今はマスク",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1070285",
-            "published_at": "2020/04/17 17:10"
         }
     ]
 }
