@@ -174,7 +174,7 @@ function writeFile(json, fileName) {
   const filePath = path.join(dir, fileName)
   fs.readFile(filePath, 'UTF-8', (err, data) => {
     if (err) throw err
-    const oldJSON = JSON.parse(data)
+    const oldJSON = JSON.parse(data || "null")
     if (isUpdateJSON(oldJSON, json)) {
       fs.writeFile(filePath, JSON.stringify(json, null, '    '), err => {
         if (err) throw err
@@ -192,7 +192,7 @@ function writeFile(json, fileName) {
  */
 function isUpdateJSON(oldJSON, newJSON) {
   // newJSONはシャローコピーなのでディープコピーを作成
-  const newJSONClone = JSON.parse(JSON.stringify(newJSON))
+  const newJSONClone = JSON.parse(JSON.stringify(newJSON) || "null")
   // 各jsonからdateを除去
   delete oldJSON.date
   delete newJSONClone.date
