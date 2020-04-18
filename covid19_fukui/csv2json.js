@@ -194,8 +194,14 @@ function isUpdateJSON(oldJSON, newJSON) {
   // newJSONはシャローコピーなのでディープコピーを作成
   const newJSONClone = JSON.parse(JSON.stringify(newJSON) || "null")
   // 各jsonからdateを除去
-  delete oldJSON.date
-  delete newJSONClone.date
+  if("date" in oldJSON)
+    delete oldJSON.date
+  if("date" in newJSON)
+    delete newJSONClone.date
+    if("timestamp" in oldJSON)
+    delete oldJSON.timestamp
+    if("timestamp" in newJSON)
+    delete newJSON.timestamp
   const oldJSONStr = JSON.stringify(oldJSON)
   const newJSONCloneStr = JSON.stringify(newJSONClone)
   return oldJSONStr !== newJSONCloneStr
