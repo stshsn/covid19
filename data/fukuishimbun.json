@@ -1,6 +1,15 @@
 {
-    "timestamp": 1587265506,
     "info": [
+        {
+            "title": "コロナ6人感染、福井県の会見中継",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1071257",
+            "published_at": "2020/04/19 12:25"
+        },
+        {
+            "title": "福井県で新型コロナ新たに6人感染",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1071254",
+            "published_at": "2020/04/19 12:13"
+        },
         {
             "title": "新型コロナ初期症状、最多は「発熱」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071227",
@@ -30,16 +39,6 @@
             "title": "福井の日本酒、飲食店休業で大打撃",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1070930",
             "published_at": "2020/04/18 17:20"
-        },
-        {
-            "title": "濃厚接触者、全員がPCR検査対象？",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1070912",
-            "published_at": "2020/04/18 17:00"
-        },
-        {
-            "title": "福井県嶺南で新型コロナ感染初確認",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1070876",
-            "published_at": "2020/04/18 14:06"
         }
     ]
 }
