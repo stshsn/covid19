@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587305107,
+    "timestamp": 1587333884,
     "info": [
+        {
+            "title": "妊婦の新型コロナ対策を医師が解説",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1071389",
+            "published_at": "2020/04/20 07:00"
+        },
         {
             "title": "石川県、4月21日から休業要請",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071394",
@@ -30,11 +35,6 @@
             "title": "コロナ6人感染、福井県の会見中継",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071257",
             "published_at": "2020/04/19 12:25"
-        },
-        {
-            "title": "福井県で新型コロナ新たに6人感染",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071254",
-            "published_at": "2020/04/19 12:13"
         }
     ]
 }
