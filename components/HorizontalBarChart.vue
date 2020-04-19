@@ -2,8 +2,8 @@
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <p class="Graph-Desc">
-          （ 注 ）福井県における陽性患者数を年代別で表示しています<br/>
-          （ 注 ）この値はこれまでの累積値です
+          {{ $t('（ 注 ）福井県における陽性患者数を年代別で表示しています') }}<br/>
+          {{ $t('（ 注 ）この値はこれまでの累積値です') }}
       </p>
     </template>
     <horizontal-bar
@@ -185,7 +185,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         labels: this.labels,
         datasets: [
           {
-            label: "陽性者数",
+            label: this.$t("陽性者数"),
             data: this.valueOfEachAge,
             backgroundColor: color,
             borderWidth: 0
@@ -196,15 +196,17 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayOption() {
         // const unit = this.unit
         const valueOfEachAge = this.valueOfEachAge
+        const _this = this
+
         const options = {
             tooltips: {
                 displayColors: false,
                 callbacks: {
                     label(tooltipItem: any) {
-                        return `陽性者数: ${valueOfEachAge[tooltipItem.index]}`
+                      return `${_this.$t('陽性者数')}: ${valueOfEachAge[tooltipItem.index]}`
                     },
                     title(tooltipItem: any, data: any) {
-                        return `${data.labels[tooltipItem[0].index]} 陽性者数`
+                      return `${data.labels[tooltipItem[0].index]} ${_this.$t('陽性者数')}`
                     }
                 }
             },
