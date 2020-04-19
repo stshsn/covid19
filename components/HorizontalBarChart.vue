@@ -25,6 +25,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { TranslateResult } from 'vue-i18n'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
@@ -48,8 +49,10 @@ type Computed = {
   displayData: {
     labels: string[]
     datasets: {
-      label: string
+      label: TranslateResult
       data: number[]
+      backgroundColor: string,
+      borderWidth: number
     }[]
   }
   displayOption: {
