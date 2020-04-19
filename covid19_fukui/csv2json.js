@@ -201,7 +201,7 @@ function isUpdateJSON(oldJSON, newJSON) {
     if("timestamp" in oldJSON)
     delete oldJSON.timestamp
     if("timestamp" in newJSON)
-    delete newJSON.timestamp
+    delete newJSONClone.timestamp
   const oldJSONStr = JSON.stringify(oldJSON)
   const newJSONCloneStr = JSON.stringify(newJSONClone)
   return oldJSONStr !== newJSONCloneStr
