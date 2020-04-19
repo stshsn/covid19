@@ -127,7 +127,8 @@ const config: Configuration = {
     '@nuxtjs/sitemap',
     '@nuxtjs/proxy',
     ['@nuxtjs/moment', ['ja']],
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['nuxt-leaflet', { /* module options */ }]
   ],
   /*
    ** vuetify module configuration
