@@ -73,7 +73,7 @@ const config: Configuration = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#0054c6' },
   /*
    ** Global CSS
    */
@@ -164,7 +164,7 @@ const config: Configuration = {
   },
   manifest: {
     name: '福井県公認 新型コロナウイルス感染症対策サイト',
-    theme_color: '#00a040',
+    theme_color: '#0054c6',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',
