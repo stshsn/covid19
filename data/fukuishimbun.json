@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587290688,
+    "timestamp": 1587301493,
     "info": [
+        {
+            "title": "石川県、4月21日から休業要請",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1071394",
+            "published_at": "2020/04/19 21:05"
+        },
         {
             "title": "新型コロナ、石川県内の感染確認178人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071341",
@@ -35,11 +40,6 @@
             "title": "新型コロナ初期症状、最多は「発熱」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071227",
             "published_at": "2020/04/19 11:00"
-        },
-        {
-            "title": "看護師や保育士、子の登園自粛で苦悩",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071226",
-            "published_at": "2020/04/19 10:40"
         }
     ]
 }
