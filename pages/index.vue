@@ -158,7 +158,7 @@ export default Vue.extend({
                 "mainEntityOfPage": "https://covid19-fukui.com/",
                 "headline": "福井県内の最新感染動向 | 福井県公認 新型コロナウイルス感染症対策サイト",
                 "description": "当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、福井高専卒のエンジニアが開設したものです",
-                "image": "https://covid19-fukui.com/new_ogp.png",  
+                "image": "https://covid19-fukui.com/official_ogp.png",  
                 "author": {
                   "@type": "Person",
                   "name": "野村弘樹（福井高専卒）"
