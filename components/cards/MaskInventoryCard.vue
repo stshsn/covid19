@@ -108,7 +108,7 @@ export default {
 </script>
 <style scoped>
 #map-wrapper {
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: 500px;
 }
 </style>
