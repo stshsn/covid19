@@ -24,24 +24,16 @@
               @update:center="centerUpdate"
               @update:zoom="zoomUpdate"
             >
-              <l-tile-layer
-                :url="url"
-                :attribution="attribution"
-              ></l-tile-layer>
-              <l-control-zoom position="bottomright"></l-control-zoom>
+              <l-tile-layer :url="url" :attribution="attribution" />
+              <l-control-zoom position="bottomright" />
               <l-control position="topleft">
-                <v-btn
-                  small
-                  @click="moveToPosition"
-                >
-                  <v-icon>mdi-near-me</v-icon>
-                  {{ $t('現在地付近へ移動') }}
+                <v-btn small @click="moveToPosition">
+                  <v-icon>mdi-crosshairs-gps</v-icon>
                 </v-btn>
               </l-control>
               <l-marker
-                v-for="(genky, index) of genkies"
-                v-if="genky.IDg === '2'"
-                :key=index
+                v-for="(genky, index) of genkyInFukui"
+                :key="index"
                 :lat-lng="[genky.緯度, genky.経度]"
               >
                 <l-popup>
@@ -49,7 +41,7 @@
                     {{ genky.店舗名 }}
                   </div>
                 </l-popup>
-              </l-marker>  
+              </l-marker>
             </l-map>
           </client-only>
         </div>
@@ -64,17 +56,22 @@ import GenkyLocations from '@/data/genky_locations.json'
 export default {
   data() {
     return {
-      url: "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
+      url: 'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
       zoom: 9,
       center: [35.833388, 136.185209],
       currentZoom: 9,
       currentCenter: [35.833388, 136.185209],
       mapOptions: {
         zoomControl: false,
-        minZoom: 9,
+        minZoom: 9
       },
-      genkies: GenkyLocations,
-      attribution: '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>'
+      attribution:
+        '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>'
+    }
+  },
+  computed: {
+    genkyInFukui: () => {
+      return GenkyLocations.filter(genky => genky.IDg === '2')
     }
   },
   methods: {
@@ -85,11 +82,8 @@ export default {
       this.currentZoom = zoom
     },
     moveToPosition() {
-      let currentPosition = []
       navigator.geolocation.getCurrentPosition(
         position => {
-          //currentPosition = [position.coords.latitude, position.coords.longitude]
-          console.log(position.coords.latitude, position.coords.longitude)
           this.center = [position.coords.latitude, position.coords.longitude]
           this.zoom = 13
         },
@@ -97,13 +91,21 @@ export default {
           console.log(error)
         }
       )
-    },
-  },
-};
+    }
+  }
+}
 </script>
-<style scoped>
+<style lang="scss" scoped>
 #map-wrapper {
-  width: 600px;
   height: 600px;
+  @include lessThan($large) {
+    height: 480px;
+  }
+  @include lessThan($medium) {
+    height: 320px;
+  }
+  @include lessThan($small) {
+    height: 256px;
+  }
 }
 </style>
