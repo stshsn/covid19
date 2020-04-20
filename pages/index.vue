@@ -17,6 +17,23 @@
     <!-- <fukui-news class="mb-4" />
     <whats-new class="mb-4" :items="newsItems" /> -->
     <whats-new-japan class="mb-4" :items="japanItems" />
+    <div class="BreakingNews">
+      <ul class="BreakingNews-list">
+        <li class="BreakingNews-list-item BreakingNews-list-item-anchor">
+          <h4>
+            <v-icon size="20" class="BreakingNews-heading-icon">
+              mdi-information
+            </v-icon>
+            誤ったDMCA申請につきまして
+          </h4>
+          <span class="BreakingNews-list-item-anchor-link">
+            <a href="https://covid19-fukui.bosai-signal.jp/">類似の新型コロナ対策サイト</a>についてDMCA申請を行っていましたが、誤ったDMCA申請であることが判明しました。<br />
+            現在、申請したDMCA申請に関しましては、取下げ申請を行っております。<br />
+            関係者の方々には、大変なご迷惑をおかけいたしました。お詫び申し上げます。
+          </span>
+        </li>
+      </ul>
+    </div>
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
