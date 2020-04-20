@@ -1,6 +1,16 @@
 {
-    "timestamp": 1587351894,
+    "timestamp": 1587355509,
     "info": [
+        {
+            "title": "コロナ１人感染、福井県の会見配信",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1071674",
+            "published_at": "2020/04/20 12:25"
+        },
+        {
+            "title": "福井県で新型コロナ新たに１人感染",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1071673",
+            "published_at": "2020/04/20 12:20"
+        },
         {
             "title": "聴覚障害者の診察、スマホで手話通訳",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071636",
@@ -30,16 +40,6 @@
             "title": "妊婦の新型コロナ対策を医師が解説",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071389",
             "published_at": "2020/04/20 07:00"
-        },
-        {
-            "title": "石川県、4月21日から休業要請",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071394",
-            "published_at": "2020/04/19 21:05"
-        },
-        {
-            "title": "新型コロナ、石川県内の感染確認178人に",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071341",
-            "published_at": "2020/04/19 18:45"
         }
     ]
 }
