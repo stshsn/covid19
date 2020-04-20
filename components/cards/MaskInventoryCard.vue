@@ -40,7 +40,6 @@
               </l-control>
               <l-marker
                 v-for="(genky, index) of genkies"
-                v-if="genky.IDg === '2'"
                 :key=index
                 :lat-lng="[genky.緯度, genky.経度]"
               >
@@ -73,8 +72,14 @@ export default {
         zoomControl: false,
         minZoom: 9,
       },
-      genkies: GenkyLocations,
       attribution: '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>'
+    }
+  },
+  computed: {
+    genkies: () => {
+      return GenkyLocations.filter(function (genky) {
+        return genky.IDg === '2'
+      })
     }
   },
   methods: {
