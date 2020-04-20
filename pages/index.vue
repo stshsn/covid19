@@ -35,6 +35,7 @@
       <confirmed-cases-attributes-card />
       <information-number-card />
       <hospital-beds-number-card />
+      <mask-inventory-card />
       
     </v-row>
   </div>
@@ -64,6 +65,8 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 // 病床数
 import HospitalBedsNumberCard from '@/components/cards/HospitalBedsNumberCard.vue'
+// マスクの在庫状況
+import MaskInventoryCard from '@/components/cards/MaskInventoryCard.vue'
 // Youtube
 // import YoutubeCard from '@/components/cards/YoutubeCard.vue'
 
@@ -108,6 +111,7 @@ export default Vue.extend({
     // TestedCasesDetailsCard,
     ConfirmedCasesAttributesCard,
     HospitalBedsNumberCard,
+    MaskInventoryCard,
     InformationNumberCard,
     EachSexAgeNumberPositiveCard
     // YoutubeCard,

@@ -156,7 +156,7 @@ const config: Configuration = {
             './node_modules/vue-spinner/src/ScaleLoader.vue'
           ],
           whitelist: ['html', 'body', 'nuxt-progress', 'DataCard'],
-          whitelistPatterns: [/(col|row)/]
+          whitelistPatterns: [/(col|row)/, /leaflet/, /marker/]
         })
       ]
     }
