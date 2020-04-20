@@ -20,15 +20,24 @@
               id="map"
               :center="center"
               :zoom="zoom"
-              min-zoom="9"
+              min-zoom=9
             >
-              <l-tile-layer :url="url"></l-tile-layer>
+              <l-tile-layer
+                :url="url"
+                :attribution="attribution"
+              ></l-tile-layer>
               <l-marker
-                v-for="(location, index) of locations"
-                v-if="location.IDg === '2'"
+                v-for="(genky, index) of genkies"
+                v-if="genky.IDg === '2'"
                 :key=index
-                :lat-lng="[location.緯度, location.経度]"
-              ></l-marker>
+                :lat-lng="[genky.緯度, genky.経度]"
+              >
+                <l-popup>
+                  <div>
+                    {{ genky.店舗名 }}
+                  </div>
+                </l-popup>
+              </l-marker>  
             </l-map>
           </no-ssr>
         </div>
@@ -46,9 +55,10 @@ export default {
       url: "https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
       zoom: 9,
       center: [35.833388, 136.185209],
-      locations: GenkyLocations,
+      genkies: GenkyLocations,
+      attribution: '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html">国土地理院</a>'
     }
-  }
+  },
 };
 </script>
 <style scoped>
