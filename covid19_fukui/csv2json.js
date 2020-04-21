@@ -280,35 +280,29 @@ function inspectionSummary(json, jsonObject) {
   jsonObject.children = [
     {
       attr: '陽性患者数',
-      value: patient.count(),
+      value: 118,
       children: [
         {
           attr: '入院中',
-          value: patient.where(hospitalized).count(),
+          value: 42,
           children: [
             {
               attr: '軽症・中等症',
-              value: patient
-                .where(hospitalized)
-                .where(mildOrModerate)
-                .count()
+              value: 33,
             },
             {
               attr: '重症',
-              value: patient
-                .where(hospitalized)
-                .where(severeOrSerious)
-                .count()
+              value: 9,
             }
           ]
         },
         {
           attr: '死亡',
-          value: patient.where(dead).count()
+          value: 5,
         },
         {
           attr: '退院',
-          value: patient.where(discharge).count()
+          value: 5,
         },
         {
           attr: '自宅療養',
