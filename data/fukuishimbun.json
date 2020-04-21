@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587456335,
+    "timestamp": 1587459892,
     "info": [
+        {
+            "title": "雇用調整助成金申請「ハードル高い」",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1072499",
+            "published_at": "2020/04/21 17:10"
+        },
         {
             "title": "マスク確保、福井県警や消防も苦慮",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1072518",
@@ -25,11 +30,6 @@
             "title": "福井県で新たに５人新型コロナ感染",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1072399",
             "published_at": "2020/04/21 12:28"
-        },
-        {
-            "title": "市施設開放、コロナ危機感に疑問の声",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1072289",
-            "published_at": "2020/04/21 11:30"
         }
     ]
 }
