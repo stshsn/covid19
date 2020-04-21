@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587445486,
+    "timestamp": 1587449112,
     "info": [
+        {
+            "title": "感染５人は福井市、越前市、坂井市",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1072451",
+            "published_at": "2020/04/21 14:16"
+        },
         {
             "title": "福井県が休業要請へ、４月25日から",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1072444",
@@ -29,11 +34,6 @@
         {
             "title": "「どさくさに紛れる」という慣用句…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1072243",
-            "published_at": "2020/04/21 07:20"
-        },
-        {
-            "title": "コロナ担当看護師、心身ともぎりぎり",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071995",
             "published_at": "2020/04/21 07:20"
         }
     ]
