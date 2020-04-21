@@ -38,7 +38,12 @@
               >
                 <l-popup>
                   <div>
-                    {{ genky.店舗名 }}
+                    <h3>{{ getInventory(genky.店舗名).店舗名 }}</h3>
+                    <div>
+                      <span>在庫数</span>
+                      <span>{{ getInventory(genky.店舗名).在庫数 }}</span>
+                    </div>
+                    <span>更新日時 {{ getInventory(genky.店舗名).日時 }}</span>
                   </div>
                 </l-popup>
               </l-marker>
@@ -52,6 +57,7 @@
 
 <script>
 import GenkyLocations from '@/data/genky_locations.json'
+import MaskInventory from '@/data/mask_inventory.json'
 
 export default {
   data() {
@@ -66,13 +72,29 @@ export default {
         minZoom: 9
       },
       attribution:
-        '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>'
+        '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
+      maskInventoryData: MaskInventory.data,
     }
   },
   computed: {
     genkyInFukui: () => {
       return GenkyLocations.filter(genky => genky.IDg === '2')
-    }
+    },
+    getInventory: () => {
+      return (shopName) => {
+        const inventory = MaskInventory.data.filter(d => d.店舗名 === shopName)[0]
+        if (inventory) {
+          inventory.日時 = new Date(inventory.日時).toLocaleString()
+          return inventory
+        } else {
+          return {
+            "店舗名": shopName,
+            "在庫数": "---",
+            "日時": "---"
+          }
+        }
+      }
+    },
   },
   methods: {
     centerUpdate(center) {
