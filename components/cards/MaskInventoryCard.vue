@@ -36,7 +36,7 @@
                 :key="index"
                 :lat-lng="[genky.緯度, genky.経度]"
               >
-                <l-popup>
+                <l-tooltip>
                   <div>
                     <h3>{{ getInventory(genky.店舗名).店舗名 }}</h3>
                     <div>
@@ -45,7 +45,7 @@
                     </div>
                     <span>更新日時 {{ getInventory(genky.店舗名).日時 }}</span>
                   </div>
-                </l-popup>
+                </l-tooltip>
               </l-marker>
             </l-map>
           </client-only>
@@ -113,7 +113,12 @@ export default {
           console.log(error)
         }
       )
-    }
+    },
+    openPopup(event) {
+      this.$nextTick(() => {
+        event.target.openPopup()
+      })
+    },
   }
 }
 </script>
