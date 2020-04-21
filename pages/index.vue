@@ -27,8 +27,8 @@
             誤ったDMCA申請につきまして
           </h4>
           <span class="BreakingNews-list-item-anchor-link">
-            <a href="https://covid19-fukui.bosai-signal.jp/">類似の新型コロナ対策サイト</a>についてDMCA申請を行っていましたが、誤ったDMCA申請であることが判明しました。<br />
-            現在、申請したDMCA申請に関しましては、取下げ申請を行っております。<br />
+            丹南ケーブルテレビ株式会社が運営する<a href="https://covid19-fukui.bosai-signal.jp/">新型コロナ対策サイト</a>についてDMCA申請を行っていましたが<br />
+            誤ったDMCA申請であることが判明しました。現在、申請したDMCA申請に関しましては、取下げ申請を行っております。<br />
             関係者の方々には、大変なご迷惑をおかけいたしました。お詫び申し上げます。
           </span>
         </li>
