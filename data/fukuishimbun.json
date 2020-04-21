@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587441912,
+    "timestamp": 1587445486,
     "info": [
+        {
+            "title": "福井県が休業要請へ、４月25日から",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1072444",
+            "published_at": "2020/04/21 13:57"
+        },
         {
             "title": "コロナ５人感染、福井県の会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1072402",
@@ -30,21 +35,6 @@
             "title": "コロナ担当看護師、心身ともぎりぎり",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071995",
             "published_at": "2020/04/21 07:20"
-        },
-        {
-            "title": "福井市が中学生以下１人に１万円給付",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071984",
-            "published_at": "2020/04/21 07:10"
-        },
-        {
-            "title": "やよい軒福井種池店従業員感染、休業",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071977",
-            "published_at": "2020/04/21 07:00"
-        },
-        {
-            "title": "石川県で新型コロナ新たに3人、県内感染者数は計181人に",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071865",
-            "published_at": "2020/04/20 19:13"
         }
     ]
 }
