@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587431100,
+    "timestamp": 1587438291,
     "info": [
+        {
+            "title": "市施設開放、コロナ危機感に疑問の声",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1072289",
+            "published_at": "2020/04/21 11:30"
+        },
         {
             "title": "高浜町長に野瀬氏４選",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1072244",
@@ -40,11 +45,6 @@
             "title": "自宅で温泉いかが、源泉を旅館が用意",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1071787",
             "published_at": "2020/04/20 17:10"
-        },
-        {
-            "title": "コロナ入院日数平均「15.7日間」",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1071784",
-            "published_at": "2020/04/20 17:00"
         }
     ]
 }
