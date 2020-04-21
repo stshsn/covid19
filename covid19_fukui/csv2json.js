@@ -284,11 +284,11 @@ function inspectionSummary(json, jsonObject) {
       children: [
         {
           attr: '入院中',
-          value: 42,
+          value: 81,
           children: [
             {
               attr: '軽症・中等症',
-              value: 33,
+              value: 72,
             },
             {
               attr: '重症',
@@ -302,7 +302,7 @@ function inspectionSummary(json, jsonObject) {
         },
         {
           attr: '退院',
-          value: 5,
+          value: 32,
         },
         {
           attr: '自宅療養',
