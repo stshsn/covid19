@@ -139,13 +139,8 @@ export default Vue.extend({
     // AgencyCard
   },
   data() {
-    const data = {
+    return {
       method: 'default',
-      InspectionPersons,
-      InspectionsSummary,
-      HospitalBeds,
-      PatientsSummary,
-      Contacts,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('福井県内の最新感染動向')
@@ -154,7 +149,6 @@ export default Vue.extend({
       japanItems: JapanNews.japanItems,
       BreakingItems: BreakingNewsData.items
     }
-    return data
   },
 
   computed: {
