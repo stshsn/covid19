@@ -88,7 +88,7 @@ import MaskInventoryCard from '@/components/cards/MaskInventoryCard.vue'
 
 // 検査実施人数
 import InspectionPersons from '@/data/inspection_persons.json'
-// 陽性患者の属性
+// 検査陽性者の状況
 import InspectionsSummary from '@/data/inspection_summary.json'
 // 感染症病床使用率
 import HospitalBeds from '@/data/hospital_beds.json'
