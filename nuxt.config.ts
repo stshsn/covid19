@@ -127,7 +127,8 @@ const config: Configuration = {
     '@nuxtjs/sitemap',
     '@nuxtjs/proxy',
     ['@nuxtjs/moment', ['ja']],
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['nuxt-leaflet', { /* module options */ }]
   ],
   /*
    ** vuetify module configuration
@@ -155,7 +156,7 @@ const config: Configuration = {
             './node_modules/vue-spinner/src/ScaleLoader.vue'
           ],
           whitelist: ['html', 'body', 'nuxt-progress', 'DataCard'],
-          whitelistPatterns: [/(col|row)/]
+          whitelistPatterns: [/(col|row)/, /leaflet/, /marker/]
         })
       ]
     }
