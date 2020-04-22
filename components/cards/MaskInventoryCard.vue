@@ -2,17 +2,15 @@
   <v-col cols="12" class="DataCard">
     <v-card>
       <!--<v-card-title>{{ $t('マスクの在庫状況') }}</v-card-title>-->
-      <v-card-title>{{ $t('県内のゲンキー店舗') }}</v-card-title>
+      <v-card-title>{{ $t('県内のゲンキー店舗（開発中）') }}</v-card-title>
       <v-card-text>
         <div>
-          <!--
-          <p class="visibleShops">
-            {{ $t('表示中の店舗') }}:
-            <span
-              v-text="locationsVisibleOnMap.length > 0 ? locationsVisibleOnMap : $t('表示できる店舗はありません')"
-            />
+          <p class="Graph-Desc">
+            （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br/>
+            （ 注 ）「在庫あり」「在庫なし」の割合は、別アプリからのデータを利用しています<br />
+            <br />
+            こちらのアプリから情報提供をよろしくおねがいいたします（※ 現在準備中）
           </p>
-          -->
         </div>
         <div id="map-wrapper">
           <client-only>
@@ -40,10 +38,12 @@
                   <div>
                     <h3>{{ getInventory(genky.店舗名).店舗名 }}</h3>
                     <div>
-                      <span>在庫数</span>
-                      <span>{{ getInventory(genky.店舗名).在庫数 }}</span>
+                      <span>【在庫状況】</span><br />
+                      <span>在庫あり：{{ getInventory(genky.店舗名).在庫あり率 }} ％</span><br />
+                      <span>在庫なし：{{ getInventory(genky.店舗名).在庫なし率 }} ％</span>
                     </div>
-                    <span>更新日時 {{ getInventory(genky.店舗名).日時 }}</span>
+                    <span>【更新日時】</span><br />
+                    <span> {{ getInventory(genky.店舗名).日時 }}</span>
                   </div>
                 </l-tooltip>
               </l-marker>
@@ -89,7 +89,8 @@ export default {
         } else {
           return {
             "店舗名": shopName,
-            "在庫数": "---",
+            "在庫あり率": "--",
+            "在庫なし率": "--",
             "日時": "---"
           }
         }
