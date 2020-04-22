@@ -1,6 +1,16 @@
 {
-    "timestamp": 1587528307,
+    "timestamp": 1587535531,
     "info": [
+        {
+            "title": "福井県、妊婦にPCR検査を実施へ",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1073202",
+            "published_at": "2020/04/22 14:45"
+        },
+        {
+            "title": "新たなコロナ感染者は越前市の女性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1073192",
+            "published_at": "2020/04/22 14:35"
+        },
         {
             "title": "コロナ１人感染、福井県の会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073140",
@@ -35,16 +45,6 @@
             "title": "「リンゴの実が木から落ちるのを見…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073001",
             "published_at": "2020/04/22 07:20"
-        },
-        {
-            "title": "小浜市が高校生以下に弁当購入券",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1072691",
-            "published_at": "2020/04/22 07:10"
-        },
-        {
-            "title": "山あいの集落彩る真っ赤なハナモモ",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1072641",
-            "published_at": "2020/04/22 07:00"
         }
     ]
 }
