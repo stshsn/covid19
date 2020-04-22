@@ -129,10 +129,10 @@ export default {
     height: 480px;
   }
   @include lessThan($medium) {
-    height: 320px;
+    height: 400px;
   }
   @include lessThan($small) {
-    height: 256px;
+    height: 400px;
   }
 }
 </style>
