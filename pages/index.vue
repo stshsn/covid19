@@ -6,7 +6,7 @@
       </page-header>
       <div class="UpdatedAt">
         <span>{{ $t('最終更新') }} </span>
-        <time :datetime="updatedAt">{{ InspectionPersons.date }}</time>
+        <time :datetime="lastUpdatedAtISO">{{ lastUpdatedAt }}</time>
       </div>
       <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="Annotation">
         <span>{{ $t('注釈') }} </span>
@@ -94,6 +94,8 @@ import InspectionsSummary from '@/data/inspection_summary.json'
 import HospitalBeds from '@/data/hospital_beds.json'
 // 陽性患者数
 import PatientsSummary from '@/data/patients_summary.json'
+//  陽性患者の属性, 年代別の陽性患者数
+import Patients from '@/data/patients.json'
 
 // お問い合わせ件数
 import Contacts from '@/data/contacts.json'
@@ -156,8 +158,23 @@ export default Vue.extend({
   },
 
   computed: {
-    updatedAt() {
-      return convertDatetimeToISO8601Format(InspectionPersons.date)
+    lastUpdatedAt(): string {
+      const dates = [
+        PatientsSummary.date,
+        InspectionsSummary.date,
+        Patients.date,
+        InspectionPersons.date,
+        Contacts.date,
+        HospitalBeds.date
+      ]
+      // 辞書順でソート
+      dates.sort().reverse()
+
+      return dates[0]
+    },
+    lastUpdatedAtISO() {
+      // this as any -> https://github.com/vuejs/vue/issues/8721
+      return convertDatetimeToISO8601Format((this as any).lastUpdatedAt)
     }
   },
   head(): MetaInfo {
