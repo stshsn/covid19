@@ -49,7 +49,7 @@
             </l-map>
           </client-only>
         </div>
-        <div v-if="this.$route.query.embed != 'true'">
+        <div v-if="this.$route.query.embed != 'true'" class="footer-right">
           <v-btn icon :ripple="false" @click="toggleShareMenu">
             <svg
               width="14"
@@ -207,7 +207,7 @@ export default {
     },
     graphEmbedValue() {
       const graphEmbedValue =
-        '<iframe style="width: 100%; height="600px;" src="' +
+        '<iframe style="width: 100%; height 600px;" src="' +
         this.permalink(true, true) +
         '" frameborder="0"></iframe>'
       return graphEmbedValue
@@ -312,6 +312,10 @@ export default {
   @include lessThan($small) {
     height: 400px;
   }
+}
+
+.footer-right {
+  text-align: end;
 }
 
 .DataView-Share-Buttons {
