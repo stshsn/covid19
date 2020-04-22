@@ -32,17 +32,18 @@
                 :key="index"
                 :lat-lng="[genky.緯度, genky.経度]"
               >
-                <l-tooltip>
+                <l-popup>
                   <div>
                     <h3>{{ genky.店舗名 }}</h3><br />
                     <span>【営業時間】</span><br />
                     <span>{{ genky.営業時間 }}</span>
                   </div>
+                  <br/>
                   <div>
-                    <h3>【経路はこちら】</h3>
-                    <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.軽度+'&dirflg=d'">マップで開く</a></span>
+                    <span>【経路はこちら】</span><br />
+                    <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'">マップで開く</a></span>
                   </div>
-                </l-tooltip>
+                </l-popup>
               </l-marker>
             </l-map>
           </client-only>
