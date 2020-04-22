@@ -5,7 +5,7 @@
       :title-id="'attributes-of-confirmed-cases'"
       :chart-data="patientsTable"
       :chart-option="{}"
-      :date="Patients.date"
+      :date="updatedAt"
       :info="sumInfoOfPatients"
       :url="'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19.html'"
     />
@@ -16,6 +16,7 @@
 import Patients from '@/data/patients.json'
 import formatTable from '@/utils/formatTable'
 import DataTable from '@/components/DataTable.vue'
+import { getCommonStyleDateString } from '@/utils/formatDate'
 
 export default {
   components: {
@@ -62,6 +63,11 @@ export default {
       sumInfoOfPatients
     }
     return data
+  },
+  computed: {
+    updatedAt() {
+      return getCommonStyleDateString(this.Patients.date)
+    }
   }
 }
 </script>
