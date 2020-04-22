@@ -8,8 +8,6 @@
             （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br/>
             （ 注 ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
             （ 注 ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
-            <br />
-            こちらのアプリから情報提供をよろしくおねがいいたします（※ 現在準備中）
           </p>
         </div>
         <div id="map-wrapper">
@@ -36,7 +34,13 @@
               >
                 <l-tooltip>
                   <div>
-                    <h3>{{ getInventory(genky.店舗名).店舗名 }}</h3>
+                    <h3>{{ genky.店舗名 }}</h3><br />
+                    <span>【営業時間】</span><br />
+                    <span>{{ genky.営業時間 }}</span>
+                  </div>
+                  <div>
+                    <h3>【経路はこちら】</h3>
+                    <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.軽度+'&dirflg=d'">マップで開く</a></span>
                   </div>
                 </l-tooltip>
               </l-marker>
@@ -192,9 +196,7 @@ export default {
         } else {
           return {
             "店舗名": shopName,
-            "在庫あり率": "--",
-            "在庫なし率": "--",
-            "日時": "---"
+            "営業時間": ""
           }
         }
       }
