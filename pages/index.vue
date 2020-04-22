@@ -6,7 +6,7 @@
       </page-header>
       <div class="UpdatedAt">
         <span>{{ $t('最終更新') }} </span>
-        <time :datetime="updatedAt">{{ InspectionPersons.date }}</time>
+        <time :datetime="lastUpdatedAtISO">{{ lastUpdatedAt }}</time>
       </div>
       <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="Annotation">
         <span>{{ $t('注釈') }} </span>
@@ -88,12 +88,14 @@ import MaskInventoryCard from '@/components/cards/MaskInventoryCard.vue'
 
 // 検査実施人数
 import InspectionPersons from '@/data/inspection_persons.json'
-// 陽性患者の属性
+// 検査陽性者の状況
 import InspectionsSummary from '@/data/inspection_summary.json'
 // 感染症病床使用率
 import HospitalBeds from '@/data/hospital_beds.json'
 // 陽性患者数
 import PatientsSummary from '@/data/patients_summary.json'
+//  陽性患者の属性, 年代別の陽性患者数
+import Patients from '@/data/patients.json'
 
 // お問い合わせ件数
 import Contacts from '@/data/contacts.json'
@@ -110,7 +112,7 @@ import EachSexAgeNumberPositiveCard from '@/components/cards/EachSexAgeNumberPos
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+import { convertDatetimeToISO8601Format, getCommonStyleDateString } from '@/utils/formatDate'
 
 export default Vue.extend({
   components: {
@@ -137,13 +139,8 @@ export default Vue.extend({
     // AgencyCard
   },
   data() {
-    const data = {
+    return {
       method: 'default',
-      InspectionPersons,
-      InspectionsSummary,
-      HospitalBeds,
-      PatientsSummary,
-      Contacts,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('福井県内の最新感染動向')
@@ -152,12 +149,26 @@ export default Vue.extend({
       japanItems: JapanNews.japanItems,
       BreakingItems: BreakingNewsData.items
     }
-    return data
   },
 
   computed: {
-    updatedAt() {
-      return convertDatetimeToISO8601Format(InspectionPersons.date)
+    lastUpdatedAt(): string {
+      const dates = [
+        PatientsSummary.date,
+        InspectionsSummary.date,
+        Patients.date,
+        InspectionPersons.date,
+        Contacts.date,
+        HospitalBeds.date
+      ]
+      // 辞書順でソート
+      dates.sort().reverse()
+
+      return getCommonStyleDateString(dates[0])
+    },
+    lastUpdatedAtISO() {
+      // this as any -> https://github.com/vuejs/vue/issues/8721
+      return convertDatetimeToISO8601Format((this as any).lastUpdatedAt)
     }
   },
   head(): MetaInfo {
