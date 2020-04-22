@@ -7,10 +7,8 @@
         <div>
           <p class="Graph-Desc">
             （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br/>
-            （ 注 ）実際の在庫状況と異なる場合があります<br />
             （ 注 ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
             （ 注 ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
-            （ 注 ）「在庫あり」「在庫なし」の割合は、別アプリからのデータを利用しています<br />
             <br />
             こちらのアプリから情報提供をよろしくおねがいいたします（※ 現在準備中）
           </p>
@@ -40,13 +38,6 @@
                 <l-tooltip>
                   <div>
                     <h3>{{ getInventory(genky.店舗名).店舗名 }}</h3>
-                    <div>
-                      <span>【在庫状況】</span><br />
-                      <span>在庫あり：{{ getInventory(genky.店舗名).在庫あり率 }} ％</span><br />
-                      <span>在庫なし：{{ getInventory(genky.店舗名).在庫なし率 }} ％</span>
-                    </div>
-                    <span>【更新日時】</span><br />
-                    <span> {{ getInventory(genky.店舗名).日時 }}</span>
                   </div>
                 </l-tooltip>
               </l-marker>
