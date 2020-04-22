@@ -112,7 +112,7 @@ import EachSexAgeNumberPositiveCard from '@/components/cards/EachSexAgeNumberPos
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+import { convertDatetimeToISO8601Format, getCommonStyleDateString } from '@/utils/formatDate'
 
 export default Vue.extend({
   components: {
@@ -164,7 +164,7 @@ export default Vue.extend({
       // 辞書順でソート
       dates.sort().reverse()
 
-      return dates[0]
+      return getCommonStyleDateString(dates[0])
     },
     lastUpdatedAtISO() {
       // this as any -> https://github.com/vuejs/vue/issues/8721
