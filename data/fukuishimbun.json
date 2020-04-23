@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587647167,
+    "timestamp": 1587654348,
     "info": [
+        {
+            "title": "富山県もマスク購入券、全世帯に配布",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074196",
+            "published_at": "2020/04/23 22:28"
+        },
         {
             "title": "新型コロナ感染で自宅待機中の男性が死亡",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074169",
@@ -35,11 +40,6 @@
             "title": "福井県死亡６人目は福井市の男性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073914",
             "published_at": "2020/04/23 14:34"
-        },
-        {
-            "title": "コロナ患者１人死亡、福井県会見配信",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073839",
-            "published_at": "2020/04/23 12:45"
         }
     ]
 }
