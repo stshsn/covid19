@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587643568,
+    "timestamp": 1587647167,
     "info": [
+        {
+            "title": "新型コロナ感染で自宅待機中の男性が死亡",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074169",
+            "published_at": "2020/04/23 21:15"
+        },
         {
             "title": "休校決定以上に教育者に求めたもの",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074153",
@@ -35,16 +40,6 @@
             "title": "コロナ患者１人死亡、福井県会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073839",
             "published_at": "2020/04/23 12:45"
-        },
-        {
-            "title": "福井県で新型コロナ患者１人死亡",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073833",
-            "published_at": "2020/04/23 12:28"
-        },
-        {
-            "title": "休業要請協力金福井県は中小50万円",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073830",
-            "published_at": "2020/04/23 12:15"
         }
     ]
 }
