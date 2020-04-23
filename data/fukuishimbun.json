@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587618299,
+    "timestamp": 1587621913,
     "info": [
+        {
+            "title": "福井県死亡６人目は福井市の男性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1073914",
+            "published_at": "2020/04/23 14:34"
+        },
         {
             "title": "コロナ患者１人死亡、福井県会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073839",
@@ -40,11 +45,6 @@
             "title": "福井県、休業要請の対象は100業種",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073385",
             "published_at": "2020/04/23 07:20"
-        },
-        {
-            "title": "コロナ軽症者受け入れたホテルの決意",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073397",
-            "published_at": "2020/04/23 07:10"
         }
     ]
 }
