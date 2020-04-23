@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587596692,
+    "timestamp": 1587607508,
     "info": [
+        {
+            "title": "福井県の感染症対策本部会議を配信",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1073726",
+            "published_at": "2020/04/23 10:15"
+        },
         {
             "title": "コロナで観光宣伝打撃",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073681",
@@ -40,11 +45,6 @@
             "title": "シルクのマスク生んだ窮地と意地",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073234",
             "published_at": "2020/04/22 17:10"
-        },
-        {
-            "title": "ろう者へテレビ電話のコロナ相談窓口",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073224",
-            "published_at": "2020/04/22 17:00"
         }
     ]
 }
