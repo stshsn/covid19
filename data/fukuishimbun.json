@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587607508,
+    "timestamp": 1587611104,
     "info": [
+        {
+            "title": "永平寺町が全世帯の水道料半年減免",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1073717",
+            "published_at": "2020/04/23 11:30"
+        },
         {
             "title": "福井県の感染症対策本部会議を配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073726",
@@ -40,11 +45,6 @@
             "title": "石川県で新型コロナウイルス新たに6人感染、4月22日",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073297",
             "published_at": "2020/04/22 20:02"
-        },
-        {
-            "title": "シルクのマスク生んだ窮地と意地",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073234",
-            "published_at": "2020/04/22 17:10"
         }
     ]
 }
