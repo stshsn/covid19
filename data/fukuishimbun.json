@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587636314,
+    "timestamp": 1587643568,
     "info": [
+        {
+            "title": "休校決定以上に教育者に求めたもの",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074153",
+            "published_at": "2020/04/23 21:00"
+        },
         {
             "title": "【新型コロナ最新ニュース】石川県で17人感染、かほく市の二ツ屋病院の入院患者15人",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074033",
@@ -40,11 +45,6 @@
             "title": "休業要請協力金福井県は中小50万円",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1073830",
             "published_at": "2020/04/23 12:15"
-        },
-        {
-            "title": "永平寺町、水道料金を全世帯半年減免",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1073717",
-            "published_at": "2020/04/23 11:30"
         }
     ]
 }
