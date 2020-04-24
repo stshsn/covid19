@@ -37,22 +37,23 @@
               <l-tile-layer :url="url" :attribution="attribution" />
               <l-control-zoom position="bottomright" />
               <l-control position="topleft">
-                <v-btn small @click="moveToGPS">
-                  <v-icon>mdi-crosshairs-gps</v-icon>
-                </v-btn>
-              </l-control>
-              <l-control position="topleft">
                 <v-menu :offset-y="true">
                   <template v-slot:activator="{ on }">
                     <v-btn small v-on="on">
-                      <v-icon>mdi-near-me</v-icon>
+                      {{ $t('移動') }}
                     </v-btn>
                   </template>
                   <v-list>
                     <v-list-item
-                      v-for="(latLng, region) of regionInFukui"
+                      @click="moveToGPS"
+                    >
+                      <v-list-item-title>現在地へ</v-list-item-title>
+                    </v-list-item>
+                    <v-divider></v-divider>
+                    <v-list-item
+                      v-for="(bounds, region) of regionInFukui"
                       :key="region"
-                      @click="moveToRegion(latLng)"
+                      @click="moveToRegion(bounds)"
                     >
                       <v-list-item-title>{{ region }}</v-list-item-title>
                     </v-list-item>
@@ -197,12 +198,12 @@ import MaskInventory from '@/data/mask_inventory.json'
 export default {
   data() {
     const regionInFukui = {
-      '嶺北北部': [36.173357, 136.223431],
-      '福井市内': [36.070192, 136.245747],
-      '奥　　越': [36.031609, 136.501179],
-      '嶺北南部': [35.915191, 136.184292],
-      '嶺南東部': [35.612651, 136.021214],
-      '嶺南西部': [35.487511, 135.655918]
+      '嶺北北部': [[36.1152222, 136.1609285], [36.2271168, 136.2756708]],
+      '福井市内': [[36.010266, 136.1780678], [36.0994464, 136.3253579]],
+      '奥　　越': [[35.9733288, 136.4798565], [36.0750573, 136.5114535]],
+      '嶺北南部': [[35.8377444, 136.0520882], [35.9808129, 136.3433536]],
+      '嶺南東部': [[35.555878,135.9023407], [35.6493848,136.0746429]],
+      '嶺南西部': [[35.4559145, 135.534236], [35.5042143, 135.7537516]]
     }
     const citiesInFukui = [
       'あわら市',
@@ -307,8 +308,9 @@ export default {
         }
       )
     },
-    moveToRegion(latLng) {
-      this.$refs.lMap.mapObject.setView(latLng, 12)
+    moveToRegion(bounds) {
+      console.log(this.$refs.lMap)
+      this.$refs.lMap.mapObject.fitBounds(bounds, { padding: [20, 20] })
     },
     openPopup(event) {
       this.$nextTick(() => {
