@@ -1,20 +1,20 @@
 {
-    "timestamp": 1587719102,
+    "timestamp": 1587726297,
     "info": [
         {
-            "title": "石川県で男女6人が新たに新型コロナ感染",
+            "title": "石川県で男女6人が新型コロナ感染、小松市の教員も",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074771",
-            "published_at": "2020/04/24 17:12"
+            "published_at": "2020/04/24 19:34"
+        },
+        {
+            "title": "全中は中止へ、日本中体連方針",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074769",
+            "published_at": "2020/04/24 19:24"
         },
         {
             "title": "福井県の休業要請協力金いつ支給",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074678",
             "published_at": "2020/04/24 17:10"
-        },
-        {
-            "title": "全中は中止、日本中体連方針",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074769",
-            "published_at": "2020/04/24 17:09"
         },
         {
             "title": "マスク購入時の感染リスク大丈夫？",
@@ -45,11 +45,6 @@
             "title": "コロナ１人感染、福井県の会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074605",
             "published_at": "2020/04/24 12:38"
-        },
-        {
-            "title": "福井県で新たに１人新型コロナ感染",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074602",
-            "published_at": "2020/04/24 12:23"
         }
     ]
 }
