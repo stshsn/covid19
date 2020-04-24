@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587683096,
+    "timestamp": 1587693921,
     "info": [
+        {
+            "title": "児童預かり、各自治体の感染予防策",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074494",
+            "published_at": "2020/04/24 11:00"
+        },
         {
             "title": "杉本県政１年",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074443",
@@ -30,11 +35,6 @@
             "title": "富山県もマスク購入券、全世帯に配布",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074196",
             "published_at": "2020/04/23 22:28"
-        },
-        {
-            "title": "新型コロナ感染で自宅待機中の男性が死亡",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074169",
-            "published_at": "2020/04/23 21:15"
         }
     ]
 }
