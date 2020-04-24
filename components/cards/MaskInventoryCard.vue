@@ -60,24 +60,6 @@
                   </v-list>
                 </v-menu>
               </l-control>
-              <l-control position="topleft">
-                <v-menu :offset-y="true">
-                  <template v-slot:activator="{ on }">
-                    <v-btn small v-on="on">
-                      <v-icon>mdi-near-me</v-icon>
-                    </v-btn>
-                  </template>
-                  <v-list>
-                    <v-list-item
-                      v-for="(latLng, region) of regionInFukui"
-                      :key="region"
-                      @click="moveToRegion(latLng)"
-                    >
-                      <v-list-item-title>{{ region }}</v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-menu>
-              </l-control>
               <l-marker
                 v-for="(genky, index) of genkyInFukui"
                 :key="index"
@@ -247,12 +229,12 @@ export default {
       titleId: 'mask-inventory-card',
       url: 'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
       zoom: 9,
-      center: [35.833388, 136.185209],
-      currentZoom: 9,
-      currentCenter: [35.833388, 136.185209],
+      center: [35.875698, 135.981903],
+      currentZoom: this.zoom,
+      currentCenter: this.center,
       mapOptions: {
         zoomControl: false,
-        minZoom: 9
+        minZoom: 8
       },
       attribution:
         '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
@@ -263,6 +245,16 @@ export default {
       citiesInFukui,
       visibleOnMap: citiesInFukui
     }
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.$refs.lMap.mapObject.fitBounds(
+        [
+          [35.4559145, 135.534236], [36.2271168, 136.5114535]
+        ],
+        { paddingTopLeft: [30, 30] }
+      )
+    })
   },
   computed: {
     genkyInFukui: () => {
