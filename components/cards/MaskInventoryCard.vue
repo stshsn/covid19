@@ -5,27 +5,62 @@
       <v-card-text>
         <div>
           <p class="Graph-Desc">
-            （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br/>
-            （ 注 ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
-            （ 注 ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
+            （ 注
+            ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br />
+            （ 注
+            ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
+            （ 注
+            ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
           </p>
         </div>
+        <!--
+        <v-row justify="space-around">
+          <v-switch
+            style="margin-left: 12px"
+            v-for="(city, index) of citiesInFukui"
+            :key="index"
+            v-model="visibleOnMap"
+            multiple
+            :label="city"
+            :value="city"
+            @update:center="centerUpdate"
+            @update:zoom="zoomUpdate"
+          ></v-switch>
+        </v-row>
+        -->
         <div id="map-wrapper">
           <client-only>
             <l-map
               id="map"
+              ref="lMap"
               :center="center"
               :zoom="zoom"
               :options="mapOptions"
-              @update:center="centerUpdate"
-              @update:zoom="zoomUpdate"
             >
               <l-tile-layer :url="url" :attribution="attribution" />
               <l-control-zoom position="bottomright" />
               <l-control position="topleft">
-                <v-btn small @click="moveToPosition">
+                <v-btn small @click="moveToGPS">
                   <v-icon>mdi-crosshairs-gps</v-icon>
                 </v-btn>
+              </l-control>
+              <l-control position="topleft">
+                <v-menu :offset-y="true">
+                  <template v-slot:activator="{ on }">
+                    <v-btn small v-on="on">
+                      <v-icon>mdi-near-me</v-icon>
+                    </v-btn>
+                  </template>
+                  <v-list>
+                    <v-list-item
+                      v-for="(latLng, region) of regionInFukui"
+                      :key="region"
+                      @click="moveToRegion(latLng)"
+                    >
+                      <v-list-item-title>{{ region }}</v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
               </l-control>
               <l-marker
                 v-for="(genky, index) of genkyInFukui"
@@ -34,14 +69,26 @@
               >
                 <l-popup>
                   <div>
-                    <h3>{{ genky.店舗名 }}</h3><br />
+                    <h3>{{ genky.店舗名 }}</h3>
+                    <br />
                     <span>【営業時間】</span><br />
                     <span>{{ genky.営業時間 }}</span>
                   </div>
-                  <br/>
+                  <br />
                   <div>
                     <span>【経路はこちら】</span><br />
-                    <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'">マップで開く</a></span>
+                    <span
+                      ><a
+                        :href="
+                          'http://maps.apple.com/?daddr=' +
+                            genky.緯度 +
+                            ',' +
+                            genky.経度 +
+                            '&dirflg=d'
+                        "
+                        >マップで開く</a
+                      ></span
+                    >
                   </div>
                 </l-popup>
               </l-marker>
@@ -159,12 +206,38 @@
 </template>
 
 <script>
-import DataView from '@/components/DataView.vue'
 import GenkyLocations from '@/data/genky_locations.json'
 import MaskInventory from '@/data/mask_inventory.json'
 
 export default {
   data() {
+    const regionInFukui = {
+      嶺北北部: [36.173357, 136.223431],
+      福井市内: [36.070192, 136.245747],
+      '奥　　越': [36.031609, 136.501179],
+      嶺北南部: [35.915191, 136.184292],
+      嶺南東部: [35.612651, 136.021214],
+      嶺南西部: [35.487511, 135.655918]
+    }
+    const citiesInFukui = [
+      'あわら市',
+      '坂井市',
+      '福井市',
+      '永平寺町',
+      '勝山市',
+      '大野市',
+      '越前町',
+      '鯖江市',
+      '越前市',
+      '池田町',
+      '南越前町',
+      '敦賀市',
+      '美浜町',
+      '若狭町',
+      '小浜市',
+      'おおい町',
+      '高浜町'
+    ]
     return {
       title: '県内のゲンキー店舗（開発中）',
       titleId: 'mask-inventory-card',
@@ -182,22 +255,43 @@ export default {
       maskInventoryData: MaskInventory.data,
       displayShare: false,
       showOverlay: false,
+      regionInFukui,
+      citiesInFukui,
+      visibleOnMap: citiesInFukui
     }
   },
   computed: {
     genkyInFukui: () => {
       return GenkyLocations.filter(genky => genky.IDg === '2')
     },
+    /*
+    citiesHaveGenky: () => {
+      let cities = []
+      GenkyLocations
+        .filter(genky => genky.IDg === '2')
+        .forEach(genky => cities.push(genky.所在地.match(/^福井県(.*郡)?(.+?[市町])/)[2]))
+      return [...new Set(cities)]
+    },
+    */
+    isVisible() {
+      return address => {
+        for (const city of this.visibleOnMap) {
+          return new RegExp(city).test(address) ? 'block' : 'none'
+        }
+      }
+    },
     getInventory: () => {
-      return (shopName) => {
-        const inventory = MaskInventory.data.filter(d => d.店舗名 === shopName)[0]
+      return shopName => {
+        const inventory = MaskInventory.data.filter(
+          d => d.店舗名 === shopName
+        )[0]
         if (inventory) {
           inventory.日時 = new Date(inventory.日時).toLocaleString()
           return inventory
         } else {
           return {
-            "店舗名": shopName,
-            "営業時間": ""
+            店舗名: shopName,
+            営業時間: ''
           }
         }
       }
@@ -208,7 +302,7 @@ export default {
         this.permalink(true, true) +
         '" frameborder="0"></iframe>'
       return graphEmbedValue
-    },
+    }
   },
   methods: {
     centerUpdate(center) {
@@ -217,16 +311,21 @@ export default {
     zoomUpdate(zoom) {
       this.currentZoom = zoom
     },
-    moveToPosition() {
+    moveToGPS() {
       navigator.geolocation.getCurrentPosition(
         position => {
-          this.center = [position.coords.latitude, position.coords.longitude]
-          this.zoom = 13
+          this.$refs.lMap.mapObject.setView(
+            [position.coords.latitude, position.coords.longitude],
+            13
+          )
         },
         error => {
           console.log(error)
         }
       )
+    },
+    moveToRegion(latLng) {
+      this.$refs.lMap.mapObject.setView(latLng, 12)
     },
     openPopup(event) {
       this.$nextTick(() => {
@@ -274,8 +373,10 @@ export default {
         'https://twitter.com/intent/tweet?text=' +
         this.title +
         ' / ' +
-        this.$t('福井県公認') + ' ' +
-        this.$t('新型コロナウイルス感染症') + ' ' +
+        this.$t('福井県公認') +
+        ' ' +
+        this.$t('新型コロナウイルス感染症') +
+        ' ' +
         this.$t('対策サイト') +
         '&url=' +
         this.permalink(true) +
