@@ -5,12 +5,9 @@
       <v-card-text>
         <div>
           <p class="Graph-Desc">
-            （ 注
-            ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br />
-            （ 注
-            ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
-            （ 注
-            ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
+            （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br />
+            （ 注 ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
+            （ 注 ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
           </p>
         </div>
         <!--
@@ -23,8 +20,6 @@
             multiple
             :label="city"
             :value="city"
-            @update:center="centerUpdate"
-            @update:zoom="zoomUpdate"
           ></v-switch>
         </v-row>
         -->
@@ -36,6 +31,8 @@
               :center="center"
               :zoom="zoom"
               :options="mapOptions"
+              @update:center="centerUpdate"
+              @update:zoom="zoomUpdate"
             >
               <l-tile-layer :url="url" :attribution="attribution" />
               <l-control-zoom position="bottomright" />
@@ -69,26 +66,14 @@
               >
                 <l-popup>
                   <div>
-                    <h3>{{ genky.店舗名 }}</h3>
-                    <br />
+                    <h3>{{ genky.店舗名 }}</h3><br />
                     <span>【営業時間】</span><br />
                     <span>{{ genky.営業時間 }}</span>
                   </div>
                   <br />
                   <div>
                     <span>【経路はこちら】</span><br />
-                    <span
-                      ><a
-                        :href="
-                          'http://maps.apple.com/?daddr=' +
-                            genky.緯度 +
-                            ',' +
-                            genky.経度 +
-                            '&dirflg=d'
-                        "
-                        >マップで開く</a
-                      ></span
-                    >
+                    <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'">マップで開く</a></span>
                   </div>
                 </l-popup>
               </l-marker>
@@ -212,12 +197,12 @@ import MaskInventory from '@/data/mask_inventory.json'
 export default {
   data() {
     const regionInFukui = {
-      嶺北北部: [36.173357, 136.223431],
-      福井市内: [36.070192, 136.245747],
+      '嶺北北部': [36.173357, 136.223431],
+      '福井市内': [36.070192, 136.245747],
       '奥　　越': [36.031609, 136.501179],
-      嶺北南部: [35.915191, 136.184292],
-      嶺南東部: [35.612651, 136.021214],
-      嶺南西部: [35.487511, 135.655918]
+      '嶺北南部': [35.915191, 136.184292],
+      '嶺南東部': [35.612651, 136.021214],
+      '嶺南西部': [35.487511, 135.655918]
     }
     const citiesInFukui = [
       'あわら市',
@@ -272,7 +257,6 @@ export default {
         .forEach(genky => cities.push(genky.所在地.match(/^福井県(.*郡)?(.+?[市町])/)[2]))
       return [...new Set(cities)]
     },
-    */
     isVisible() {
       return address => {
         for (const city of this.visibleOnMap) {
@@ -280,18 +264,17 @@ export default {
         }
       }
     },
+    */
     getInventory: () => {
       return shopName => {
-        const inventory = MaskInventory.data.filter(
-          d => d.店舗名 === shopName
-        )[0]
+        const inventory = MaskInventory.data.filter(d => d.店舗名 === shopName)[0]
         if (inventory) {
           inventory.日時 = new Date(inventory.日時).toLocaleString()
           return inventory
         } else {
           return {
-            店舗名: shopName,
-            営業時間: ''
+            "店舗名": shopName,
+            "営業時間": ""
           }
         }
       }
@@ -302,7 +285,7 @@ export default {
         this.permalink(true, true) +
         '" frameborder="0"></iframe>'
       return graphEmbedValue
-    }
+    },
   },
   methods: {
     centerUpdate(center) {
@@ -373,10 +356,8 @@ export default {
         'https://twitter.com/intent/tweet?text=' +
         this.title +
         ' / ' +
-        this.$t('福井県公認') +
-        ' ' +
-        this.$t('新型コロナウイルス感染症') +
-        ' ' +
+        this.$t('福井県公認') + ' ' +
+        this.$t('新型コロナウイルス感染症') + ' ' +
         this.$t('対策サイト') +
         '&url=' +
         this.permalink(true) +
