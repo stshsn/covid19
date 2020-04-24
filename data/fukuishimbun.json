@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587747906,
+    "timestamp": 1587758747,
     "info": [
+        {
+            "title": "インターハイが史上初の中止の公算",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074951",
+            "published_at": "2020/04/25 05:00"
+        },
         {
             "title": "新型コロナウイルス血漿治療に「有望な結果」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075207",
@@ -40,11 +45,6 @@
             "title": "福井県が医療物資の提供呼び掛け",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074655",
             "published_at": "2020/04/24 14:35"
-        },
-        {
-            "title": "新たなコロナ感染者は福井市の女性",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074651",
-            "published_at": "2020/04/24 14:25"
         }
     ]
 }
