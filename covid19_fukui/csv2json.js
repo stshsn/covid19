@@ -280,15 +280,15 @@ function inspectionSummary(json, jsonObject) {
   jsonObject.children = [
     {
       attr: '陽性患者数',
-      value: 118,
+      value: 119,
       children: [
         {
           attr: '入院中',
-          value: 81,
+          value: 64,
           children: [
             {
               attr: '軽症・中等症',
-              value: 72,
+              value: 55,
             },
             {
               attr: '重症',
@@ -298,11 +298,11 @@ function inspectionSummary(json, jsonObject) {
         },
         {
           attr: '死亡',
-          value: 5,
+          value: 6,
         },
         {
           attr: '退院',
-          value: 32,
+          value: 49,
         },
         {
           attr: '自宅療養',
