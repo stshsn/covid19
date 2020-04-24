@@ -60,6 +60,24 @@
                   </v-list>
                 </v-menu>
               </l-control>
+              <l-control position="topleft">
+                <v-menu :offset-y="true">
+                  <template v-slot:activator="{ on }">
+                    <v-btn small v-on="on">
+                      <v-icon>mdi-near-me</v-icon>
+                    </v-btn>
+                  </template>
+                  <v-list>
+                    <v-list-item
+                      v-for="(latLng, region) of regionInFukui"
+                      :key="region"
+                      @click="moveToRegion(latLng)"
+                    >
+                      <v-list-item-title>{{ region }}</v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+              </l-control>
               <l-marker
                 v-for="(genky, index) of genkyInFukui"
                 :key="index"
