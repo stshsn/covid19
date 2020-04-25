@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587794733,
+    "timestamp": 1587801935,
     "info": [
+        {
+            "title": "勝山市が新型コロナで奨学金12万円",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075368",
+            "published_at": "2020/04/25 17:00"
+        },
         {
             "title": "福井県、新たな感染者や死亡者なし",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075343",
@@ -35,11 +40,6 @@
             "title": "福井の感染1例目、日華化学社長会見",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074949",
             "published_at": "2020/04/25 07:10"
-        },
-        {
-            "title": "パチンコ店名公表「集客の逆効果も」",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074947",
-            "published_at": "2020/04/25 07:00"
         }
     ]
 }
