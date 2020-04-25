@@ -116,7 +116,7 @@ const main = async () => {
   // 各JSONの処理
   contacts(linq.where(x => x.name === 'call_center').first().json, contactsJson)
   hospitalBeds(
-    linq.where(x => x.name === 'patients').first().json,
+    linq.where(x => x.name === 'discharge').first().json,
     hospitalBedsJson
   )
   inspectionPersons(
@@ -233,13 +233,15 @@ function contacts(json, jsonObject) {
  * @param {Object} jsonObject 書き出すJSONオブジェクト
  */
 function hospitalBeds(json, jsonObject) {
-  const patient = Enumerable.from(json)
-  const hospitalized = x =>
-    x.患者_状態 !== '死亡' && parseInt(x.患者_退院済フラグ) !== 1
-  const usedNum = patient.where(hospitalized).count()
+  const discharge = Enumerable.from(json)
+  const positivePatiensNum = discharge.sum(x => parseInt(x.陽性確認_件数))
+  const deadNum = discharge.sum(x => parseInt(x.死亡確認_件数))
+  const dischargeNum = discharge.sum(x => parseInt(x.陰性確認_件数))
+  const hospitalizedNum = positivePatiensNum - dischargeNum - deadNum
+
   jsonObject.data = {
-    used: usedNum,
-    unused: HospitalBedNum - usedNum
+    used: hospitalizedNum,
+    unused: HospitalBedNum - hospitalizedNum
   }
   jsonObject.labels = ['現在患者数', '空き病床数(推定)']
 }
