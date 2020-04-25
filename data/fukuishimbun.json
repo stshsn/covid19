@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587801935,
+    "timestamp": 1587805522,
     "info": [
+        {
+            "title": "原発に県外作業員、新型コロナ懸念",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075354",
+            "published_at": "2020/04/25 17:10"
+        },
         {
             "title": "勝山市が新型コロナで奨学金12万円",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075368",
@@ -35,11 +40,6 @@
             "title": "休業要請で県に疑問、不安の声殺到",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074933",
             "published_at": "2020/04/25 07:20"
-        },
-        {
-            "title": "福井の感染1例目、日華化学社長会見",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074949",
-            "published_at": "2020/04/25 07:10"
         }
     ]
 }
