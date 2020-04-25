@@ -35,11 +35,11 @@ const openDataSource = [
     url:
       'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_call_center.csv'
   },
-  // {
-  //   name: 'discharge',
-  //   url:
-  //     'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_discharge.csv'
-  // },
+  {
+    name: 'discharge',
+    url:
+      'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_hospitalization.csv'
+  },
   {
     name: 'patients',
     url:
@@ -125,6 +125,7 @@ const main = async () => {
   )
   inspectionSummary(
     linq.where(x => x.name === 'patients').first().json,
+    linq.where(x => x.name === 'discharge').first().json,
     inspectionSummaryJson
   )
   patients(linq.where(x => x.name === 'patients').first().json, patientsJson)
@@ -264,45 +265,46 @@ function inspectionPersons(json, jsonObject) {
 
 /**
  * 陽性患者の属性をJSONにします
- * @param {Object} json 元の情報があるJSONオブジェクト
+ * @param {Object} patientJson 患者属性情報があるJSONオブジェクト
+ * @param {Object} dischargeJson 入退院情報があるJSONオブジェクト
  * @param {Object} jsonObject 書き出すJSONオブジェクト
  */
-function inspectionSummary(json, jsonObject) {
-  const patient = Enumerable.from(json)
-  const hospitalized = x =>
-    x.患者_状態 !== '死亡' && parseInt(x.患者_退院済フラグ) !== 1
-  const mildOrModerate = x =>
-    x.患者_状態 === '軽症' || x.患者_状態 === '中等症' || x.患者_状態 === ''
-  const severeOrSerious = x => x.患者_状態 === '重症' || x.患者_状態 === '重篤'
-  const dead = x => x.患者_状態 === '死亡'
-  const discharge = x =>
-    parseInt(x.患者_退院済フラグ) === 1 && x.患者_状態 !== '死亡'
+function inspectionSummary(patientJson, dischargeJson, jsonObject) {
+  const patient = Enumerable.from(patientJson)
+  const discharge = Enumerable.from(dischargeJson)
+  const positivePatiensNum = discharge.sum(x => parseInt(x.陽性確認_件数))
+  const deadNum = discharge.sum(x => parseInt(x.死亡確認_件数))
+  const dischargeNum = discharge.sum(x => parseInt(x.陰性確認_件数))
+  const hospitalizedNum = positivePatiensNum - dischargeNum - deadNum
+  const isSevereOrSerious = x => x.患者_状態 === '重症' || x.患者_状態 === '重篤'
+  const severeOrSeriousNum = patient.where(isSevereOrSerious).count()
+  const mildOrModerateNum = hospitalizedNum - severeOrSeriousNum
   jsonObject.children = [
     {
       attr: '陽性患者数',
-      value: 119,
+      value: positivePatiensNum,
       children: [
         {
           attr: '入院中',
-          value: 64,
+          value: hospitalizedNum,
           children: [
             {
               attr: '軽症・中等症',
-              value: 55,
+              value: mildOrModerateNum,
             },
             {
               attr: '重症',
-              value: 9,
+              value: severeOrSeriousNum,
             }
           ]
         },
         {
           attr: '死亡',
-          value: 6,
+          value: deadNum,
         },
         {
           attr: '退院',
-          value: 49,
+          value: dischargeNum,
         },
         {
           attr: '自宅療養',
@@ -311,7 +313,7 @@ function inspectionSummary(json, jsonObject) {
         {
           attr: '宿泊施設等',
           value: '不明'
-        }
+        },
       ]
     }
   ]
