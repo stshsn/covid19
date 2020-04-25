@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587805522,
+    "timestamp": 1587812712,
     "info": [
+        {
+            "title": "福井県「５月６日までが正念場」",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075442",
+            "published_at": "2020/04/25 20:00"
+        },
         {
             "title": "原発に県外作業員、新型コロナ懸念",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075354",
@@ -34,11 +39,6 @@
         {
             "title": "来週からいよいよ大型連休が始まる…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075258",
-            "published_at": "2020/04/25 07:20"
-        },
-        {
-            "title": "休業要請で県に疑問、不安の声殺到",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074933",
             "published_at": "2020/04/25 07:20"
         }
     ]
