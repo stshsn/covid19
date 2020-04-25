@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587783911,
+    "timestamp": 1587787525,
     "info": [
+        {
+            "title": "福井県、新たな感染者や死亡者なし",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075343",
+            "published_at": "2020/04/25 12:55"
+        },
         {
             "title": "行政あっせんマスク購入チラシ届かず",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075303",
@@ -40,11 +45,6 @@
             "title": "県外ナンバー車に「あおり運転や投石」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1074963",
             "published_at": "2020/04/25 06:30"
-        },
-        {
-            "title": "インターハイが史上初の中止の公算",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1074951",
-            "published_at": "2020/04/25 05:00"
         }
     ]
 }
