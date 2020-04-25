@@ -68,31 +68,59 @@
                 <l-popup>
                   <div>
                     <h3>{{ genky.店舗名 }}</h3><br />
-                    <span>【営業時間】</span><br />
-                    <span>{{ genky.営業時間 }}</span>
+                    <span class="text-no-wrap">営業時間: {{ genky.営業時間 }}</span>
                   </div>
-                  <br />
                   <div>
-                    <span>【経路はこちら】</span><br />
-                    <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'">マップで開く</a></span>
+                    {{ genky.所在地 }}
+                    <v-btn 
+                      :href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'"
+                      icon
+                    >
+                      <v-icon>mdi-map-legend</v-icon>
+                    </v-btn>
                   </div>
                   <br />
                   <div>
                     <a
-                      :href="'https://twitter.com/intent/tweet?hashtags='
+                      :href="'https://twitter.com/intent/tweet?button_hashtag='
+                        + hashTags[0]
+                        + '&hashtags='
                         + hashTags.join(',')
                         + ',' + genky.店舗名
                         + '&ref_src=twsrc%5Etfw'"
                       class="twitter-hashtag-button"
                       data-show-count="false"
                     >Tweet</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <script
+                      async src="https://platform.twitter.com/widgets.js"
+                      charset="utf-8">
+                    </script>
                   </div>
+                  <v-btn
+                    small
+                    outlined
+                    @click="toggleRelatedTweet(genky.店舗名)"
+                  >{{ $t('この店舗に関連するツイートを表示') }}
+                  </v-btn>
                 </l-popup>
               </l-marker>
             </l-map>
           </client-only>
         </div>
+        <v-dialog v-model="relatedTweet" scrollable width="90%" max-width="360px">
+          <v-card>
+            <!--
+            <v-card-title>{{ $t('この店舗に関連するツイート') }}</v-card-title>
+            <v-divider></v-divider>
+            -->
+            <v-card-text style="height: 500px;">
+              <twitter-tweet :tweet-list="tweetList"></twitter-tweet>
+            </v-card-text>
+            <v-card-action>
+              <v-btn text outlined block tile @click="toggleRelatedTweet()">{{ $t( '閉じる') }}</v-btn>
+            </v-card-action>
+          </v-card>
+        </v-dialog>
         <div v-if="this.$route.query.embed != 'true'" class="footer-right">
           <v-btn icon :ripple="false" @click="toggleShareMenu">
             <svg
@@ -204,10 +232,14 @@
 </template>
 
 <script>
+import TwitterTweet from '@/components/TwitterTweet.vue'
 import GenkyLocations from '@/data/genky_locations.json'
 import MaskInventory from '@/data/mask_inventory.json'
 
 export default {
+  components: {
+    TwitterTweet
+  },
   data() {
     const regionInFukui = {
       '嶺北北部': [[36.1152222, 136.1609285], [36.2271168, 136.2756708]],
@@ -252,6 +284,9 @@ export default {
         '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
       maskInventoryData: MaskInventory.data,
       hashTags: ['福井県マスク在庫'],
+      tweetList: ['1253910475223363585', '1252779322487652352'],
+      //tweetList: [],
+      relatedTweet: false,
       displayShare: false,
       showOverlay: false,
       regionInFukui,
@@ -337,6 +372,10 @@ export default {
       console.log(this.$refs.lMap)
       this.$refs.lMap.mapObject.fitBounds(bounds, { padding: [20, 20] })
     },
+    toggleRelatedTweet(shopName) {
+      console.log(shopName)
+      this.relatedTweet = !this.relatedTweet
+    },
     openPopup(event) {
       this.$nextTick(() => {
         event.target.openPopup()
@@ -406,6 +445,14 @@ export default {
   }
 }
 </script>
+<style>
+.v-overlay {
+  z-index: 99999 !important;
+}
+.v-dialog__content {
+  z-index: 100000 !important;
+}
+</style>
 <style lang="scss" scoped>
 #map-wrapper {
   height: 600px;
