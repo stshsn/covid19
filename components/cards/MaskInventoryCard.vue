@@ -5,15 +5,29 @@
       <v-card-text>
         <div>
           <p class="Graph-Desc">
-            （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br/>
+            （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br />
             （ 注 ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
             （ 注 ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
           </p>
         </div>
+        <!--
+        <v-row justify="space-around">
+          <v-switch
+            style="margin-left: 12px"
+            v-for="(city, index) of citiesInFukui"
+            :key="index"
+            v-model="visibleOnMap"
+            multiple
+            :label="city"
+            :value="city"
+          ></v-switch>
+        </v-row>
+        -->
         <div id="map-wrapper">
           <client-only>
             <l-map
               id="map"
+              ref="lMap"
               :center="center"
               :zoom="zoom"
               :options="mapOptions"
@@ -23,9 +37,28 @@
               <l-tile-layer :url="url" :attribution="attribution" />
               <l-control-zoom position="bottomright" />
               <l-control position="topleft">
-                <v-btn small @click="moveToPosition">
-                  <v-icon>mdi-crosshairs-gps</v-icon>
-                </v-btn>
+                <v-menu :offset-y="true">
+                  <template v-slot:activator="{ on }">
+                    <v-btn small v-on="on">
+                      <v-icon small>mdi-near-me</v-icon> {{ $t('移動') }}
+                    </v-btn>
+                  </template>
+                  <v-list>
+                    <v-list-item
+                      @click="moveToGPS"
+                    >
+                      <v-list-item-title>現在地へ</v-list-item-title>
+                    </v-list-item>
+                    <v-divider></v-divider>
+                    <v-list-item
+                      v-for="(bounds, region) of regionInFukui"
+                      :key="region"
+                      @click="moveToRegion(bounds)"
+                    >
+                      <v-list-item-title>{{ region }}</v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
               </l-control>
               <l-marker
                 v-for="(genky, index) of genkyInFukui"
@@ -38,7 +71,7 @@
                     <span>【営業時間】</span><br />
                     <span>{{ genky.営業時間 }}</span>
                   </div>
-                  <br/>
+                  <br />
                   <div>
                     <span>【経路はこちら】</span><br />
                     <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'">マップで開く</a></span>
@@ -159,37 +192,92 @@
 </template>
 
 <script>
-import DataView from '@/components/DataView.vue'
 import GenkyLocations from '@/data/genky_locations.json'
 import MaskInventory from '@/data/mask_inventory.json'
 
 export default {
   data() {
+    const regionInFukui = {
+      '嶺北北部': [[36.1152222, 136.1609285], [36.2271168, 136.2756708]],
+      '福井市内': [[36.010266, 136.1780678], [36.0994464, 136.3253579]],
+      '奥　　越': [[35.9733288, 136.4798565], [36.0750573, 136.5114535]],
+      '嶺北南部': [[35.8377444, 136.0520882], [35.9808129, 136.3433536]],
+      '嶺南東部': [[35.555878,135.9023407], [35.6493848,136.0746429]],
+      '嶺南西部': [[35.4559145, 135.534236], [35.5042143, 135.7537516]]
+    }
+    const citiesInFukui = [
+      'あわら市',
+      '坂井市',
+      '福井市',
+      '永平寺町',
+      '勝山市',
+      '大野市',
+      '越前町',
+      '鯖江市',
+      '越前市',
+      '池田町',
+      '南越前町',
+      '敦賀市',
+      '美浜町',
+      '若狭町',
+      '小浜市',
+      'おおい町',
+      '高浜町'
+    ]
     return {
       title: '県内のゲンキー店舗（開発中）',
       titleId: 'mask-inventory-card',
       url: 'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
       zoom: 9,
-      center: [35.833388, 136.185209],
-      currentZoom: 9,
-      currentCenter: [35.833388, 136.185209],
+      center: [35.875698, 135.981903],
+      currentZoom: this.zoom,
+      currentCenter: this.center,
       mapOptions: {
         zoomControl: false,
-        minZoom: 9
+        minZoom: 8
       },
       attribution:
         '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
       maskInventoryData: MaskInventory.data,
       displayShare: false,
       showOverlay: false,
+      regionInFukui,
+      citiesInFukui,
+      visibleOnMap: citiesInFukui
     }
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.$refs.lMap.mapObject.fitBounds(
+        [
+          [35.4559145, 135.534236], [36.2271168, 136.5114535]
+        ],
+        { paddingTopLeft: [30, 30] }
+      )
+    })
   },
   computed: {
     genkyInFukui: () => {
       return GenkyLocations.filter(genky => genky.IDg === '2')
     },
+    /*
+    citiesHaveGenky: () => {
+      let cities = []
+      GenkyLocations
+        .filter(genky => genky.IDg === '2')
+        .forEach(genky => cities.push(genky.所在地.match(/^福井県(.*郡)?(.+?[市町])/)[2]))
+      return [...new Set(cities)]
+    },
+    isVisible() {
+      return address => {
+        for (const city of this.visibleOnMap) {
+          return new RegExp(city).test(address) ? 'block' : 'none'
+        }
+      }
+    },
+    */
     getInventory: () => {
-      return (shopName) => {
+      return shopName => {
         const inventory = MaskInventory.data.filter(d => d.店舗名 === shopName)[0]
         if (inventory) {
           inventory.日時 = new Date(inventory.日時).toLocaleString()
@@ -217,16 +305,22 @@ export default {
     zoomUpdate(zoom) {
       this.currentZoom = zoom
     },
-    moveToPosition() {
+    moveToGPS() {
       navigator.geolocation.getCurrentPosition(
         position => {
-          this.center = [position.coords.latitude, position.coords.longitude]
-          this.zoom = 13
+          this.$refs.lMap.mapObject.setView(
+            [position.coords.latitude, position.coords.longitude],
+            13
+          )
         },
         error => {
           console.log(error)
         }
       )
+    },
+    moveToRegion(bounds) {
+      console.log(this.$refs.lMap)
+      this.$refs.lMap.mapObject.fitBounds(bounds, { padding: [20, 20] })
     },
     openPopup(event) {
       this.$nextTick(() => {
