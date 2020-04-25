@@ -146,6 +146,11 @@ export default Vue.extend({
         },
         {
           icon: 'mdi-information',
+          title: this.$t('県あっせんマスクについて'),
+          link: this.localePath('/mask')
+        },
+        {
+          icon: 'mdi-information',
           title: this.$t('国内のお知らせ一覧'),
           link: this.localePath('/japan-news'),
           divider: true

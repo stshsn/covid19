@@ -76,6 +76,18 @@
                     <span>【経路はこちら】</span><br />
                     <span><a v-bind:href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'">マップで開く</a></span>
                   </div>
+                  <br />
+                  <div>
+                    <a
+                      :href="'https://twitter.com/intent/tweet?hashtags='
+                        + hashTags.join(',')
+                        + ',' + genky.店舗名
+                        + '&ref_src=twsrc%5Etfw'"
+                      class="twitter-hashtag-button"
+                      data-show-count="false"
+                    >Tweet</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  </div>
                 </l-popup>
               </l-marker>
             </l-map>
@@ -239,6 +251,7 @@ export default {
       attribution:
         '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
       maskInventoryData: MaskInventory.data,
+      hashTags: ['福井県マスク在庫'],
       displayShare: false,
       showOverlay: false,
       regionInFukui,
@@ -248,12 +261,14 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
+      if (this.$refs.lMap) {
       this.$refs.lMap.mapObject.fitBounds(
         [
           [35.4559145, 135.534236], [36.2271168, 136.5114535]
         ],
         { paddingTopLeft: [30, 30] }
       )
+      }
     })
   },
   computed: {
