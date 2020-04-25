@@ -40,7 +40,7 @@
                 <v-menu :offset-y="true">
                   <template v-slot:activator="{ on }">
                     <v-btn small v-on="on">
-                      {{ $t('移動') }}
+                      <v-icon small>mdi-near-me</v-icon> {{ $t('移動') }}
                     </v-btn>
                   </template>
                   <v-list>
