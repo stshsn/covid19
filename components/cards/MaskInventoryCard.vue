@@ -237,6 +237,7 @@
 import TwitterTweet from '@/components/TwitterTweet.vue'
 import GenkyLocations from '@/data/genky_locations.json'
 import MaskInventory from '@/data/mask_inventory.json'
+import axios from 'axios'
 
 export default {
   components: {
@@ -380,9 +381,24 @@ export default {
       } else {
         const hashTags = this.hashTags.concat(shopName)
         //console.log(hashTags)
-        //this.tweetList = await searchRelatedTweet(hashTags)
+        this.tweetList = await this.searchRelatedTweet(shopName)
+        console.log(this.tweetList)
         this.relatedTweet = true
       }
+    },
+    async searchRelatedTweet(shopName) {
+      const tweetList = await axios
+        .get(
+          '/api/v1/tweet?shop=' + shopName,
+        )
+        .then((res) => {
+          const tweetList = res.data.tweet
+          return tweetList.map(t => t.tweet_id)
+        })
+        .catch((err) => {
+          return []
+        })
+      return tweetList
     },
     openPopup(event) {
       this.$nextTick(() => {
