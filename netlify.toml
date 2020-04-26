@@ -9,7 +9,7 @@
   from = "/api/v1/tweet"
   query = {shop = ":shop"}
   to = "https://covid19-273411.appspot.com/api/v1/rss/tweet?shop=:shop"
-  status = 200
+  status = 301
   force = true
   headers = {X-From = "Netlify"}
 
