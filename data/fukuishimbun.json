@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587866712,
+    "timestamp": 1587870313,
     "info": [
+        {
+            "title": "休業要請、福井県内の対応分かれる",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075678",
+            "published_at": "2020/04/26 11:10"
+        },
         {
             "title": "休校中、子どもの栄養管理の秘訣",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075663",
@@ -25,11 +30,6 @@
             "title": "福井県「５月６日までが正念場」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075442",
             "published_at": "2020/04/25 20:00"
-        },
-        {
-            "title": "原発に県外作業員、新型コロナ懸念",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075354",
-            "published_at": "2020/04/25 17:10"
         }
     ]
 }
