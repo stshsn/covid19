@@ -8,8 +8,8 @@
 [[redirects]]
   from = "/api/v1/tweet"
   query = {shop = ":shop"}
-  to = "https://covid19-273411.appspot.com/api/v1/rss/tweet/:shop"
-  status = 200
+  to = "https://covid19-273411.appspot.com/api/v1/rss/tweet"
+  status = 301
   force = true
   headers = {X-From = "Netlify"}
 
