@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587881137,
+    "timestamp": 1587888325,
     "info": [
+        {
+            "title": "あわら温泉の旅館・ホテルが一斉休業",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075737",
+            "published_at": "2020/04/26 17:00"
+        },
         {
             "title": "新たな感染者は福井市の70代男性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075711",
@@ -30,11 +35,6 @@
             "title": "石川県の新型コロナ感染者226人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075664",
             "published_at": "2020/04/26 10:25"
-        },
-        {
-            "title": "「外に出たい若者たちよ、もうしば…",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075636",
-            "published_at": "2020/04/26 07:20"
         }
     ]
 }
