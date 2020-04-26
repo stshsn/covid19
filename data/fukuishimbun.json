@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587873898,
+    "timestamp": 1587881137,
     "info": [
+        {
+            "title": "新たな感染者は福井市の70代男性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1075711",
+            "published_at": "2020/04/26 14:08"
+        },
         {
             "title": "コロナ１人感染、福井県の会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075696",
@@ -30,11 +35,6 @@
             "title": "「外に出たい若者たちよ、もうしば…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075636",
             "published_at": "2020/04/26 07:20"
-        },
-        {
-            "title": "福井県春季高校総体中止へ、県高体連",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075484",
-            "published_at": "2020/04/26 07:10"
         }
     ]
 }
