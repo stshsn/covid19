@@ -64,6 +64,7 @@
                 v-for="(genky, index) of genkyInFukui"
                 :key="index"
                 :lat-lng="[genky.緯度, genky.経度]"
+                :icon="maskInventoryData.includes(genky.店舗名) ? redIcon : blueIcon"
               >
                 <l-popup>
                   <div>
@@ -271,6 +272,22 @@ export default {
       'おおい町',
       '高浜町'
     ]
+    const blueIcon = process.browser ? new this.$L.Icon({
+      iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    }) : undefined
+    const redIcon = process.browser ? new this.$L.Icon({
+      iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    }) : undefined
     return {
       title: '県内のゲンキー店舗（開発中）',
       titleId: 'mask-inventory-card',
@@ -285,6 +302,8 @@ export default {
       },
       attribution:
         '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
+      blueIcon: blueIcon,
+      redIcon: redIcon,
       maskInventoryData: MaskInventory.data,
       hashTags: ['福井県マスク在庫'],
       //tweetList: ['1253910475223363585', '1252779322487652352'],
