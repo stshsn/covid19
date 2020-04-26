@@ -82,7 +82,9 @@
                   <br />
                   <div>
                     <a
-                      :href="'https://twitter.com/intent/tweet?button_hashtag='
+                      :href="'https://twitter.com/intent/tweet'
+                        + '?url=https%3A%2F%2Fcovid19-fukui.com%2F'
+                        + '&button_hashtag='
                         + hashTags[0]
                         + '&hashtags='
                         + hashTags.join(',')
@@ -116,9 +118,9 @@
             <v-card-text style="height: 500px;">
               <twitter-tweet :tweet-list="tweetList"></twitter-tweet>
             </v-card-text>
-            <v-card-action>
-              <v-btn text outlined block tile @click="toggleRelatedTweet()">{{ $t( '閉じる') }}</v-btn>
-            </v-card-action>
+            <v-card-actions>
+              <v-btn text outlined block @click="toggleRelatedTweet()">{{ $t( '閉じる') }}</v-btn>
+            </v-card-actions>
           </v-card>
         </v-dialog>
         <div v-if="this.$route.query.embed != 'true'" class="footer-right">
@@ -284,8 +286,8 @@ export default {
         '<a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html" target="_blank">国土地理院</a>',
       maskInventoryData: MaskInventory.data,
       hashTags: ['福井県マスク在庫'],
-      tweetList: ['1253910475223363585', '1252779322487652352'],
-      //tweetList: [],
+      //tweetList: ['1253910475223363585', '1252779322487652352'],
+      tweetList: [],
       relatedTweet: false,
       displayShare: false,
       showOverlay: false,
@@ -372,9 +374,15 @@ export default {
       console.log(this.$refs.lMap)
       this.$refs.lMap.mapObject.fitBounds(bounds, { padding: [20, 20] })
     },
-    toggleRelatedTweet(shopName) {
-      console.log(shopName)
-      this.relatedTweet = !this.relatedTweet
+    async toggleRelatedTweet(shopName) {
+      if (shopName === undefined) {
+        this.relatedTweet = false
+      } else {
+        const hashTags = this.hashTags.concat(shopName)
+        //console.log(hashTags)
+        //this.tweetList = await searchRelatedTweet(hashTags)
+        this.relatedTweet = true
+      }
     },
     openPopup(event) {
       this.$nextTick(() => {

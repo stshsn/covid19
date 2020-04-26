@@ -131,7 +131,12 @@ export default Vue.extend({
         {
           icon: 'CovidIcon',
           title: this.$t('新型コロナウイルス感染症が心配な方はこちら'),
-          link: this.localePath('/flow'),
+          link: this.localePath('/flow')
+        },
+        {
+          icon: 'SurgicalMaskIcon',
+          title: this.$t('県あっせんマスクについて'),
+          link: this.localePath('/mask'),
           divider: true
         },
         {
@@ -143,11 +148,6 @@ export default Vue.extend({
           icon: 'mdi-information',
           title: this.$t('福井県内のお知らせ一覧'),
           link: this.localePath('/news')
-        },
-        {
-          icon: 'mdi-information',
-          title: this.$t('県あっせんマスクについて'),
-          link: this.localePath('/mask')
         },
         {
           icon: 'mdi-information',
