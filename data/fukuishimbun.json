@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587960342,
+    "timestamp": 1587967529,
     "info": [
+        {
+            "title": "福井県死亡７人目は越前市の男性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076231",
+            "published_at": "2020/04/27 14:18"
+        },
         {
             "title": "新型コロナ１人死亡、福井県会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076171",
@@ -30,11 +35,6 @@
             "title": "10万円給付DV避難者早期申し出を",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075854",
             "published_at": "2020/04/27 07:00"
-        },
-        {
-            "title": "インターハイは中止、新型コロナで",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075776",
-            "published_at": "2020/04/26 17:23"
         }
     ]
 }
