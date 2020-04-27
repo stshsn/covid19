@@ -8,6 +8,7 @@
             （ 注 ）こちらは現在開発中です。レイアウト等が変更になる可能性があります<br />
             （ 注 ）この情報は県民の皆様から寄せられた情報を元に提供しています<br />
             （ 注 ）データは有志により提供されています。ゲンキー株式会社への問い合わせはご遠慮ください<br />
+            （ 注 ）更新日時：{{ maskUpdateDate| dateFormatter }}
           </p>
         </div>
         <!--
@@ -240,10 +241,16 @@ import TwitterTweet from '@/components/TwitterTweet.vue'
 import GenkyLocations from '@/data/genky_locations.json'
 import MaskInventory from '@/data/mask_inventory.json'
 import axios from 'axios'
+import format from 'date-fns/format'
 
 export default {
   components: {
     TwitterTweet
+  },
+  filters: {
+    dateFormatter: function (date) {
+      return format(date, 'YYYY/MM/DD')
+    }
   },
   data() {
     const regionInFukui = {
@@ -290,7 +297,7 @@ export default {
       shadowSize: [41, 41]
     }) : undefined
     return {
-      title: '県内のゲンキー店舗（開発中）',
+      title: '県内のゲンキー店舗と在庫状況',
       titleId: 'mask-inventory-card',
       url: 'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
       zoom: 9,
@@ -306,6 +313,7 @@ export default {
       blueIcon: blueIcon,
       redIcon: redIcon,
       maskInventoryData: MaskInventory.data,
+      maskUpdateDate: MaskInventory.date,
       hashTags: ['福井県マスク在庫'],
       //tweetList: ['1253910475223363585', '1252779322487652352'],
       tweetList: [],
