@@ -75,6 +75,7 @@
                     {{ genky.所在地 }}
                     <v-btn 
                       :href="'http://maps.apple.com/?daddr='+genky.緯度+','+genky.経度+'&dirflg=d'"
+                      target="_blank"
                       icon
                     >
                       <v-icon>mdi-map-legend</v-icon>
