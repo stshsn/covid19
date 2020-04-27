@@ -1,6 +1,11 @@
 {
-    "timestamp": 1587942305,
+    "timestamp": 1587953122,
     "info": [
+        {
+            "title": "始まらない大学の新歓、オンラインで",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076073",
+            "published_at": "2020/04/27 11:00"
+        },
         {
             "title": "補正予算案国会審議へ",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076037",
@@ -30,11 +35,6 @@
             "title": "あわら温泉の旅館・ホテルが一斉休業",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075737",
             "published_at": "2020/04/26 17:00"
-        },
-        {
-            "title": "新たな感染者は福井市の70代男性",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075711",
-            "published_at": "2020/04/26 14:08"
         }
     ]
 }
