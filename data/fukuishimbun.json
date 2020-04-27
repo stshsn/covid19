@@ -1,6 +1,16 @@
 {
-    "timestamp": 1587974718,
+    "timestamp": 1587978310,
     "info": [
+        {
+            "title": "石川県内の感染確認236人に",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076359",
+            "published_at": "2020/04/27 17:45"
+        },
+        {
+            "title": "買い物での３密防止、腐心する店側",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076247",
+            "published_at": "2020/04/27 17:10"
+        },
         {
             "title": "福井県死亡７人目は越前市の男性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076231",
@@ -25,11 +35,6 @@
             "title": "補正予算案国会審議へ",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076037",
             "published_at": "2020/04/27 07:30"
-        },
-        {
-            "title": "テレワーク、ホテルが専用プラン提供",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075859",
-            "published_at": "2020/04/27 07:10"
         }
     ]
 }
