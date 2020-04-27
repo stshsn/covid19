@@ -1,8 +1,18 @@
 {
-    "timestamp": 1587953122,
+    "timestamp": 1587960342,
     "info": [
         {
-            "title": "始まらない大学の新歓、オンラインで",
+            "title": "新型コロナ１人死亡、福井県会見配信",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076171",
+            "published_at": "2020/04/27 12:30"
+        },
+        {
+            "title": "福井県で新型コロナ患者１人死亡",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076168",
+            "published_at": "2020/04/27 12:18"
+        },
+        {
+            "title": "始まらない大学、オンラインで新歓",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076073",
             "published_at": "2020/04/27 11:00"
         },
@@ -25,16 +35,6 @@
             "title": "インターハイは中止、新型コロナで",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1075776",
             "published_at": "2020/04/26 17:23"
-        },
-        {
-            "title": "休業応じぬ福井のパチンコ店、車満杯",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075738",
-            "published_at": "2020/04/26 17:10"
-        },
-        {
-            "title": "あわら温泉の旅館・ホテルが一斉休業",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1075737",
-            "published_at": "2020/04/26 17:00"
         }
     ]
 }
