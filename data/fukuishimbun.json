@@ -1,13 +1,23 @@
 {
-    "timestamp": 1588050306,
+    "timestamp": 1588053928,
     "info": [
+        {
+            "title": "福井県済生会病院、本館の診療は継続",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076978",
+            "published_at": "2020/04/28 14:58"
+        },
+        {
+            "title": "感染の看護師は新型コロナ病棟勤務",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1076967",
+            "published_at": "2020/04/28 14:44"
+        },
         {
             "title": "休校延長で福井県独自の在宅授業開始",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076955",
             "published_at": "2020/04/28 13:52"
         },
         {
-            "title": "福井県の休業協力金申請4月30日から",
+            "title": "福井県の休業協力金申請30日から",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076942",
             "published_at": "2020/04/28 13:39"
         },
@@ -35,11 +45,6 @@
             "title": "福井県済生会病院の看護師が感染",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076900",
             "published_at": "2020/04/28 12:35"
-        },
-        {
-            "title": "高校総体中止",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1076772",
-            "published_at": "2020/04/28 07:30"
         }
     ]
 }
