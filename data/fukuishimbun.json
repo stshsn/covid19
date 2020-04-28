@@ -1,6 +1,16 @@
 {
-    "timestamp": 1588053928,
+    "timestamp": 1588057509,
     "info": [
+        {
+            "title": "石川県もマスク購入券配布、クスリのアオキで販売",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1077009",
+            "published_at": "2020/04/28 15:49"
+        },
+        {
+            "title": "マクドナルド全店、店内飲食を中止",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1077025",
+            "published_at": "2020/04/28 15:25"
+        },
         {
             "title": "福井県済生会病院、本館の診療は継続",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076978",
@@ -40,11 +50,6 @@
             "title": "看護師感染、福井県と病院の会見配信",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076904",
             "published_at": "2020/04/28 12:41"
-        },
-        {
-            "title": "福井県済生会病院の看護師が感染",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1076900",
-            "published_at": "2020/04/28 12:35"
         }
     ]
 }
