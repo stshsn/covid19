@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588079106,
+    "timestamp": 1588111497,
     "info": [
+        {
+            "title": "ごみ処理施設への直接持ち込み増加",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1077226",
+            "published_at": "2020/04/29 07:00"
+        },
         {
             "title": "石川県内の新型コロナ感染者249人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077244",
@@ -35,11 +40,6 @@
             "title": "感染の看護師は新型コロナ病棟勤務",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1076967",
             "published_at": "2020/04/28 14:44"
-        },
-        {
-            "title": "休校延長で福井県独自の在宅授業開始",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1076955",
-            "published_at": "2020/04/28 13:52"
         }
     ]
 }
