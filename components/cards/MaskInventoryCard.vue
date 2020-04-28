@@ -90,8 +90,7 @@
                         + '&button_hashtag='
                         + hashTags[0]
                         + '&hashtags='
-                        + hashTags.join(',')
-                        + ',' + genky.店舗名
+                        + hashTags.concat(genky.店舗名).slice(1).join(',')
                         + '&ref_src=twsrc%5Etfw'"
                       class="twitter-hashtag-button"
                       data-show-count="false"
