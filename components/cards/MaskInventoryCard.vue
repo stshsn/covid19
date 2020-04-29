@@ -103,7 +103,12 @@
                   <v-btn
                     small
                     outlined
-                    @click="toggleRelatedTweet(genky.店舗名)"
+                    :href="'https://twitter.com/search?q='
+                      + '%23福井県マスク在庫'
+                      + '%20%23' + genky.店舗名
+                      + '&src=typed_query&f=live'
+                    "
+                    target="_blank"
                   >{{ $t('この店舗に関連するツイートを表示') }}
                   </v-btn>
                 </l-popup>
