@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588115100,
+    "timestamp": 1588129502,
     "info": [
+        {
+            "title": "フェニックスまつり、コロナで中止",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1077556",
+            "published_at": "2020/04/29 11:30"
+        },
         {
             "title": "長引く休校",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077506",
@@ -35,11 +40,6 @@
             "title": "石川県内の新型コロナ感染者245人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077097",
             "published_at": "2020/04/28 17:15"
-        },
-        {
-            "title": "福井県、ホテルや旅館に休業要請",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1077024",
-            "published_at": "2020/04/28 17:10"
         }
     ]
 }
