@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588129502,
+    "timestamp": 1588133128,
     "info": [
+        {
+            "title": "福井県、新たな感染者なしと発表",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1077595",
+            "published_at": "2020/04/29 12:19"
+        },
         {
             "title": "フェニックスまつり、コロナで中止",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077556",
@@ -35,11 +40,6 @@
             "title": "石川県内の新型コロナ感染者249人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077244",
             "published_at": "2020/04/28 21:58"
-        },
-        {
-            "title": "石川県内の新型コロナ感染者245人に",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1077097",
-            "published_at": "2020/04/28 17:15"
         }
     ]
 }
