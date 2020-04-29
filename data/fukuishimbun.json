@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588151103,
+    "timestamp": 1588154760,
     "info": [
+        {
+            "title": "石川県内の感染者は計250人に",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1077743",
+            "published_at": "2020/04/29 18:10"
+        },
         {
             "title": "銀イオンのマスク、500万円挑戦",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077614",
@@ -40,11 +45,6 @@
             "title": "休校延長「子どものストレス心配」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077232",
             "published_at": "2020/04/29 07:30"
-        },
-        {
-            "title": "「大いに言路を開き、天下と公共の…",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1077498",
-            "published_at": "2020/04/29 07:20"
         }
     ]
 }
