@@ -1,6 +1,16 @@
 {
-    "timestamp": 1588237550,
+    "timestamp": 1588284320,
     "info": [
+        {
+            "title": "ポケモンGOが外出自粛で仕様変更、自宅でゲット",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078788",
+            "published_at": "2020/05/01 06:54"
+        },
+        {
+            "title": "石川県白山市の80代男性が新型コロナ感染",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078393",
+            "published_at": "2020/05/01 06:00"
+        },
         {
             "title": "調査で相次ぐ新型コロナ発症日修正",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078303",
@@ -25,26 +35,6 @@
             "title": "福井県内死亡８人目は福井市の女性",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078265",
             "published_at": "2020/04/30 14:33"
-        },
-        {
-            "title": "新型コロナ1人死亡、福井県会見中継",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078218",
-            "published_at": "2020/04/30 12:30"
-        },
-        {
-            "title": "福井県で新型コロナ患者１人死亡",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078216",
-            "published_at": "2020/04/30 12:20"
-        },
-        {
-            "title": "福井市の片町や駅前、夜の人出７割減",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078163",
-            "published_at": "2020/04/30 11:20"
-        },
-        {
-            "title": "新型コロナ引き金か、欧州で川崎病の子ども増加",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078080",
-            "published_at": "2020/04/30 09:05"
         }
     ]
 }
