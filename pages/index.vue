@@ -40,6 +40,7 @@
     <v-row class="DataBlock">
       <!-- <youtube-card /> -->
       <confirmed-cases-number-card />
+      <hospitalized-patients-card />
       <confirmed-cases-details-card />
       <each-sex-age-number-positive-card />
       <inspection-persons-number-card />
@@ -66,6 +67,8 @@ import JapanNews from '@/data/japan_news.json'
 import BreakingNewsData from '@/data/breaking_news.json'
 // 陽性患者数
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+// 入院患者数
+import HospitalizedPatientsCard from '@/components/cards/HospitalizedPatientsCard.vue'
 // 陽性患者の属性
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // 検査陽性者の状況
@@ -118,6 +121,7 @@ export default Vue.extend({
     WhatsNewJapan,
     StaticInfo,
     ConfirmedCasesNumberCard,
+    HospitalizedPatientsCard,
     ConfirmedCasesDetailsCard,
     InspectionPersonsNumberCard,
     // TestedCasesDetailsCard,
