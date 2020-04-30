@@ -1,6 +1,16 @@
 {
-    "timestamp": 1588219556,
+    "timestamp": 1588226896,
     "info": [
+        {
+            "title": "福井県マスク購入券の利用期限延長",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078270",
+            "published_at": "2020/04/30 14:45"
+        },
+        {
+            "title": "福井県内死亡８人目は福井市の女性",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078265",
+            "published_at": "2020/04/30 14:33"
+        },
         {
             "title": "新型コロナ1人死亡、福井県会見中継",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078218",
@@ -30,11 +40,6 @@
             "title": "山口茜選手「未来と自分変えられる」",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1077841",
             "published_at": "2020/04/30 07:20"
-        },
-        {
-            "title": "エルパが感染防止でドライブスルー",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1077836",
-            "published_at": "2020/04/30 07:10"
         }
     ]
 }
