@@ -55,7 +55,7 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { single as color } from '@/utils/colors'
+import { plusMinus as color } from '@/utils/colors'
 
 type Data = {
   dataKind: 'transition' | 'cumulative'
@@ -79,7 +79,7 @@ type Computed = {
     datasets: {
       label: 'transition' | 'cumulative'
       data: number[]
-      backgroundColor: string
+      backgroundColor: string[]
       borderWidth: number
     }[]
   }
@@ -218,7 +218,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               data: this.chartData.map(d => {
                 return d.transition
               }),
-              backgroundColor: color,
+              backgroundColor: this.chartData.map(d => {
+                return d.transition >= 0 ? color[0] : color[1]
+              }),
               borderWidth: 0
             }
           ]
@@ -232,7 +234,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: this.chartData.map(d => {
               return d.cumulative
             }),
-            backgroundColor: color,
+            backgroundColor: this.chartData.map(d => {
+              return d.cumulative >= 0 ? color[0] : color[1]
+            }),
             borderWidth: 0
           }
         ]
