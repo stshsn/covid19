@@ -117,10 +117,10 @@ export default {
         title = this.$t('陽性患者の属性')
         updatedAt = InspectionsSummary.date
         break
-        // case 'number-of-tested':
-        //   title = this.$t('検査実施件数')
-        //   updatedAt = InspectionsSummary.date
-        break
+      // case 'number-of-tested':
+      //   title = this.$t('検査実施件数')
+      //   updatedAt = InspectionsSummary.date
+      // break
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
         updatedAt = InspectionPersons.date
@@ -174,7 +174,7 @@ export default {
   },
   head() {
     const url = 'https://covid19-fukui.com'
-    const timestamp = new Date().getTime()
+    // const timestamp = new Date().getTime()
     const ogpImage = this.$tc('ogp.og:image')
     const description = `${this.updatedAt} | ${this.$t(
       '当サイトは福井県における新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、福井高専生卒の野村弘樹が開設したものです'
