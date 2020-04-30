@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588226896,
+    "timestamp": 1588230353,
     "info": [
+        {
+            "title": "コロナ影響は…フリースクールの今",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078254",
+            "published_at": "2020/04/30 16:00"
+        },
         {
             "title": "福井県マスク購入券の利用期限延長",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078270",
@@ -30,16 +35,6 @@
             "title": "新型コロナ引き金か、欧州で川崎病の子ども増加",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078080",
             "published_at": "2020/04/30 09:05"
-        },
-        {
-            "title": "川端康成は日本の近代文学を代表す…",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078031",
-            "published_at": "2020/04/30 07:20"
-        },
-        {
-            "title": "山口茜選手「未来と自分変えられる」",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1077841",
-            "published_at": "2020/04/30 07:20"
         }
     ]
 }
