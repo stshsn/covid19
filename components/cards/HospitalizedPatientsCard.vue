@@ -2,8 +2,8 @@
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
       :title="$t('入院患者数')"
-      :title-id="'number-of-confirmed-cases'"
-      :chart-id="'time-bar-chart-patients'"
+      :title-id="'number-of-hospitalized-patients'"
+      :chart-id="'time-bar-chart-hospitalized-patients'"
       :chart-data="hospitalizedPatientsGraph"
       :date="updatedAt"
       :unit="$t('人')"
