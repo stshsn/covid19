@@ -8,7 +8,31 @@
       :date="updatedAt"
       :unit="$t('人')"
       :url="'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19.html'"
-    />
+    >
+      <template v-slot:description>
+        <ul>
+          <li>
+            {{ $t('(注)１日あたりの入退院件数を表しています') }} <br />
+            {{
+              $t(
+                '(注)入退院件数 = 入院件数 - 退院件数 - 死亡件数 と計算しています'
+              )
+            }}
+            <br />
+            {{
+              $t(
+                '(注)青グラフの場合、入院者数が１日の退院者数を上回っている。'
+              )
+            }}<br />
+            {{
+              $t(
+                '(注)赤グラフの場合、退院者数が１日の入院者数を上回っていることを示しています'
+              )
+            }}
+          </li>
+        </ul>
+      </template>
+    </time-bar-chart>
   </v-col>
 </template>
 
