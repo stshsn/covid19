@@ -91,7 +91,7 @@ export default {
     HospitalBedsNumberCard,
     InformationNumberCard,
     EachSexAgeNumberPositiveCard,
-    MaskInventoryCard,
+    MaskInventoryCard
     // ConsultationDeskReportsNumberCard,
     // MetroCard,
     // AgencyCard,
@@ -117,9 +117,9 @@ export default {
         title = this.$t('陽性患者の属性')
         updatedAt = InspectionsSummary.date
         break
-      // case 'number-of-tested':
-      //   title = this.$t('検査実施件数')
-      //   updatedAt = InspectionsSummary.date
+        // case 'number-of-tested':
+        //   title = this.$t('検査実施件数')
+        //   updatedAt = InspectionsSummary.date
         break
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
@@ -154,7 +154,7 @@ export default {
         title = this.$t('コールセンターお問合せ件数')
         updatedAt = Contacts.date
         break
-      
+
       case 'each-sex-age-number-positive':
         title = this.$t('年代別の陽性患者数')
         updatedAt = PatientsSummary.date
