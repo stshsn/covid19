@@ -3,7 +3,7 @@
     <template v-slot:description>
       <slot name="description" />
     </template>
-    <template v-slot:button>
+    <template v-if="isEnableButton" v-slot:button>
       <data-selector
         v-model="dataKind"
         :target-id="chartId"
@@ -114,6 +114,8 @@ type Props = {
   chartId: string
   chartData: GraphDataType[]
   transitionType: string
+  isEnableButton: boolean
+  forceDataKind: string
   date: string
   unit: string
   url: string
@@ -153,6 +155,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       type: Array,
       default: () => []
     },
+    isEnableButton: {
+      type: Boolean,
+      default: true
+    },
+    forceDataKind: {
+      type: String,
+      default: ''
+    },
     transitionType: {
       type: String,
       default: 'daily'
@@ -187,6 +197,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
+      if (this.forceDataKind !== '')
+        this.dataKind =
+          this.forceDataKind === 'transition' ? 'transition' : 'cumulative'
       if (this.dataKind === 'transition') {
         return {
           lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,

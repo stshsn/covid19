@@ -5,6 +5,8 @@
       :title-id="'number-of-hospitalized-patients'"
       :chart-id="'time-bar-chart-hospitalized-patients'"
       :chart-data="hospitalizedPatientsGraph"
+      :is-enable-button="false"
+      :force-data-kind="'cumulative'"
       :date="updatedAt"
       :unit="$t('人')"
       :url="'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19.html'"
