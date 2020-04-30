@@ -17,7 +17,9 @@
       :url="localePath('/mask')"
       target="_blank"
       :text="
-        $t('ゲンキーで販売されている県あっせんマスクについての情報はこちらからご確認いただけます')
+        $t(
+          'ゲンキーで販売されている県あっせんマスクについての情報はこちらからご確認いただけます'
+        )
       "
       :btn-text="$t('マスク情報へ')"
     />
@@ -101,7 +103,10 @@ import EachSexAgeNumberPositiveCard from '@/components/cards/EachSexAgeNumberPos
 // import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
-import { convertDatetimeToISO8601Format, getCommonStyleDateString } from '@/utils/formatDate'
+import {
+  convertDatetimeToISO8601Format,
+  getCommonStyleDateString
+} from '@/utils/formatDate'
 
 export default Vue.extend({
   components: {
