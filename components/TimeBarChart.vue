@@ -130,7 +130,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     this.canvas = process.browser
     this.sliderUpdate([0, this.sliderMax])
   },
-  components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
+  components: {
+    DataView,
+    DataSelector,
+    DateSelectSlider,
+    DataViewBasicInfoPanel
+  },
   props: {
     title: {
       type: String,
@@ -352,7 +357,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         return 1
       }
       return this.chartData.length - 1
-    },
+    }
   },
   methods: {
     formatDayBeforeRatio(dayBeforeRatio: number): string {
