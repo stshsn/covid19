@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588201506,
+    "timestamp": 1588205418,
     "info": [
+        {
+            "title": "レムデシビルで新型コロナ治療の効果確認できずと中国",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078075",
+            "published_at": "2020/04/30 08:56"
+        },
         {
             "title": "川端康成は日本の近代文学を代表す…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078031",
@@ -30,11 +35,6 @@
             "title": "シャープのマスク、偽の当選メールに注意",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078021",
             "published_at": "2020/04/30 06:19"
-        },
-        {
-            "title": "石川県金沢市で新型コロナ新たに１人感染",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1077743",
-            "published_at": "2020/04/30 06:00"
         }
     ]
 }
