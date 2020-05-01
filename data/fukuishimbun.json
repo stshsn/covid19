@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588302388,
+    "timestamp": 1588305953,
     "info": [
+        {
+            "title": "福井県で新たな新型コロナ感染者なし",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1078962",
+            "published_at": "2020/05/01 12:20"
+        },
         {
             "title": "ＧＷ中の高速道路割引、5月10日まで適用せず",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078930",
@@ -24,11 +29,6 @@
         {
             "title": "「感染者は悪くない」保健師が訴え",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078512",
-            "published_at": "2020/05/01 07:20"
-        },
-        {
-            "title": "新型コロナウイルスを巡る暗い話題…",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078782",
             "published_at": "2020/05/01 07:20"
         }
     ]
