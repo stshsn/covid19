@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588305953,
+    "timestamp": 1588316820,
     "info": [
+        {
+            "title": "関西電力、大飯原発の定期検査を延期",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1079021",
+            "published_at": "2020/05/01 15:20"
+        },
         {
             "title": "福井県で新たな新型コロナ感染者なし",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078962",
@@ -25,11 +30,6 @@
             "title": "ＤＭＯさかい始動",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078786",
             "published_at": "2020/05/01 07:30"
-        },
-        {
-            "title": "「感染者は悪くない」保健師が訴え",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078512",
-            "published_at": "2020/05/01 07:20"
         }
     ]
 }
