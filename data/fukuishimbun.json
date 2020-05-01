@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588291853,
+    "timestamp": 1588295123,
     "info": [
+        {
+            "title": "新型コロナ、年齢上がるほど高リスク",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1074953",
+            "published_at": "2020/05/01 10:00"
+        },
         {
             "title": "テイクアウトや宅配で現金５％還元",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078810",
@@ -30,11 +35,6 @@
             "title": "自衛隊中央病院、感染者受け入れも院内感染ゼロの対応力",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078799",
             "published_at": "2020/05/01 07:02"
-        },
-        {
-            "title": "ポケモンGOが外出自粛で仕様変更、自宅でゲット",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078788",
-            "published_at": "2020/05/01 06:54"
         }
     ]
 }
