@@ -1,6 +1,6 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <time-bar-chart
+    <time-mixed-chart
       :title="$t('入院患者数')"
       :title-id="'number-of-hospitalized-patients'"
       :chart-id="'time-bar-chart-hospitalized-patients'"
@@ -34,25 +34,25 @@
           </li>
         </ul>
       </template>
-    </time-bar-chart>
+    </time-mixed-chart>
   </v-col>
 </template>
 
 <script>
 import HospitalizedPatients from '@/data/hospitalized_patients.json'
-import formatGraph from '@/utils/formatGraph'
+import formatMixedGraph from '@/utils/formatMixedGraph'
 import { getCommonStyleDateString } from '@/utils/formatDate'
-import TimeBarChart from '@/components/TimeBarChart.vue'
+import TimeMixedChart from '@/components/TimeMixedChart.vue'
 
 export default {
   components: {
-    TimeBarChart
+    TimeMixedChart
   },
   data() {
     return {
       updatedAt: getCommonStyleDateString(HospitalizedPatients.date),
       // 感染者数グラフ
-      hospitalizedPatientsGraph: formatGraph(HospitalizedPatients.data)
+      hospitalizedPatientsGraph: formatMixedGraph(HospitalizedPatients.data)
     }
   }
 }
