@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588316820,
+    "timestamp": 1588320335,
     "info": [
+        {
+            "title": "福井県の休業協力金、続々と希望者",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1079004",
+            "published_at": "2020/05/01 17:00"
+        },
         {
             "title": "関西電力、大飯原発の定期検査を延期",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079021",
@@ -25,11 +30,6 @@
             "title": "テイクアウトでお得、現金５％還元",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1078810",
             "published_at": "2020/05/01 08:00"
-        },
-        {
-            "title": "ＤＭＯさかい始動",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1078786",
-            "published_at": "2020/05/01 07:30"
         }
     ]
 }
