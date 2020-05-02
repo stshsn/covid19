@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588374299,
+    "timestamp": 1588388721,
     "info": [
+        {
+            "title": "10万円給付詐欺メール、手口は",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1079591",
+            "published_at": "2020/05/02 11:20"
+        },
         {
             "title": "コロナ禍と改憲論議",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079541",
@@ -30,11 +35,6 @@
             "title": "福井県総合グリーンセンター全面閉鎖",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079060",
             "published_at": "2020/05/01 17:10"
-        },
-        {
-            "title": "福井県の休業協力金、続々と希望者",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1079004",
-            "published_at": "2020/05/01 17:00"
         }
     ]
 }
