@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588388721,
+    "timestamp": 1588392342,
     "info": [
+        {
+            "title": "福井県で新たな新型コロナ感染者なし",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1079606",
+            "published_at": "2020/05/02 12:40"
+        },
         {
             "title": "10万円給付詐欺メール、手口は",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079591",
@@ -30,11 +35,6 @@
             "title": "石川県内の感染者は計254人に",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079179",
             "published_at": "2020/05/01 18:35"
-        },
-        {
-            "title": "福井県総合グリーンセンター全面閉鎖",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1079060",
-            "published_at": "2020/05/01 17:10"
         }
     ]
 }
