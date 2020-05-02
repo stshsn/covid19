@@ -1,6 +1,11 @@
 {
-    "timestamp": 1588399603,
+    "timestamp": 1588406737,
     "info": [
+        {
+            "title": "緊急事態宣言延長「やむなし」多数",
+            "link": "https://www.fukuishimbun.co.jp/articles/-/1079657",
+            "published_at": "2020/05/02 17:00"
+        },
         {
             "title": "理美容業界からコロナ感染不安の声",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079597",
@@ -30,11 +35,6 @@
             "title": "故森毅さんは数学者でありながら…",
             "link": "https://www.fukuishimbun.co.jp/articles/-/1079533",
             "published_at": "2020/05/02 07:20"
-        },
-        {
-            "title": "パチンコ店、福井県内全て休業",
-            "link": "https://www.fukuishimbun.co.jp/articles/-/1079267",
-            "published_at": "2020/05/02 07:00"
         }
     ]
 }
