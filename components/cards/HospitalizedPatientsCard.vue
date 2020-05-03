@@ -11,6 +11,7 @@
       :unit="$t('人')"
       :url="'https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19.html'"
     >
+      <!--
       <template v-slot:description>
         <ul>
           <li>
@@ -34,6 +35,7 @@
           </li>
         </ul>
       </template>
+      -->
     </time-mixed-chart>
   </v-col>
 </template>

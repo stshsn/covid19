@@ -406,11 +406,13 @@ function hospitalizedPatients(json, jsonObject) {
     const positivePatiensNum = parseInt(row.陽性確認_件数)
     const deadNum = parseInt(row.死亡確認_件数)
     const dischargeNum = parseInt(row.陰性確認_件数)
-    const hospitalizedNum = positivePatiensNum - deadNum - dischargeNum
+    // const hospitalizedNum = positivePatiensNum - deadNum - dischargeNum
 
     const newObj = {
       日付: publicationDateString,
-      小計: hospitalizedNum
+      入院: positivePatiensNum,
+      死亡: deadNum,
+      退院: dischargeNum
     }
     jsonObject.data.push(newObj)
   })

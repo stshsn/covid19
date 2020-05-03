@@ -1,12 +1,14 @@
 type DataType = {
   日付: Date
   入院: number
+  死亡: number
   退院: number
 }
 
 export type GraphDataType = {
   label: string
   hospitalized: number
+  dead: number
   discharge: number
   cumulative: number
 }
@@ -24,12 +26,13 @@ export default (data: DataType[]) => {
     .filter(d => new Date(d['日付']) < today)
     .forEach(d => {
       const date = new Date(d['日付'])
-      const subTotal = d['入院'] - d['退院']
+      const subTotal = d['入院'] - d['死亡'] - d['退院']
       if (!isNaN(subTotal)) {
         patSum += subTotal
         graphData.push({
           label: `${date.getMonth() + 1}/${date.getDate()}`,
           hospitalized: d['入院'],
+          dead: d['死亡'],
           discharge: d['退院'],
           cumulative: patSum
         })

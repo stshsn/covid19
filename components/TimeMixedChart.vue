@@ -16,7 +16,7 @@
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
-      :height="240"
+      :height="300"
     />
     <date-select-slider
       :chart-data="chartData"
@@ -31,7 +31,7 @@
       :items-per-page="-1"
       :hide-default-footer="true"
       :hide-default-header="true"
-      :height="240"
+      :height="300"
       :fixed-header="true"
       :mobile-breakpoint="0"
       class="cardTable"
@@ -49,6 +49,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { TranslateResult } from 'vue-i18n'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatMixedGraph'
 import DataView from '@/components/DataView.vue'
@@ -77,19 +78,19 @@ type Computed = {
   displayData: {
     labels: string[]
     datasets: {
-      label: 'transition' | 'cumulative'
+      label: TranslateResult
       data: number[]
-      backgroundColor: string[]
+      backgroundColor: string[] | string
       borderWidth: number
     }[]
   }
   displayOption: {
     tooltips: {
       displayColors: boolean
-      callbacks: {
-        label(tooltipItem: any): string
-        title(tooltipItem: any[], data: any): string | undefined
-      }
+      // callbacks: {
+      //   label(tooltipItem: any): string
+      //   title(tooltipItem: any[], data: any): string | undefined
+      // }
     }
     responsive: boolean
     maintainAspectRatio: boolean
@@ -224,7 +225,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         labels: this.chartData.map(d => d.label),
         datasets: [
           {
-            label: this.dataKind,
+            label: this.$t('入院件数'),
             data: this.chartData.map(d => {
               return d.hospitalized
             }),
@@ -234,26 +235,38 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             borderWidth: 0
           },
           {
-            label: this.dataKind,
+            label: this.$t('退院件数'),
             data: this.chartData.map(d => {
               return d.discharge * -1
             }),
             backgroundColor: this.chartData.map(d => {
-              return color[1]
+              return '#2196F3'
             }),
             borderWidth: 0
           },
           {
-            label: this.dataKind,
+            label: this.$t('死亡件数'),
+            data: this.chartData.map(d => {
+              return d.dead * -1
+            }),
+            backgroundColor: this.chartData.map(d => {
+              return color[1] 
+            }),
+            borderWidth: 0
+          },
+          {
+            label: this.$t('入院患者数'),
             data: this.chartData.map(d => {
               return d.cumulative
             }),
-            backgroundColor: this.chartData.map(d => {
-              return "#000"
-            }),
-            borderWidth: 0,
-            fill: false,
-            type: "line"
+            // backgroundColor: this.chartData.map(d => {
+            //   return "#efefef"
+            // }),
+            backgroundColor: "#efefef",
+            borderWidth: 1,
+            pointRadius: 0,
+            type: "line",
+            steppedLine: "after"
           }
         ]
       }
@@ -261,26 +274,27 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayOption() {
       const unit = this.unit
       const scaledTicksYAxisMax = this.scaledTicksYAxisMax
+      const _this = this
       const options = {
         animation: false,
         tooltips: {
           displayColors: false,
-          callbacks: {
-            label(tooltipItem: any) {
-              const labelText = `${parseInt(
-                tooltipItem.value
-              ).toLocaleString()} ${unit}`
-              return labelText
-            },
-            title(tooltipItem: any, data: any) {
-              return data.labels[tooltipItem[0].index]
-            }
-          }
+          // callbacks: {
+          //   label(tooltipItem: any) {
+          //     const labelText = `${parseInt(
+          //       tooltipItem.value
+          //     ).toLocaleString()} ${unit}`
+          //     return labelText
+          //   },
+          //   title(tooltipItem: any, data: any) {
+          //     return data.labels[tooltipItem[0].index]
+          //   }
+          // }
         },
         responsive: true,
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: true
         },
         scales: {
           xAxes: [
